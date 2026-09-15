@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Datastromen — Uniformiteitschecker NederlandWereldwijd</title>
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1a1e24; --ink2:#3d4650; --muted:#6b7580; --line:#dfe4ea; --bg:#f6f7f9; --card:#fff;
+  --db:#1a7a52;    --db-bg:#e7f4ec;  --db-line:#a6d5bb;
+  --tmp:#8f5c08;   --tmp-bg:#fdf2e0; --tmp-line:#e7c98f;
+  --src:#1d5da8;   --src-bg:#e9f0fb; --src-line:#a9c5e8;
+  --keuze:#7333a0; --keuze-bg:#f4eafb; --keuze-line:#d3b2ea;
+  --r:12px;
+  --f:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--f);
+     padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 72px}
+h1,h2,h3{line-height:1.25;margin:0;letter-spacing:-.01em}
+h1{font-size:26px} h2{font-size:19px} h3{font-size:15px}
+p{margin:.5em 0}
+code{font:12.5px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#eef1f5;padding:1px 5px;border-radius:5px}
+
+header.top{padding:38px 0 22px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:650}
+.lead{max-width:74ch;color:var(--ink2);margin-top:9px}
+
+.note{margin-top:22px;padding:14px 16px;border-radius:var(--r);background:#fff8e8;
+      border:1px solid #e9d49a;border-left:4px solid #c8901c;font-size:14px}
+.note b{color:#77510a}
+.note ul{margin:.4em 0 0;padding-left:1.15em} .note li{margin:.15em 0}
+
+section{margin-top:40px}
+.sec-intro{color:var(--ink2);max-width:80ch;margin:6px 0 18px}
+
+/* controls */
+.controls{position:sticky;top:0;z-index:20;margin:20px 0 0;background:rgba(246,247,249,.95);
+  backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--r);
+  padding:11px 13px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.ctl-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.seg{display:flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.seg label{font-size:13px;padding:6px 11px;cursor:pointer;color:var(--ink2);border-right:1px solid #eef1f5;white-space:nowrap}
+.seg label:last-child{border-right:0}
+.seg input{position:absolute;opacity:0;width:0;height:0}
+.seg label:has(input:checked){background:var(--ink);color:#fff}
+.switch{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);cursor:pointer;
+  border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px}
+.switch input{accent-color:var(--ink);width:15px;height:15px}
+.count{font-size:12.5px;color:var(--muted);margin-left:auto}
+
+/* tags */
+.tag{display:inline-flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid;white-space:nowrap}
+.t-db{color:var(--db);background:var(--db-bg);border-color:var(--db-line)}
+.t-tmp{color:var(--tmp);background:var(--tmp-bg);border-color:var(--tmp-line)}
+.t-src{color:var(--src);background:var(--src-bg);border-color:var(--src-line)}
+.t-keuze{color:var(--keuze);background:var(--keuze-bg);border-color:var(--keuze-line)}
+.t-plain{color:var(--muted);background:#eef1f4;border-color:#ccd4dc;text-transform:none;letter-spacing:0;font-weight:600}
+.t-aanname{color:#8a4b12;background:#fdeedd;border-color:#eecba4;text-transform:none;letter-spacing:0;font-weight:600}
+.crud{display:inline-flex;font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border-radius:5px;
+  background:#e7f4ec;color:var(--db);border:1px solid var(--db-line);white-space:nowrap}
+.crud.none{background:#eef1f4;color:var(--muted);border-color:#ccd4dc;letter-spacing:0;text-transform:none;font-weight:600}
+body.hide-crud .crud,
+body.hide-crud .crud-col{display:none}
+
+/* legend */
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px}
+.legend div{display:flex;gap:9px;align-items:flex-start;background:var(--card);border:1px solid var(--line);
+  border-radius:10px;padding:10px 12px;flex:1 1 200px;min-width:185px}
+.sw{width:12px;height:12px;border-radius:4px;flex:0 0 auto;margin-top:4px;border:1px solid rgba(0,0,0,.15)}
+.legend b{display:block;font-size:12.5px} .legend small{color:var(--muted);font-size:11.6px;line-height:1.45}
+
+/* diagram */
+.diagram{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
+.cols{display:grid;grid-template-columns:1fr 150px 1fr 150px 1fr;gap:0;align-items:start}
+.diagram [data-cat]{transition:opacity .2s ease,filter .2s ease}
+body[data-filter="db"] .diagram [data-cat="nodb"],
+body[data-filter="nodb"] .diagram [data-cat="db"]{opacity:.16;filter:grayscale(1)}
+.seg label.on{background:var(--ink);color:#fff}
+.col{display:flex;flex-direction:column;gap:12px}
+.col h3{font-size:10.8px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.node{border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff}
+.node > b{display:block;font-size:13.2px;line-height:1.3}
+.node small{display:block;color:var(--muted);font-size:11.6px;line-height:1.45;margin-top:3px}
+.node.src{background:var(--src-bg);border-color:var(--src-line)}
+.node.app{background:#fff;border-color:#c9d2dc;border-style:dashed}
+.node.person{background:#f2f4f7;border-color:#ccd4dc}
+.node.store-db{background:var(--db-bg);border-color:var(--db-line)}
+.node.store-tmp{background:var(--tmp-bg);border-color:var(--tmp-line)}
+.node.store-src{background:var(--src-bg);border-color:var(--src-line)}
+.node.store-keuze{background:var(--keuze-bg);border-color:var(--keuze-line)}
+.arrows{display:flex;flex-direction:column;justify-content:center;gap:16px;padding-top:26px}
+.ar{text-align:center;font-size:10.8px;line-height:1.35;color:var(--ink2)}
+.ar .gl{display:block;font-size:17px;color:#8b97a4;line-height:1}
+.ar .gl.down{display:none}
+.ar em{font-style:normal;color:var(--muted);display:block;font-size:10.4px}
+.ar .crud{margin-top:4px}
+.diagram .back{margin-top:16px;padding:11px 13px;border:1px dashed #c9d2dc;border-radius:10px;
+  font-size:12.5px;color:var(--ink2);background:#fafbfc}
+.diagram .back b{color:var(--ink)}
+
+/* flows */
+.flow{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 17px;margin-bottom:12px}
+.flow-head{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:11px}
+.fid{font:700 11px/1 var(--f);letter-spacing:.06em;color:var(--muted);background:#eef1f4;
+     border:1px solid #d9e0e7;border-radius:5px;padding:4px 6px}
+.flow-head h3{flex:1 1 220px;min-width:160px}
+.route{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+.stage{flex:1 1 170px;min-width:148px;border:1px solid var(--line);border-radius:9px;padding:9px 10px;background:#fbfcfd}
+.stage > span:first-child{display:block;font-size:10.2px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.stage.s-store{background:#fff}
+.hop{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;
+     text-align:center;font-size:10.3px;color:var(--muted);max-width:104px;padding:0 2px;gap:3px}
+.hop .gl{font-size:15px;color:#8b97a4;line-height:1}
+.hop .crud,.ar .crud{white-space:normal;display:inline-block;text-align:center;line-height:1.35}
+.why{margin:11px 0 0;font-size:13.2px;color:var(--ink2);border-top:1px solid #eef1f5;padding-top:9px}
+.why b{color:var(--ink)}
+
+/* table */
+.tablewrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:900px;font-size:13px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid #eef1f5;vertical-align:top}
+th{font-size:10.6px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:#fafbfc;
+   position:sticky;top:0;border-bottom:1px solid var(--line)}
+tbody tr:last-child td{border-bottom:0}
+td.g{font-weight:650}
+td small{display:block;color:var(--muted);font-size:11.6px;line-height:1.45;margin-top:2px}
+
+/* advice */
+.advice{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.advice h3{margin-top:18px;font-size:14.5px}
+.advice h3:first-child{margin-top:0}
+.advice ul{margin:.45em 0 0;padding-left:1.15em} .advice li{margin:.3em 0}
+.advice .kicker{background:var(--db-bg);border:1px solid var(--db-line);border-radius:10px;padding:13px 15px;font-size:14px}
+.advice .kicker b{color:var(--db)}
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+
+@media (max-width:860px){
+  .cols{grid-template-columns:1fr}
+  .arrows{padding:4px 0;gap:10px}
+  .ar .gl{display:none} .ar .gl.down{display:block}
+  .col{margin-bottom:4px}
+  .hop{flex:1 1 100%;max-width:none;flex-direction:row;gap:7px;justify-content:flex-start}
+  .stage{flex:1 1 100%}
+}
+</style>
+</head>
+<body data-filter="all">
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Uniformiteitschecker NederlandWereldwijd</div>
+  <h1>Datastromen: waar komen gegevens vandaan, en wat moet je bewaren?</h1>
+  <p class="lead">Wie leest wat uit, wat gebeurt ermee, waar landt het, en wat blijft er over na het sluiten van
+  het tabblad. Gebaseerd op <code>STRATEGY.md</code> (14-09-2026) en de drie sporen: content uitlezen,
+  afwijkingen aantonen, werkbaar overzicht voor de redactie.</p>
+</header>
+
+<div class="note">
+  <b>Belangrijk: er is nog geen regel code.</b> De repo bevat alleen <code>README.md</code> en
+  <code>STRATEGY.md</code>. Alles hieronder is dus <em>ontwerp</em>, geen beschrijving van iets dat draait.
+  <ul>
+    <li><b>Gebouwd:</b> niets.</li>
+    <li><b>Uit de strategie:</b> de drie sporen, de twee publieke websites, de voorlichterswebsite als open vraag,
+        de webredacteur als gebruiker, "1× per week".</li>
+    <li><b>Aannames van mij</b> (herkenbaar aan het label <span class="tag t-aanname">aanname</span>):
+        sitemap.xml is beschikbaar, de termenlijst komt als bestand in de repo, CSV-export en het voorleggen
+        aan een kenniseigenaar zijn afgeleid uit spoor 3, en signalen worden bij elke check opnieuw berekend.</li>
+    <li><b>Nog open:</b> draait de app in de browser of op een server? Beide varianten staan erbij —
+        ze verschillen nauwelijks in <em>wat</em> je moet bewaren, wel in <em>waar</em>.</li>
+  </ul>
+</div>
+
+<div class="controls">
+  <span class="ctl-label">Toon</span>
+  <div class="seg">
+    <label class="on"><input type="radio" name="filter" value="all" checked>Alle data</label>
+    <label><input type="radio" name="filter" value="db">Databaseopslag</label>
+    <label><input type="radio" name="filter" value="nodb">Geen eigen databaseopslag</label>
+  </div>
+  <label class="switch"><input type="checkbox" id="crudToggle" checked>CRUD-labels tonen</label>
+  <span class="count" id="count"></span>
+</div>
+
+<section>
+  <h2>Legenda — opslagcategorie</h2>
+  <p class="sec-intro">Elke kleur heeft ook altijd een tekstlabel, zodat het diagram ook zonder kleur leesbaar is.</p>
+  <div class="legend">
+    <div><span class="sw" style="background:#a6d5bb"></span><span><b>BEWAREN</b><small>Moet duurzaam in een eigen database. Blijft bestaan na sluiten en herladen.</small></span></div>
+    <div><span class="sw" style="background:#e7c98f"></span><span><b>TIJDELIJK</b><small>Alleen nodig tijdens invoer, berekening of weergave. Mag daarna weg.</small></span></div>
+    <div><span class="sw" style="background:#a9c5e8"></span><span><b>ELDERS</b><small>Staat al op een website, in een bestand of in een mailbox. Niet kopiëren naar je eigen database.</small></span></div>
+    <div><span class="sw" style="background:#d3b2ea"></span><span><b>KEUZE NODIG</b><small>Twijfelgeval. Er hoort een vraag bij die eerst beantwoord moet worden.</small></span></div>
+  </div>
+</section>
+
+<section>
+  <h2>1 · Het diagram</h2>
+  <p class="sec-intro">Mensen, bronnen, de app en de opslag als aparte onderdelen. Op elke pijl staat welke
+  gegevens er stromen; waar het om opgeslagen gegevens gaat staat de CRUD-actie erbij. De app-blokken hebben
+  een stippellijn: die bestaan nog niet.</p>
+
+  <div class="diagram">
+    <div class="cols">
+
+      <div class="col">
+        <h3>Bronnen — buiten de app</h3>
+        <div class="node src" data-cat="nodb"><b>nederlandwereldwijd.nl</b><small>± 5.000 pagina's · Nederlands · bestaat al</small></div>
+        <div class="node src" data-cat="nodb"><b>netherlandsworldwide.nl</b><small>± 5.000 pagina's · anderstalig · bestaat al</small></div>
+        <div class="node src" data-cat="nodb"><b>Voorlichterswebsite (intern)</b><small><span class="tag t-aanname">aanname</span> toestemming nog onbevestigd. Lukt het niet, dan volstaan de twee publieke sites.</small></div>
+        <div class="node src" data-cat="nodb"><b>termen-en-richtlijnen.json</b><small><span class="tag t-aanname">aanname</span> bestand in de GitHub-repo: voorkeursterm + afgekeurde varianten, bijv. <code>legalisation</code> vs. <code>legalization</code></small></div>
+      </div>
+
+      <div class="arrows" data-cat="nodb">
+        <div class="ar"><span class="gl">→</span><span class="gl down">↓</span>
+          sitemap.xml + HTML van elke pagina<em>ophalen, per check opnieuw</em>
+          <span class="crud none">geen databaseactie</span></div>
+        <div class="ar"><span class="gl">→</span><span class="gl down">↓</span>
+          voorkeurstermen + uitzonderingen<em>uit het bestand, bij start van de check</em>
+          <span class="crud">Read · in het bestand</span></div>
+      </div>
+
+      <div class="col">
+        <h3>De app — Uniformiteitschecker <span class="tag t-plain">nog niet gebouwd</span></h3>
+        <div class="node app" data-cat="nodb"><b>1 · Ophalen &amp; normaliseren</b><small>HTML strippen tot platte tekst met koppen, per URL</small></div>
+        <div class="node app" data-cat="nodb"><b>2 · Termencheck</b><small>Tekst tegen de schrijfrichtlijnen: afgekeurde term gevonden?</small></div>
+        <div class="node app" data-cat="nodb"><b>3 · Inhoudscheck</b><small>Pagina's onderling vergelijken op tegenstrijdige feiten</small></div>
+        <div class="node app" data-cat="both"><b>4 · Signalenoverzicht op het scherm</b><small>Per signaal: type, URL, het gevonden fragment en de afhandelstatus. Hier klikt de redacteur.</small></div>
+      </div>
+
+      <div class="arrows" data-cat="both">
+        <div class="ar"><span class="gl">→</span><span class="gl down">↓</span>
+          signalenlijst op het scherm<em>type, URL, fragment, status</em>
+          <span class="crud none">geen databaseactie</span></div>
+        <div class="ar"><span class="gl">→</span><span class="gl down">↓</span>
+          geselecteerde signalen als CSV<em>download naar de laptop</em>
+          <span class="crud">Read · eigen opslag</span></div>
+        <div class="ar"><span class="gl">→</span><span class="gl down">↓</span>
+          URL + citaat + vraag<em>handmatig, buiten de app</em>
+          <span class="crud none">geen databaseactie</span></div>
+      </div>
+
+      <div class="col">
+        <h3>Mensen &amp; bestemming</h3>
+        <div class="node person" data-cat="both"><b>Webredacteur NederlandWereldwijd</b><small>Start de check (± 1× per week), leest de lijst, markeert wat af is. Primaire gebruiker.</small></div>
+        <div class="node person" data-cat="nodb"><b>signalen-2026-w38.csv</b><small><span class="tag t-aanname">aanname</span> bestand op de eigen laptop — buiten de app</small></div>
+        <div class="node person" data-cat="nodb"><b>Kenniseigenaar</b><small><span class="tag t-aanname">aanname</span> bijv. team Consulaire Zaken. Krijgt de vraag per mail of Teams en antwoordt daar ook. De app bepaalt niet wat juist is.</small></div>
+      </div>
+
+    </div>
+
+    <div class="back" data-cat="db">
+      <b>Terug naar de app ↩</b> — de webredacteur klikt in het overzicht op <em>opgelost</em>, <em>geen fout</em>
+      of <em>voorgelegd aan kenniseigenaar</em>. Die status gaat naar de opslag
+      <span class="crud">Create + Update</span> en wordt bij de volgende check weer opgehaald en naast de
+      nieuwe signalen gezet <span class="crud">Read</span>. Dit is de enige lus in het hele plaatje —
+      en precies daarom de enige echte reden voor een database.
+    </div>
+
+    <div class="cols" style="grid-template-columns:1fr;margin-top:22px">
+      <div class="col">
+        <h3>Opslag — wat blijft er bestaan na sluiten of herladen?</h3>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px">
+      <div class="node store-db" data-cat="db">
+        <span class="tag t-db">Bewaren</span>
+        <b style="margin-top:7px"><code>signaal_status</code></b>
+        <small>Per signaal-id: status, wie, wanneer, eventueel een opmerking. Eén kleine tabel.
+        <br><b>Blijft:</b> ja, moet.</small>
+      </div>
+      <div class="node store-tmp" data-cat="nodb">
+        <span class="tag t-tmp">Tijdelijk</span>
+        <b style="margin-top:7px">Werkgeheugen van de check</b>
+        <small>Ruwe HTML, platte tekst, de vergelijkingen en de signalen zelf.
+        <br><b>Blijft:</b> niets — en dat is prima.</small>
+      </div>
+      <div class="node store-src" data-cat="nodb">
+        <span class="tag t-src">Elders</span>
+        <b style="margin-top:7px">Blijft bij de bron</b>
+        <small>Paginateksten staan op de websites, de termenlijst staat in de repo, de vraag staat in de mailbox,
+        de CSV staat op de laptop.<br><b>Blijft:</b> ja, maar niet bij jou.</small>
+      </div>
+      <div class="node store-keuze" data-cat="db">
+        <span class="tag t-keuze">Keuze nodig</span>
+        <b style="margin-top:7px">Waar komt <code>signaal_status</code> te staan?</b>
+        <small><b>Browservariant:</b> localStorage — dat is <em>ook</em> opslag, geen werkgeheugen: het overleeft
+        herladen, maar staat per browser en per persoon. Je collega ziet jouw afhandeling niet.
+        <br><b>Servervariant:</b> een kleine gedeelde database.</small>
+      </div>
+    </div>
+    <p class="scrollhint" style="font-size:12px;color:var(--muted);margin:14px 2px 0">
+      Op een smal scherm staan de kolommen onder elkaar; de pijlen wijzen dan naar beneden.</p>
+  </div>
+</section>
+
+<section>
+  <h2>2 · De stromen één voor één</h2>
+  <p class="sec-intro">Elke kaart is één volledige route: van de bron, via de verwerking, naar de bestemming en
+  de opslag. Filter je bovenaan, dan verdwijnen hele kaarten — nooit een half traject.</p>
+  <div id="flows">
+
+  <article class="flow" data-cat="nodb">
+    <div class="flow-head"><span class="fid">F1</span><h3>Paginateksten van de drie websites</h3>
+      <span class="tag t-tmp">Tijdelijk</span><span class="tag t-plain">alleen in de strategie</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>nederlandwereldwijd.nl, netherlandsworldwide.nl en (mogelijk) de voorlichterswebsite</div>
+      <div class="hop"><span class="gl">→</span>sitemap.xml + HTML<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Ophalen, HTML strippen, per URL platte tekst met koppen maken</div>
+      <div class="hop"><span class="gl">→</span>platte tekst<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Bestemming</span>De termencheck en de inhoudscheck — verder nergens heen</div>
+      <div class="hop"><span class="gl">→</span>niets<span class="crud none">geen databaseactie</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-tmp">Tijdelijk</span> werkgeheugen; de tekst zelf blijft <span class="tag t-src">Elders</span> op de website staan</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> niets — bij de volgende check haal je alles opnieuw op.
+    <b>Waarom niet bewaren:</b> de website is de bron van waarheid. Een kopie van 10.000 pagina's is meteen
+    verouderd, kost onderhoud, en zou je juist een <em>nieuwe</em> plek geven waar tegenstrijdige informatie kan ontstaan.</p>
+  </article>
+
+  <article class="flow" data-cat="nodb">
+    <div class="flow-head"><span class="fid">F2</span><h3>Termenlijst en schrijfrichtlijnen</h3>
+      <span class="tag t-src">Elders</span><span class="tag t-aanname">aanname</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span><code>termen-en-richtlijnen.json</code> in de GitHub-repo. Fictief: voorkeur <code>legalisation</code>, afgekeurd <code>legalization</code></div>
+      <div class="hop"><span class="gl">→</span>inlezen bij start<span class="crud">Read · in het bestand</span></div>
+      <div class="stage"><span>Verwerking in de app</span>De termencheck zoekt de afgekeurde varianten in elke pagina</div>
+      <div class="hop"><span class="gl">→</span>treffers<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Bestemming</span>Signalen van het type "schrijfrichtlijn"</div>
+      <div class="hop"><span class="gl">→</span>niets<span class="crud none">geen databaseactie</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-src">Elders</span> blijft in het bestand — niet kopiëren</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> ja, in de repo. <b>Waarom niet in een database:</b> een bestand in
+    Git geeft je gratis versiegeschiedenis en "wie heeft dit veranderd" — precies wat je wilt bij afspraken over taal.
+    <b>Keuze nodig als</b> de redactie de lijst zonder Git wil beheren: dan wordt dit alsnog Create/Update/Delete in eigen opslag.</p>
+  </article>
+
+  <article class="flow" data-cat="nodb">
+    <div class="flow-head"><span class="fid">F3</span><h3>Gevonden afwijkingen (de signalen zelf)</h3>
+      <span class="tag t-tmp">Tijdelijk</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>Berekend door de termencheck en de inhoudscheck. Fictief: <code>SIG-2026-0142</code> — "legalization" op een Engelstalige pagina; <code>SIG-2026-0187</code> — pagina A zegt 10 jaar, pagina B zegt 5 jaar</div>
+      <div class="hop"><span class="gl">→</span>type, URL, fragment<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Signalen samenstellen en de bewaarde status erbij zoeken</div>
+      <div class="hop"><span class="gl">→</span>lijst<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Bestemming</span>Het signalenoverzicht op het scherm van de redacteur</div>
+      <div class="hop"><span class="gl">→</span>niets<span class="crud none">geen databaseactie</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-tmp">Tijdelijk</span> opnieuw berekend bij elke check</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> niets. <b>Waarom niet bewaren:</b> een signaal is een afgeleide van
+    de pagina van vandaag. Bewaar je het, dan krijg je meldingen over tekst die allang is aangepast. Alleen het
+    <em>oordeel</em> van de redacteur is het bewaren waard — dat is F4.</p>
+  </article>
+
+  <article class="flow" data-cat="db">
+    <div class="flow-head"><span class="fid">F4</span><h3>Afhandelstatus per signaal</h3>
+      <span class="tag t-db">Bewaren</span><span class="tag t-plain">de kern van de opslagvraag</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>De webredacteur klikt in het overzicht: <em>opgelost</em>, <em>geen fout / afgesproken uitzondering</em> of <em>voorgelegd aan kenniseigenaar</em></div>
+      <div class="hop"><span class="gl">→</span>status + signaal-id<span class="crud">Create · Update</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Status koppelen aan het signaal-id, met datum en wie</div>
+      <div class="hop"><span class="gl">→</span>opslaan<span class="crud">Create · Update</span></div>
+      <div class="stage"><span>Bestemming</span>De eigen opslag — en bij de volgende check terug naar het scherm</div>
+      <div class="hop"><span class="gl">→</span>terughalen<span class="crud">Read</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-db">Bewaren</span> <code>signaal_status</code>: id, status, datum, wie, opmerking</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> ja — dit is het enige dat écht moet blijven.
+    <b>Waarom:</b> zonder dit begint de redactie elke week opnieuw bij dezelfde lijst. "Dit is geen fout, dit is
+    een afgesproken uitzondering" moet één keer gezegd hoeven worden, anders komt dezelfde melding eindeloos terug
+    en is de app precies zo vermoeiend als het probleem dat hij oplost.
+    <b>Delete:</b> nauwelijks nodig — een status terugdraaien is een <em>Update</em>. Verwijderen is alleen zinvol
+    om statussen op te ruimen van signalen die niet meer bestaan, en dat kan prima handmatig of via een opruimscript.</p>
+  </article>
+
+  <article class="flow" data-cat="db">
+    <div class="flow-head"><span class="fid">F5</span><h3>Het signaal-id (de vingerafdruk)</h3>
+      <span class="tag t-keuze">Keuze nodig</span><span class="tag t-aanname">aanname</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>Berekend uit URL + type afwijking + de term, bijv. een korte hash</div>
+      <div class="hop"><span class="gl">→</span>sleutel<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Wordt de sleutel waarmee de bewaarde status wordt teruggevonden</div>
+      <div class="hop"><span class="gl">→</span>sleutel<span class="crud">Read</span></div>
+      <div class="stage"><span>Bestemming</span>De koppeling tussen een nieuw signaal en een oud oordeel</div>
+      <div class="hop"><span class="gl">→</span>onderdeel van F4<span class="crud">Create</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-keuze">Keuze nodig</span> zit in <code>signaal_status</code></div>
+    </div>
+    <p class="why"><b>De vraag die beantwoord moet worden:</b> hoe herken je volgende week hetzelfde signaal als de
+    pagina licht is herschreven of de URL is gewijzigd? Te streng en elk oordeel is elke week weg; te los en je
+    verbergt een echt nieuw probleem onder een oud "geen fout".
+    <b>Voorstel:</b> begin met URL + type + term, en kijk na een paar weken hoeveel statussen verdwijnen.</p>
+  </article>
+
+  <article class="flow" data-cat="nodb">
+    <div class="flow-head"><span class="fid">F6</span><h3>CSV-export</h3>
+      <span class="tag t-src">Elders</span><span class="tag t-aanname">aanname</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>De signalen die op het scherm geselecteerd zijn</div>
+      <div class="hop"><span class="gl">→</span>selectie + status<span class="crud">Read</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Rijen naar CSV schrijven</div>
+      <div class="hop"><span class="gl">→</span><code>signalen-2026-w38.csv</code><span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Bestemming</span>Download naar de laptop van de redacteur</div>
+      <div class="hop"><span class="gl">→</span>bestand<span class="crud none">geen databaseactie</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-src">Elders</span> bestand op de laptop — óók opslag, maar niet van jouw app</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> ja, als bestand bij de gebruiker. <b>Waarom niet bewaren:</b> een
+    export is een momentopname die je altijd opnieuw kunt maken. Bewaar je hem, dan beheer je versies van iets
+    dat al ergens anders staat.</p>
+  </article>
+
+  <article class="flow" data-cat="nodb">
+    <div class="flow-head"><span class="fid">F7</span><h3>Vraag aan de kenniseigenaar</h3>
+      <span class="tag t-src">Elders</span><span class="tag t-keuze">Keuze nodig</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>De redacteur kopieert URL, citaat en vraag uit het overzicht</div>
+      <div class="hop"><span class="gl">→</span>tekst<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Geen — de app maakt hooguit een kant-en-klaar tekstblok</div>
+      <div class="hop"><span class="gl">→</span>mail of Teams-bericht<span class="crud none">geen databaseactie</span></div>
+      <div class="stage"><span>Bestemming</span>De kenniseigenaar; het antwoord komt ook buiten de app terug</div>
+      <div class="hop"><span class="gl">→</span>alleen de status<span class="crud">Update</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-src">Elders</span> in de mailbox. In de app hooguit de statuswaarde <em>voorgelegd</em> + datum</div>
+    </div>
+    <p class="why"><b>De vraag die beantwoord moet worden:</b> wil je in de app bijhouden <em>dát</em> iets is
+    voorgelegd en aan wie? <b>Voorstel:</b> ja, maar alleen als statuswaarde met een datum in F4 — één veld,
+    geen berichten of bijlagen. De strategie zegt dat de app niets zelf oplost; bouw er dus geen ticketsysteem naast.</p>
+  </article>
+
+  <article class="flow" data-cat="db">
+    <div class="flow-head"><span class="fid">F8</span><h3>Instellingen van de redacteur</h3>
+      <span class="tag t-keuze">Keuze nodig</span><span class="tag t-aanname">aanname</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>De redacteur kiest welke sites, hoeveel pagina's en welk filter</div>
+      <div class="hop"><span class="gl">→</span>voorkeuren<span class="crud">Create · Update</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Bepaalt wat de volgende check doet en wat je ziet</div>
+      <div class="hop"><span class="gl">→</span>voorkeuren<span class="crud">Read</span></div>
+      <div class="stage"><span>Bestemming</span>Alleen het eigen scherm</div>
+      <div class="hop"><span class="gl">→</span>onthouden<span class="crud">Create · Update</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-keuze">Keuze nodig</span> browseropslag (localStorage) — dat is opslag, geen werkgeheugen</div>
+    </div>
+    <p class="why"><b>Blijft na afsluiten:</b> ja, in de browser van die ene persoon.
+    <b>Voorstel:</b> laat dit in localStorage staan. Het is persoonlijk gemak, geen teamgegeven — niemand hoeft
+    jouw filterinstelling te zien. Belangrijk om niet te verwarren met F4: die ziet er in code hetzelfde uit,
+    maar moet juist wél gedeeld zijn.</p>
+  </article>
+
+  <article class="flow" data-cat="db">
+    <div class="flow-head"><span class="fid">F9</span><h3>Gegevens over de check zelf</h3>
+      <span class="tag t-keuze">Keuze nodig</span><span class="tag t-aanname">aanname</span></div>
+    <div class="route">
+      <div class="stage"><span>Bron</span>De check zelf: datum, aantal pagina's, aantal signalen per type</div>
+      <div class="hop"><span class="gl">→</span>één regel per run<span class="crud">Create</span></div>
+      <div class="stage"><span>Verwerking in de app</span>Optellen na afloop van een check</div>
+      <div class="hop"><span class="gl">→</span>reeks over de weken<span class="crud">Read</span></div>
+      <div class="stage"><span>Bestemming</span>Een regel bovenaan het overzicht: "vorige week 412, nu 380"</div>
+      <div class="hop"><span class="gl">→</span>bewaren<span class="crud">Create</span></div>
+      <div class="stage s-store"><span>Opslag</span><span class="tag t-keuze">Keuze nodig</span> tabel <code>checkrun</code> — klein, maar niet nodig voor versie 1</div>
+    </div>
+    <p class="why"><b>De vraag die beantwoord moet worden:</b> wil de redactie kunnen zien of het aantal
+    afwijkingen daalt? <b>Voorstel:</b> mooi, maar niet in de eerste versie. Eén regel per run is goedkoop en
+    kun je later toevoegen zonder iets om te bouwen — wacht tot de redactie er zelf om vraagt.</p>
+  </article>
+
+  </div>
+</section>
+
+<section>
+  <h2>3 · De matrix</h2>
+  <p class="sec-intro">Dezelfde namen en dezelfde keuzes als hierboven. "Geen databaseactie" betekent: het is
+  alleen transport, tijdelijke verwerking of een berekening — er verandert niets aan opgeslagen gegevens.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th>Gegeven / handeling</th><th>Bron → verwerking → bestemming</th><th class="crud-col">C / R / U / D</th>
+        <th>Waar gebeurt het</th><th>Opslagkeuze</th><th>Blijft na afsluiten</th><th>Reden</th>
+      </tr></thead>
+      <tbody id="matrix">
+        <tr data-cat="nodb">
+          <td class="g">F1 · Paginateksten<small>3 websites</small></td>
+          <td>Websites → ophalen en normaliseren → termen- en inhoudscheck</td>
+          <td class="crud-col"><span class="crud none">geen databaseactie</span><small>Read op de externe website</small></td>
+          <td>Externe bron (HTTP)</td>
+          <td><span class="tag t-tmp">Tijdelijk</span></td>
+          <td>Niets</td>
+          <td>De site is de bron van waarheid; een kopie veroudert direct.</td>
+        </tr>
+        <tr data-cat="nodb">
+          <td class="g">F2 · Termenlijst<small>termen-en-richtlijnen.json</small></td>
+          <td>Bestand in de repo → inlezen → termencheck</td>
+          <td class="crud-col"><span class="crud">Read</span><small>in het bestand, niet in een database</small></td>
+          <td>GitHub-repo</td>
+          <td><span class="tag t-src">Elders</span></td>
+          <td>Ja, in Git</td>
+          <td>Git geeft versiegeschiedenis van taalafspraken.</td>
+        </tr>
+        <tr data-cat="nodb">
+          <td class="g">F3 · Signalen<small>SIG-2026-0142</small></td>
+          <td>Checks → signalen samenstellen → scherm</td>
+          <td class="crud-col"><span class="crud none">geen databaseactie</span></td>
+          <td>In de app</td>
+          <td><span class="tag t-tmp">Tijdelijk</span></td>
+          <td>Niets</td>
+          <td>Afgeleide van de pagina van vandaag; opnieuw te berekenen.</td>
+        </tr>
+        <tr data-cat="db">
+          <td class="g">F4 · Afhandelstatus<small>signaal_status</small></td>
+          <td>Klik van de redacteur → koppelen aan signaal-id → eigen opslag → volgende check</td>
+          <td class="crud-col"><span class="crud">Create · Read · Update</span><small>Delete alleen om oude statussen op te ruimen</small></td>
+          <td>Eigen database (of localStorage in de browservariant)</td>
+          <td><span class="tag t-db">Bewaren</span></td>
+          <td><b>Ja — moet</b></td>
+          <td>Anders komt "geen fout, afgesproken uitzondering" elke week terug.</td>
+        </tr>
+        <tr data-cat="db">
+          <td class="g">F5 · Signaal-id<small>vingerafdruk</small></td>
+          <td>URL + type + term → hash → sleutel bij F4</td>
+          <td class="crud-col"><span class="crud none">geen databaseactie</span><small>berekend, maar wel de sleutel van F4</small></td>
+          <td>In de app</td>
+          <td><span class="tag t-keuze">Keuze nodig</span></td>
+          <td>Via F4</td>
+          <td>Vraag: hoe herken je hetzelfde signaal na een herschreven pagina?</td>
+        </tr>
+        <tr data-cat="nodb">
+          <td class="g">F6 · CSV-export<small>signalen-2026-w38.csv</small></td>
+          <td>Selectie op het scherm → CSV schrijven → download</td>
+          <td class="crud-col"><span class="crud">Read</span><small>op de statussen; de export zelf is geen databaseactie</small></td>
+          <td>Laptop van de redacteur</td>
+          <td><span class="tag t-src">Elders</span></td>
+          <td>Ja, als bestand bij de gebruiker</td>
+          <td>Momentopname die je altijd opnieuw kunt maken.</td>
+        </tr>
+        <tr data-cat="nodb">
+          <td class="g">F7 · Vraag aan kenniseigenaar</td>
+          <td>Redacteur kopieert → mail of Teams → kenniseigenaar</td>
+          <td class="crud-col"><span class="crud">Update</span><small>alleen de statuswaarde "voorgelegd" + datum</small></td>
+          <td>Mailbox (buiten de app)</td>
+          <td><span class="tag t-src">Elders</span> + <span class="tag t-keuze">Keuze nodig</span></td>
+          <td>In de mailbox</td>
+          <td>De app lost niets op; bouw er geen ticketsysteem naast.</td>
+        </tr>
+        <tr data-cat="db">
+          <td class="g">F8 · Instellingen<small>sites, filters</small></td>
+          <td>Keuze van de redacteur → bepaalt de check → eigen scherm</td>
+          <td class="crud-col"><span class="crud">Create · Read · Update</span></td>
+          <td>Browseropslag (localStorage)</td>
+          <td><span class="tag t-keuze">Keuze nodig</span></td>
+          <td>Ja, per browser en per persoon</td>
+          <td>Persoonlijk gemak, geen teamgegeven — hoeft niet gedeeld.</td>
+        </tr>
+        <tr data-cat="db">
+          <td class="g">F9 · Gegevens over de check<small>checkrun</small></td>
+          <td>Check → tellen → regel bovenaan het overzicht</td>
+          <td class="crud-col"><span class="crud">Create · Read</span></td>
+          <td>Eigen database</td>
+          <td><span class="tag t-keuze">Keuze nodig</span></td>
+          <td>Ja, als je het wilt</td>
+          <td>Leuk voor een trend, niet nodig voor versie 1.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>4 · Voorstel</h2>
+  <div class="advice">
+    <div class="kicker">
+      <b>De minimale opslag is één tabel.</b> Alles wat de Uniformiteitschecker duurzaam moet bewaren, past in
+      <code>signaal_status</code>: <code>signaal_id</code>, <code>status</code>, <code>datum</code>,
+      <code>door_wie</code>, <code>opmerking</code>. Meer heb je voor de aanpak uit de strategie niet nodig.
+    </div>
+
+    <h3>Heb je een database nodig?</h3>
+    <p>Alleen als meer dan één redacteur in de app werkt — en dat is precies het geval: de strategie noemt
+    "webredacteuren", meervoud. Zodra jullie elkaars afhandeling moeten zien, voldoet browseropslag niet meer,
+    want localStorage staat per browser en per persoon. Werkt er in de praktijk maar één iemand in,
+    dan heb je <b>geen database nodig</b> en is localStorage genoeg — maar noem het dan ook opslag,
+    geen tijdelijk werkgeheugen.</p>
+
+    <h3>Wat je niet hoeft te bewaren</h3>
+    <ul>
+      <li><b>De paginateksten</b> (F1) — die staan op de websites en zijn morgen anders.</li>
+      <li><b>De signalen zelf</b> (F3) — een afgeleide van de tekst van vandaag; bij elke check opnieuw te berekenen.</li>
+      <li><b>De termenlijst</b> (F2) — laat die in de repo staan, dan houd je gratis bij wie welke taalafspraak wijzigde.</li>
+      <li><b>De CSV-export</b> (F6) en <b>de vraag aan de kenniseigenaar</b> (F7) — die staan al op een laptop
+          en in een mailbox.</li>
+    </ul>
+
+    <h3>Keuzes die nog openstaan</h3>
+    <ul>
+      <li><b>Waar komt <code>signaal_status</code> te staan?</b> Browservariant (localStorage, niet gedeeld) of
+          servervariant (kleine gedeelde database). Vraag: moeten redacteuren elkaars afhandeling zien?</li>
+      <li><b>Hoe herken je hetzelfde signaal volgende week?</b> (F5) Te streng en elk oordeel is elke week weg;
+          te los en een echt nieuw probleem verdwijnt onder een oud "geen fout".</li>
+      <li><b>Houd je bij dát iets is voorgelegd?</b> (F7) Voorstel: ja, als statuswaarde met datum — niet meer.</li>
+      <li><b>Wil de redactie een trend zien?</b> (F9) Voorstel: later.</li>
+      <li><b>Mag de voorlichterswebsite uitgelezen worden?</b> Staat in de strategie als onbevestigd. Verandert
+          niets aan de opslagkeuzes: ook die teksten blijven bij de bron.</li>
+      <li><b>Browser of server?</b> Voor <em>wat</em> je bewaart maakt het niets uit — alleen voor <em>waar</em>.
+          Beginnen met localStorage en later verhuizen naar een database is een kleine stap, zolang je F4 vanaf
+          dag één als apart gegeven behandelt en niet vermengt met F8.</li>
+    </ul>
+
+    <h3>Waar deze plaat op gebaseerd is</h3>
+    <p>Alle voorbeeldwaarden zijn fictief (<code>SIG-2026-0142</code>, <code>signalen-2026-w38.csv</code>,
+    de termen en de getallen). Er staan geen wachtwoorden, sleutels of persoonsgegevens in. De rollen zijn
+    functies, geen personen.</p>
+  </div>
+</section>
+
+<footer>
+  Gemaakt op basis van <code>STRATEGY.md</code> (14-09-2026) en de code in de repo — die op dat moment
+  uit niets anders bestond dan <code>README.md</code> en <code>STRATEGY.md</code>. Dit bestand verandert niets
+  aan de app en maakt geen database aan.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var body = document.body;
+  var crud = document.getElementById('crudToggle');
+  var count = document.getElementById('count');
+
+  function refresh() {
+    var f = body.dataset.filter;
+    var shown = 0, total = 0;
+    document.querySelectorAll('#flows .flow, #matrix tr').forEach(function (el) {
+      var isFlow = el.classList.contains('flow');
+      if (isFlow) total++;
+      var match = (f === 'all') || (el.dataset.cat === f);
+      el.style.display = match ? '' : 'none';
+      if (isFlow && match) shown++;
+    });
+    count.textContent = shown + ' van de ' + total + ' datastromen zichtbaar';
+  }
+
+  document.querySelectorAll('input[name="filter"]').forEach(function (r) {
+    r.addEventListener("change", function () {
+      body.dataset.filter = r.value;
+      document.querySelectorAll(".seg label").forEach(function (l) {
+        l.classList.toggle("on", l.contains(r) );
+      });
+      refresh();
+    });
+  });
+  crud.addEventListener('change', function () { body.classList.toggle('hide-crud', !crud.checked); });
+
+  refresh();
+})();
+</script>
+</body>
+</html>
