@@ -176,6 +176,19 @@
   color: var(--rhc-color-tekst-zacht);
 }
 
+.rhc-methode {
+  max-width: 60ch;
+  background: var(--rhc-color-achtergrond);
+  border: 1px solid var(--rhc-color-lijn-zacht);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst-zacht);
+}
+.rhc-methode p { margin: 0 0 0.4rem; font-weight: 500; color: var(--rhc-color-tekst); }
+.rhc-methode ul { margin: 0; padding-left: 1.2rem; }
+.rhc-methode li + li { margin-top: 0.3rem; }
+
 .rhc-meta {
   display: flex;
   flex-wrap: wrap;
