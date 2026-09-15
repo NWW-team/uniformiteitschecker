@@ -1,0 +1,80 @@
+# Draait de checker tegen de echte websites.
+#
+# Handmatig starten, nog geen schema: de eerste versie hoort geen wekelijks verkeer te
+# veroorzaken op een site van een ander team. Begin met stap 'verken' om te zien welke
+# rubrieken er zijn, zet de gekozen paden in config/sites.yaml, en draai daarna
+# 'crawl+check'.
+
+name: Uniformiteitscheck
+
+on:
+  workflow_dispatch:
+    inputs:
+      stap:
+        description: "Wat moet er gebeuren?"
+        type: choice
+        default: verken
+        options:
+          - verken
+          - crawl+check
+      max_paginas:
+        description: "Maximum aantal pagina's per site (alleen bij crawl+check)"
+        type: string
+        default: "50"
+
+permissions:
+  contents: read
+
+jobs:
+  uitvoeren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installeren
+        run: pip install --quiet -e .
+
+      - name: Rubrieken verkennen
+        if: inputs.stap == 'verken'
+        run: |
+          python -m uniformiteitschecker verken --top 40 | tee verkenning.txt
+          {
+            echo '## Rubrieken in de sitemap'
+            echo '```'
+            cat verkenning.txt
+            echo '```'
+            echo 'Zet de gekozen paden onder `paden` in `config/sites.yaml`.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Content ophalen
+        if: inputs.stap == 'crawl+check'
+        run: python -m uniformiteitschecker crawl --max-paginas "${{ inputs.max_paginas }}"
+
+      - name: Controleren
+        if: inputs.stap == 'crawl+check'
+        run: |
+          python -m uniformiteitschecker check | tee samenvatting.txt
+          {
+            echo '## Uniformiteitscheck'
+            echo '```'
+            cat samenvatting.txt
+            echo '```'
+            echo 'Het volledige rapport staat onder de artifacts van deze run.'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Resultaat bewaren
+        if: inputs.stap == 'crawl+check'
+        uses: actions/upload-artifact@v4
+        with:
+          name: uniformiteitscheck
+          path: |
+            corpus/
+            rapport/
+          if-no-files-found: error
+          retention-days: 30
