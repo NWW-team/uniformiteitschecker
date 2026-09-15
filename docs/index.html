@@ -1,0 +1,1205 @@
+<title>Uniformiteitssignalen NederlandWereldwijd</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #eef1f4;
+    --surface: #ffffff;
+    --surface-zacht: #f7f9fb;
+    --ink: #16202b;
+    --ink-zacht: #4a5a6a;
+    --ink-flets: #74838f;
+    --rand: #d3dbe3;
+    --rand-zacht: #e4eaf0;
+    --accent: #1c4f8f;
+    --voorleggen: #9b2c2c;
+    --voorleggen-vlak: #fbf0ef;
+    --zelf: #0f6e5c;
+    --zelf-vlak: #eef6f3;
+    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #10171f;
+      --surface: #18212b;
+      --surface-zacht: #1e2832;
+      --ink: #e8edf2;
+      --ink-zacht: #a9b8c6;
+      --ink-flets: #7d8c99;
+      --rand: #2c3947;
+      --rand-zacht: #243040;
+      --accent: #7bacea;
+      --voorleggen: #e9908c;
+      --voorleggen-vlak: #2b1d1f;
+      --zelf: #5fc3ac;
+      --zelf-vlak: #162724;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #10171f;
+    --surface: #18212b;
+    --surface-zacht: #1e2832;
+    --ink: #e8edf2;
+    --ink-zacht: #a9b8c6;
+    --ink-flets: #7d8c99;
+    --rand: #2c3947;
+    --rand-zacht: #243040;
+    --accent: #7bacea;
+    --voorleggen: #e9908c;
+    --voorleggen-vlak: #2b1d1f;
+    --zelf: #5fc3ac;
+    --zelf-vlak: #162724;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .blad {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding-block: clamp(1.5rem, 4vw, 3rem);
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* ---- Documentkop ---- */
+  .kop { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .inleiding {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--ink-zacht);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rand);
+    font-size: 0.85rem;
+  }
+  .meta div { display: flex; flex-direction: column; }
+  .meta dt {
+    color: var(--ink-flets);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .meta dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  /* ---- Waarschuwingen ---- */
+  .waarschuwing {
+    border-left: 3px solid var(--voorleggen);
+    background: var(--voorleggen-vlak);
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .waarschuwing ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+  /* ---- Groep per eigenaar ---- */
+  .groep { display: flex; flex-direction: column; gap: 1rem; }
+
+  .groepkop {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .groepkop h2 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .aantal {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    background: var(--surface-zacht);
+    border: 1px solid var(--rand);
+    color: var(--ink-zacht);
+  }
+  .groeptoelichting {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-flets);
+    max-width: 62ch;
+  }
+
+  /* ---- Bevinding ---- */
+  .bevinding {
+    background: var(--surface);
+    border: 1px solid var(--rand);
+    border-left: 3px solid var(--streep);
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .bevinding.voorleggen { --streep: var(--voorleggen); }
+  .bevinding.zelf { --streep: var(--zelf); }
+
+  .bevinding h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.12rem 0.45rem;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+  }
+  .chip.soort-inhoudelijk { color: var(--voorleggen); }
+  .chip.soort-schrijfrichtlijn { color: var(--zelf); }
+  .chip.neutraal { color: var(--ink-flets); }
+
+  /* Het bewijs: afwijkende waarde naast de waarde elders. */
+  .bewijs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--rand-zacht);
+    border: 1px solid var(--rand-zacht);
+  }
+  .kolom { background: var(--surface-zacht); padding: 0.7rem 0.85rem; }
+  .kolom h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-flets);
+    font-weight: 600;
+  }
+  .kolom ul { margin: 0; padding: 0; list-style: none; }
+  .kolom li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.15rem 0;
+    font-size: 0.88rem;
+  }
+  .land { color: var(--ink-zacht); }
+  .waarde {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .kolom.afwijkend .waarde { color: var(--voorleggen); }
+
+  .toelichting { margin: 0; font-size: 0.88rem; color: var(--ink-zacht); }
+
+  .actie {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rand-zacht);
+  }
+  .actie span {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .paginas { display: flex; flex-direction: column; gap: 0.2rem; }
+  .paginas a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    overflow-wrap: anywhere;
+  }
+  .paginas a:hover, .paginas a:focus-visible { border-bottom-color: currentColor; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- Leeg ---- */
+  .leeg {
+    background: var(--surface);
+    border: 1px solid var(--rand);
+    padding: 1.5rem;
+  }
+  .leeg h2 { font-family: var(--serif); margin: 0 0 0.4rem; font-size: 1.15rem; }
+  .leeg p { margin: 0; color: var(--ink-zacht); max-width: 60ch; }
+
+  footer {
+    border-top: 1px solid var(--rand);
+    padding-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-flets);
+    max-width: 62ch;
+  }
+</style>
+
+<div class="blad">
+  <header class="kop">
+    <p class="eyebrow">Uniformiteitschecker &middot; webredactie</p>
+    <h1>Afwijkingen in de consulaire tarieven</h1>
+    <p class="inleiding">
+      Deze pagina's horen hetzelfde te zeggen. Waar &eacute;&eacute;n land afwijkt van de
+      rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
+      bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
+    </p>
+    <dl class="meta">
+      <div><dt>Familie</dt><dd>consulaire-tarieven</dd></div>
+      <div><dt>Gecontroleerd</dt><dd>2026-09-15</dd></div>
+      <div><dt>Pagina's</dt><dd>218</dd></div>
+      <div><dt>Signalen</dt><dd>26</dd></div>
+    </dl>
+  </header>
+
+
+
+  <section class="groep">
+    <div class="groepkop">
+      <h2>Zelf verbeteren</h2>
+      <span class="aantal">2</span>
+    </div>
+    <p class="groeptoelichting">Het juiste antwoord staat in de schrijfrichtlijn of blijkt uit de zusterpagina&#39;s. De webredactie kan dit zelf corrigeren.</p>
+
+    <article class="bevinding zelf">
+      <div>
+        <h3>9 bedragen in afwijkende notatie op irak</h3>
+        <div class="chips">
+          <span class="chip soort-schrijfrichtlijn">schrijfrichtlijn</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">0 van 9 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">irak</span><span class="waarde">€60.25</span></li>
+            <li><span class="land">irak</span><span class="waarde">€60.00</span></li>
+            <li><span class="land">irak</span><span class="waarde">€45.00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak">https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
+    </article>
+    <article class="bevinding zelf">
+      <div>
+        <h3>32 bedragen in afwijkende notatie op kenia</h3>
+        <div class="chips">
+          <span class="chip soort-schrijfrichtlijn">schrijfrichtlijn</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">1 van 33 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">kenia</span><span class="waarde">€169.15</span></li>
+            <li><span class="land">kenia</span><span class="waarde">€147.40</span></li>
+            <li><span class="land">kenia</span><span class="waarde">€169.15</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia">https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
+    </article>
+  </section>
+  <section class="groep">
+    <div class="groepkop">
+      <h2>Voorleggen aan kenniseigenaar</h2>
+      <span class="aantal">24</span>
+    </div>
+    <p class="groeptoelichting">Dit betreft een feit — een bedrag, termijn of voorwaarde. De checker kan niet weten welke kant klopt, ook niet bij een grote meerderheid: geld en juridische voorwaarden wijzig je niet op statistiek.</p>
+
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Caribisch visum</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">87 van 88 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">cyprus</span><span class="waarde">€ 90,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 80,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 80,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 80,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 87 van de 88 landenpagina&#39;s met deze rij staat € 80,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Caribisch visum kinderen 6 t/m 11 jaar</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">78 van 79 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">cyprus</span><span class="waarde">€ 45,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 40,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 40,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 40,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 78 van de 79 landenpagina&#39;s met deze rij staat € 40,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: ID-kaart meerderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">89 van 92 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 168,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 168,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 167,80</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 167,80</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 167,80</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 167,80. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: ID-kaart minderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">89 van 92 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 129,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 125,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 129,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 128,75</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 128,75</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 128,75</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 128,75. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Laissez-passer of noodpaspoort</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">96 van 99 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 60,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 60,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 60,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">albanie</span><span class="waarde">€ 60,25</span></li>
+            <li><span class="land">algerije</span><span class="waarde">€ 60,25</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 60,25</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 96 van de 99 landenpagina&#39;s met deze rij staat € 60,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Legaliseren document</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">33 van 35 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (2 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">benin</span><span class="waarde">€ 26,25</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 33 van de 35 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Legaliseren handtekening Nederlander</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">100 van 103 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 26,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">albanie</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 100 van de 103 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Luchthaventransitvisum</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">84 van 85 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">cyprus</span><span class="waarde">€ 80,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 90,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 90,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 90,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 90,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Luchthaventransitvisum kinderen 6 t/m 11 jaar</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">84 van 85 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">cyprus</span><span class="waarde">€ 40,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 45,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 45,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 45,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 45,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, standaard</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">94 van 95 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">iran</span><span class="waarde">€ 1.135,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 1.139,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 1.139,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 1.139,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 94 van de 95 landenpagina&#39;s met deze rij staat € 1.139,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, verlaagd</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">92 van 94 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (2 pagina's)</h4>
+          <ul>
+            <li><span class="land">egypte</span><span class="waarde">€ 846,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 845,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 847,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 847,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 847,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 847,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte">https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, standaard</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">93 van 94 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">iran</span><span class="waarde">€ 1.450,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 1.454,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 1.454,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 1.454,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 1.454,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, verlaagd</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">92 van 93 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">iran</span><span class="waarde">€ 1.160,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 1.163,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 1.163,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 1.163,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 92 van de 93 landenpagina&#39;s met deze rij staat € 1.163,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Naturalisatie: meenaturaliserende minderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">93 van 94 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 168,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 168,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 168,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 168,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Optieprocedure: enkelvoudig</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">93 van 94 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">iran</span><span class="waarde">€ 240,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 241,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 241,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 241,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 241,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Optieprocedure: gemeenschappelijk</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">92 van 94 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (2 pagina's)</h4>
+          <ul>
+            <li><span class="land">bangladesh</span><span class="waarde">€ 395,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 410,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 412,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 412,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 412,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 412,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Optieprocedure: medeopterende minderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">85 van 91 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (6 pagina's)</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">bangladesh</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">belgie</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">brazilie</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">bulgarije</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">angola</span><span class="waarde">€ 27,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 27,00</span></li>
+            <li><span class="land">australie</span><span class="waarde">€ 27,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 85 van de 91 landenpagina&#39;s met deze rij staat € 27,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije">https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie">https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie">https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Paspoort meerderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">89 van 92 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 169,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 169,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 169,15</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Paspoort minderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">89 van 92 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 147,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 145,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 147,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 147,40</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Schengenvisum laag tarief**</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid hoog</span>
+          <span class="chip neutraal">81 van 82 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af </h4>
+          <ul>
+            <li><span class="land">chili</span><span class="waarde">€ 45,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 35,00</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 35,00</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 35,00</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 81 van de 82 landenpagina&#39;s met deze rij staat € 35,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili">https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Toeslag aanvraag paspoort of ID-kaart op andere locatie*</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">89 van 92 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 27,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 27,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 26,85</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 26,85</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 26,85</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 26,85. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Verklaring &#39;afschrift/kopie is conform origineel&#39;</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">99 van 102 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 26,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">albanie</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 99 van de 102 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Zakenpaspoort</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">87 van 90 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 169,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 169,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 169,15</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 87 van de 90 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+    <article class="bevinding voorleggen">
+      <div>
+        <h3>Bedrag wijkt af van andere landen: Zakenpaspoort minderjarige</h3>
+        <div class="chips">
+          <span class="chip soort-inhoudelijk">inhoudelijk</span>
+          <span class="chip neutraal">zekerheid middel</span>
+          <span class="chip neutraal">85 van 88 eens</span>
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af (3 pagina's)</h4>
+          <ul>
+            <li><span class="land">cuba</span><span class="waarde">€ 147,00</span></li>
+            <li><span class="land">iran</span><span class="waarde">€ 145,00</span></li>
+            <li><span class="land">suriname</span><span class="waarde">€ 147,00</span></li>
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            <li><span class="land">algerije</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="land">angola</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="land">argentinie</span><span class="waarde">€ 147,40</span></li>
+          </ul>
+        </div>
+      </div>
+
+<p class="toelichting">Op 85 van de 88 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="paginas">
+<a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
+
+      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+    </article>
+  </section>
+
+  <footer>
+    Gegenereerd door de uniformiteitschecker op basis van de publieke sitemap van
+    nederlandwereldwijd.nl. De checker signaleert en lost niets op: een afwijking kan ook
+    een legitiem landspecifiek geval zijn. Verifieer altijd via de vindplaats voordat je
+    iets wijzigt.
+  </footer>
+</div>
