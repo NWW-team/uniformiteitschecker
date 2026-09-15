@@ -191,7 +191,9 @@
   font-size: var(--rhc-text-font-size-sm);
   color: var(--rhc-color-tekst-zacht);
 }
-.rhc-methode p { margin: 0 0 0.4rem; font-weight: 500; color: var(--rhc-color-tekst); }
+.rhc-methode summary { font-weight: 500; color: var(--rhc-color-tekst); cursor: pointer; }
+.rhc-methode summary::marker { color: var(--rhc-color-tekst-zacht); }
+.rhc-methode[open] summary { margin-bottom: 0.4rem; }
 .rhc-methode ul { margin: 0; padding-left: 1.2rem; }
 .rhc-methode li + li { margin-top: 0.3rem; }
 
@@ -413,8 +415,8 @@
       rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
       bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
     </p>
-    <div class="rhc-methode">
-      <p>Hoe de checker afwijkingen vindt:</p>
+    <details class="rhc-methode">
+      <summary>Hoe de checker afwijkingen vindt</summary>
       <ul>
         <li>Hij legt pagina's over hetzelfde onderwerp naast elkaar &mdash; bijvoorbeeld
           dezelfde tarievenlijst voor alle landen (de &ldquo;zusterpagina's&rdquo;).</li>
@@ -429,7 +431,7 @@
           naast de waarde op de andere pagina's, zodat je het zelf in een paar seconden
           kunt nakijken.</li>
       </ul>
-    </div>
+    </details>
     <dl class="rhc-meta">
       <div><dt>Familie</dt><dd>consulaire-tarieven</dd></div>
       <div><dt>Gecontroleerd</dt><dd>2026-09-15</dd></div>
