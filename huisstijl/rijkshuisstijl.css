@@ -1,0 +1,381 @@
+/*
+ * Rijkshuisstijl-tokens en rapportstijl.
+ *
+ * De tokennamen (--rhc-*) en de klasse .rhc-theme volgen bewust de Rijkshuisstijl
+ * Community (https://www.rijkshuisstijl-community.nl/, npm-pakket
+ * @rijkshuisstijl-community/design-tokens). Deze omgeving heeft geen netwerktoegang
+ * tot npm, dus de tokenwaarden hieronder zijn met de hand overgenomen uit de publiek
+ * gedocumenteerde Rijkshuisstijl-basiskleuren, niet gegenereerd uit het pakket. Zodra
+ * er een omgeving met netwerk is, is dit blok met tokens (tot aan "Componenten")
+ * te vervangen door de echte @rijkshuisstijl-community/design-tokens/dist/index.css
+ * zonder dat de rest van dit bestand of de rapporten hoeven te veranderen — de
+ * componenten hieronder gebruiken uitsluitend deze --rhc-*-namen.
+ *
+ * Lettertype: Rijkshuisstijl Web Sans/Serif zijn niet vrij te distribueren. De
+ * community levert Fira Sans als alternatief (@rijkshuisstijl-community/font,
+ * EUPL-1.2). Zonder netwerktoegang kunnen de woff2-bestanden hier niet als base64
+ * worden ingesloten; de font-stack noemt daarom de huisstijlnamen, valt terug op
+ * Fira Sans als die op het systeem staat, en anders op de schreefloze systeemfont.
+ * Het @font-face-blok hieronder staat klaar voor zodra de woff2's beschikbaar zijn.
+ */
+
+.rhc-theme {
+  color-scheme: light;
+
+  /* ---- Kleur: Rijkshuisstijl basiskleuren ---- */
+  --rhc-color-lintblauw-500: #154273;
+  --rhc-color-lintblauw-700: #0e2f52;
+  --rhc-color-hemelblauw-500: #007bc7;
+  --rhc-color-hemelblauw-700: #01689b;
+  --rhc-color-rood-500: #d52b1e;
+  --rhc-color-rood-100: #f9e3e1;
+  --rhc-color-grasgroen-500: #39870c;
+  --rhc-color-grasgroen-100: #e3ecdd;
+  --rhc-color-donkergeel-500: #ffb612;
+  --rhc-color-donkergeel-100: #fff3d9;
+  --rhc-color-violet-500: #a90061;
+
+  --rhc-color-grijs-000: #ffffff;
+  --rhc-color-grijs-100: #f3f3f3;
+  --rhc-color-grijs-200: #e6e6e6;
+  --rhc-color-grijs-300: #d0d0d0;
+  --rhc-color-grijs-500: #898989;
+  --rhc-color-grijs-700: #535353;
+  --rhc-color-grijs-900: #1f2326;
+
+  /* Semantisch, zoals de rapporten het gebruiken. */
+  --rhc-color-achtergrond: var(--rhc-color-grijs-100);
+  --rhc-color-oppervlak: var(--rhc-color-grijs-000);
+  --rhc-color-tekst: var(--rhc-color-grijs-900);
+  --rhc-color-tekst-zacht: var(--rhc-color-grijs-700);
+  --rhc-color-tekst-flets: var(--rhc-color-grijs-500);
+  --rhc-color-lijn: var(--rhc-color-grijs-300);
+  --rhc-color-lijn-zacht: var(--rhc-color-grijs-200);
+  --rhc-color-accent: var(--rhc-color-hemelblauw-700);
+  --rhc-color-accent-donker: var(--rhc-color-lintblauw-500);
+
+  --rhc-color-voorleggen: var(--rhc-color-rood-500);
+  --rhc-color-voorleggen-vlak: var(--rhc-color-rood-100);
+  --rhc-color-zelf: var(--rhc-color-grasgroen-500);
+  --rhc-color-zelf-vlak: var(--rhc-color-grasgroen-100);
+  --rhc-color-waarschuwing: var(--rhc-color-donkergeel-500);
+  --rhc-color-waarschuwing-vlak: var(--rhc-color-donkergeel-100);
+  --rhc-color-markeer: var(--rhc-color-donkergeel-100);
+  --rhc-color-markeer-tekst: var(--rhc-color-grijs-900);
+
+  /* ---- Typografie ---- */
+  --rhc-text-font-family-sans: "RO Sans", "Fira Sans", "Segoe UI", system-ui, sans-serif;
+  --rhc-text-font-family-serif: "RO Serif", "Fira Sans", Georgia, serif;
+  --rhc-text-font-family-mono: "Fira Mono", "SF Mono", Consolas, monospace;
+  --rhc-text-font-size-sm: 0.85rem;
+  --rhc-text-font-size-md: 1rem;
+  --rhc-text-font-size-lg: 1.15rem;
+  --rhc-text-font-size-xl: clamp(1.6rem, 4vw, 2.1rem);
+  --rhc-text-font-weight-regular: 400;
+  --rhc-text-font-weight-bold: 700;
+
+  /* ---- Ruimte en vorm: de Rijkshuisstijl is recht, geen afgeronde hoeken. ---- */
+  --rhc-space-xs: 0.25rem;
+  --rhc-space-sm: 0.5rem;
+  --rhc-space-md: 1rem;
+  --rhc-space-lg: 1.5rem;
+  --rhc-space-xl: 2rem;
+  --rhc-border-radius-sm: 0;
+  --rhc-border-radius-md: 0;
+
+  background: var(--rhc-color-achtergrond);
+  color: var(--rhc-color-tekst);
+}
+
+/*
+@font-face {
+  font-family: "Fira Sans";
+  src: url(data:font/woff2;base64,...) format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+*/
+
+/* ==================== Componenten ==================== */
+
+.rhc-theme {
+  margin: 0;
+  font-family: var(--rhc-text-font-family-sans);
+  font-size: var(--rhc-text-font-size-md);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.rhc-theme *,
+.rhc-theme *::before,
+.rhc-theme *::after {
+  box-sizing: border-box;
+}
+
+.rhc-skiplink {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  background: var(--rhc-color-oppervlak);
+  color: var(--rhc-color-accent-donker);
+  padding: var(--rhc-space-sm) var(--rhc-space-md);
+  border: 1px solid var(--rhc-color-lijn);
+}
+.rhc-skiplink:focus {
+  left: var(--rhc-space-md);
+  top: var(--rhc-space-md);
+}
+
+.rhc-lint {
+  background: var(--rhc-color-accent-donker);
+  height: 6px;
+}
+
+.rhc-blad {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rhc-kop { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.rhc-eyebrow {
+  font-size: 0.7rem;
+  font-weight: var(--rhc-text-font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rhc-color-accent);
+}
+
+.rhc-theme h1 {
+  font-family: var(--rhc-text-font-family-serif);
+  font-weight: var(--rhc-text-font-weight-bold);
+  font-size: var(--rhc-text-font-size-xl);
+  line-height: 1.15;
+  margin: 0;
+  color: var(--rhc-color-accent-donker);
+  text-wrap: balance;
+}
+
+.rhc-theme h2 {
+  font-family: var(--rhc-text-font-family-serif);
+  font-size: var(--rhc-text-font-size-lg);
+  font-weight: var(--rhc-text-font-weight-bold);
+  color: var(--rhc-color-accent-donker);
+  margin: 0;
+}
+
+.rhc-inleiding {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--rhc-color-tekst-zacht);
+}
+
+.rhc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  padding-top: var(--rhc-space-md);
+  border-top: 1px solid var(--rhc-color-lijn);
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-meta div { display: flex; flex-direction: column; }
+.rhc-meta dt {
+  color: var(--rhc-color-tekst-flets);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.rhc-meta dd {
+  margin: 0;
+  font-family: var(--rhc-text-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.rhc-waarschuwing {
+  border-left: 4px solid var(--rhc-color-waarschuwing);
+  background: var(--rhc-color-waarschuwing-vlak);
+  padding: 0.85rem 1rem;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst);
+}
+.rhc-waarschuwing ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+.rhc-groep { display: flex; flex-direction: column; gap: 1rem; }
+
+.rhc-groepkop {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.rhc-groepkop h2 { font-size: var(--rhc-text-font-size-lg); }
+.rhc-aantal {
+  font-family: var(--rhc-text-font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.1rem 0.45rem;
+  background: var(--rhc-color-achtergrond);
+  border: 1px solid var(--rhc-color-lijn);
+  color: var(--rhc-color-tekst-zacht);
+}
+.rhc-groeptoelichting {
+  margin: 0;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst-flets);
+  max-width: 62ch;
+}
+
+.rhc-bevinding {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  border-left: 4px solid var(--rhc-streep, var(--rhc-color-accent));
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.rhc-bevinding.rhc-voorleggen { --rhc-streep: var(--rhc-color-voorleggen); }
+.rhc-bevinding.rhc-zelf { --rhc-streep: var(--rhc-color-zelf); }
+
+.rhc-bevinding h3 {
+  font-size: var(--rhc-text-font-size-md);
+  font-weight: var(--rhc-text-font-weight-bold);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.rhc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rhc-chip {
+  font-size: 0.7rem;
+  font-weight: var(--rhc-text-font-weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid currentColor;
+}
+.rhc-chip.rhc-soort-inhoudelijk { color: var(--rhc-color-voorleggen); }
+.rhc-chip.rhc-soort-schrijfrichtlijn { color: var(--rhc-color-zelf); }
+.rhc-chip.rhc-neutraal { color: var(--rhc-color-tekst-flets); }
+
+.rhc-bewijs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--rhc-color-lijn-zacht);
+  border: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-kolom { background: var(--rhc-color-achtergrond); padding: 0.7rem 0.85rem; }
+.rhc-kolom h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--rhc-color-tekst-flets);
+  font-weight: var(--rhc-text-font-weight-bold);
+}
+.rhc-kolom ul { margin: 0; padding: 0; list-style: none; }
+.rhc-kolom li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.15rem 0;
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-land { color: var(--rhc-color-tekst-zacht); }
+.rhc-waarde {
+  font-family: var(--rhc-text-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.rhc-kolom.rhc-afwijkend .rhc-waarde { color: var(--rhc-color-voorleggen); }
+
+.rhc-toelichting { margin: 0; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-tekst-zacht); }
+
+.rhc-actie {
+  margin: 0;
+  font-size: var(--rhc-text-font-size-sm);
+  font-weight: 500;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-actie span { font-weight: var(--rhc-text-font-weight-bold); color: var(--rhc-color-accent); }
+
+.rhc-paginas { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.rhc-theme a {
+  color: var(--rhc-color-accent);
+  text-decoration: underline;
+}
+.rhc-paginas a {
+  font-family: var(--rhc-text-font-family-mono);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+.rhc-theme a:focus-visible,
+.rhc-theme button:focus-visible,
+.rhc-theme input:focus-visible {
+  outline: 3px solid var(--rhc-color-donkergeel-500);
+  outline-offset: 2px;
+}
+
+.rhc-leeg {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  padding: 1.5rem;
+}
+.rhc-leeg h2 { margin: 0 0 0.4rem; }
+.rhc-leeg p { margin: 0; color: var(--rhc-color-tekst-zacht); max-width: 60ch; }
+
+.rhc-theme footer {
+  border-top: 1px solid var(--rhc-color-lijn);
+  padding-top: var(--rhc-space-md);
+  font-size: 0.82rem;
+  color: var(--rhc-color-tekst-flets);
+  max-width: 62ch;
+}
+
+/* ---- Statblokken en samenvattingstabel (spoor 1: termenlijstcheck) ---- */
+.rhc-feiten { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0; }
+.rhc-feit {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  padding: 12px 16px;
+}
+.rhc-feit b { display: block; font-size: 1.5rem; line-height: 1.2; color: var(--rhc-color-accent-donker); }
+.rhc-feit span { color: var(--rhc-color-tekst-flets); font-size: 0.85rem; }
+
+.rhc-theme table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+}
+.rhc-theme th,
+.rhc-theme td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-theme th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rhc-color-tekst-flets);
+}
+.rhc-theme tr:last-child td { border-bottom: none; }
+.rhc-getal { text-align: right; font-variant-numeric: tabular-nums; }
+
+.rhc-fragment { margin: 0 0 8px; }
+.rhc-theme mark {
+  background: var(--rhc-color-markeer);
+  color: var(--rhc-color-markeer-tekst);
+  padding: 0 2px;
+}

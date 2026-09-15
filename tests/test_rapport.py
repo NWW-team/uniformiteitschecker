@@ -61,13 +61,18 @@ class TestRapport(unittest.TestCase):
         self.assertIn("Geen afwijkingen gevonden", html)
         self.assertIn("foutloos zijn", html)
 
-    def test_definieert_kleuren_voor_beide_themas(self):
-        """Een kleur die alleen achter een media query staat, geeft de klassieke
-        onleesbare pagina: lichte tekst op lichte achtergrond."""
-        self.assertIn(":root {", self.html)
-        self.assertIn("prefers-color-scheme: dark", self.html)
-        self.assertIn(':root[data-theme="dark"]', self.html)
-        self.assertIn(':root:not([data-theme="light"])', self.html)
+    def test_is_een_compleet_zelfstandig_document(self):
+        """Zonder doctype, lang en viewport is het geen geldig, toegankelijk document."""
+        self.assertIn("<!doctype html>", self.html)
+        self.assertIn('<html lang="nl">', self.html)
+        self.assertIn('<meta charset="utf-8">', self.html)
+        self.assertIn("width=device-width", self.html)
+        self.assertIn("<main", self.html)
+        self.assertNotIn("fonts.googleapis.com", self.html)
+
+    def test_volgt_de_rijkshuisstijl(self):
+        self.assertIn('class="rhc-theme"', self.html)
+        self.assertIn("--rhc-color-", self.html)
 
 
 if __name__ == "__main__":

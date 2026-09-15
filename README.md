@@ -139,6 +139,26 @@ gaf in de verkenning ~90 "tegenstrijdigheden" waarvan er één echt was. Wat dat
 - **Bewijs meegeven.** Elke bevinding toont de waarde op zusterpagina's, zodat
   verifiëren tien seconden kost. Vertrouwen komt uit controleerbaarheid.
 
+## Huisstijl
+
+Beide rapporten volgen de [Rijkshuisstijl Community](https://github.com/nl-design-system/rijkshuisstijl-community),
+de onofficiële implementatie van de Rijkshuisstijl op de NL Design System-architectuur.
+De tokens (`--rhc-*`) en de `rhc-theme`-klasse staan in één gedeeld bestand,
+`huisstijl/rijkshuisstijl.css`, dat beide sporen inlijnen zodat er geen los verzoek
+naar een lettertype- of stylesheet-CDN nodig is — een rapport blijft één zelfstandig
+HTML-bestand.
+
+Deze tokenwaarden zijn met de hand overgenomen uit de publiek gedocumenteerde
+Rijkshuisstijl-basiskleuren: deze repo kon tijdens het maken niet bij npm. Vervang ze
+door de echte tokens zodra dat wél kan:
+
+```bash
+npm install @rijkshuisstijl-community/design-tokens
+cp node_modules/@rijkshuisstijl-community/design-tokens/dist/index.css huisstijl/rijkshuisstijl.css
+# tokennamen (--rhc-*) en de klasse .rhc-theme blijven gelijk; alleen het tokenblok
+# bovenin rijkshuisstijl.css hoeft te worden vervangen, de componentenlaag eronder niet.
+```
+
 ## Afspraken bij het ophalen
 
 We lezen de website van een ander team. Daarom: `robots.txt` volgen, één verzoek
