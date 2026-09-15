@@ -182,6 +182,19 @@
   color: var(--rhc-color-tekst-zacht);
 }
 
+.rhc-methode {
+  max-width: 60ch;
+  background: var(--rhc-color-achtergrond);
+  border: 1px solid var(--rhc-color-lijn-zacht);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst-zacht);
+}
+.rhc-methode p { margin: 0 0 0.4rem; font-weight: 500; color: var(--rhc-color-tekst); }
+.rhc-methode ul { margin: 0; padding-left: 1.2rem; }
+.rhc-methode li + li { margin-top: 0.3rem; }
+
 .rhc-meta {
   display: flex;
   flex-wrap: wrap;
@@ -400,6 +413,23 @@
       rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
       bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
     </p>
+    <div class="rhc-methode">
+      <p>Hoe de checker afwijkingen vindt:</p>
+      <ul>
+        <li>Hij legt pagina's over hetzelfde onderwerp naast elkaar &mdash; bijvoorbeeld
+          dezelfde tarievenlijst voor alle landen (de &ldquo;zusterpagina's&rdquo;).</li>
+        <li>Hij telt zelf uit wat de meeste zusterpagina's zeggen; die meerderheid geldt
+          als de norm, er wordt niets vooraf als &ldquo;juist&rdquo; ingevoerd.</li>
+        <li>Pas als minstens 80% van de zusterpagina's hetzelfde zegt, gebruikt de checker
+          dat als norm &mdash; bij bijvoorbeeld een verdeling van 50/50 is er geen duidelijke
+          norm en meldt hij niets, om vals alarm te voorkomen.</li>
+        <li>Zegt een pagina iets anders dan die norm, dan is dat een afwijking en komt die
+          hieronder als signaal te staan.</li>
+        <li>Bij elk signaal staat het bewijs erbij: de vindplaats en de afwijkende waarde
+          naast de waarde op de andere pagina's, zodat je het zelf in een paar seconden
+          kunt nakijken.</li>
+      </ul>
+    </div>
     <dl class="rhc-meta">
       <div><dt>Familie</dt><dd>consulaire-tarieven</dd></div>
       <div><dt>Gecontroleerd</dt><dd>2026-09-15</dd></div>
