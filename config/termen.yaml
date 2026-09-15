@@ -1,0 +1,54 @@
+# Termenlijst. Dit is configuratie, geen code: uit te breiden zonder ontwikkelaar.
+#
+# Per regel:
+#   id            unieke naam, komt terug in het rapport
+#   talen         op welke sites de regel geldt (nl, en)
+#   voorkeur      de term die volgens de schrijfrichtlijnen gebruikt hoort te worden
+#   varianten     wat de app signaleert als afwijking
+#   toelichting   wat de redacteur moet weten om het te kunnen beoordelen
+#   hele_woorden  true = alleen hele woorden ('paspoortfoto' geeft dan geen signaal)
+#   eigenaar      redactie | kenniseigenaar — wie erover gaat
+#
+# De app bepaalt niet wat juist is; dat legt de redactie hier vast.
+
+regels:
+  - id: reisdocument-vs-paspoort
+    talen: [nl]
+    voorkeur: reisdocument
+    varianten: [paspoort, paspoorten]
+    toelichting: >-
+      Gebruik 'reisdocument' als overkoepelende term. Gaat het echt specifiek over het
+      paspoort naast de identiteitskaart, dan mag 'paspoort' blijven staan.
+    hele_woorden: true
+
+  - id: travel-document-vs-passport
+    talen: [en]
+    voorkeur: travel document
+    varianten: [passport, passports]
+    toelichting: >-
+      Engelse tegenhanger van reisdocument-vs-paspoort. Houd de keuze gelijk aan de
+      Nederlandse pagina over hetzelfde onderwerp.
+    hele_woorden: true
+
+  - id: identiteitskaart-vs-id-kaart
+    talen: [nl]
+    voorkeur: identiteitskaart
+    varianten: ["ID-kaart", "ID kaart", "ID-kaarten", "IDkaart"]
+    toelichting: Schrijf 'identiteitskaart' voluit; 'ID-kaart' is spreektaal.
+    hele_woorden: true
+
+  - id: legalisation-spelling
+    talen: [en]
+    voorkeur: legalisation
+    varianten: [legalization, legalizations, legalize, legalized, legalizing]
+    toelichting: >-
+      Houd de Britse -is-spelling aan op de Engelstalige site. Pas de vorm aan bij het
+      woord: legalization wordt legalisation, legalized wordt legalised.
+    hele_woorden: true
+
+  - id: authorisation-spelling
+    talen: [en]
+    voorkeur: authorisation
+    varianten: [authorization, authorizations, authorize, authorized, authorizing]
+    toelichting: "Zelfde reden als legalisation-spelling: houd de Britse -is-spelling aan."
+    hele_woorden: true

@@ -1,0 +1,26 @@
+# Bronnen en afbakening.
+#
+# 'paden' bepaalt welk deel van de site wordt opgehaald: alleen URL's onder deze
+# prefixen. Leeg laten betekent de hele site — dat is bewust niet de startsituatie.
+# Weet je de juiste paden niet? Draai eerst:
+#     python -m uniformiteitschecker verken
+# Die leest alleen de sitemap en toont welke rubrieken er zijn, met aantallen.
+
+sites:
+  - id: nww-nl
+    basis_url: https://www.nederlandwereldwijd.nl
+    taal: nl
+    paden:
+      # NOG INVULLEN met een pad uit 'verken', bijvoorbeeld:
+      # - /onderwerpen/paspoort-en-identiteitskaart
+      []
+
+  - id: nww-en
+    basis_url: https://www.netherlandsworldwide.nl
+    taal: en
+    paden:
+      # NOG INVULLEN: het Engelse equivalent van dezelfde rubriek.
+      []
+
+# Vangnet, niet de afbakening zelf: stopt een run die onverwacht groot uitpakt.
+max_paginas_per_site: 200
