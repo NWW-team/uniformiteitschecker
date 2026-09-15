@@ -12,6 +12,8 @@ import pathlib
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+import huisstijl
+
 from ..model import EIGENAAR_KENNISEIGENAAR, EIGENAAR_REDACTIE, Bevinding
 
 TEMPLATE_MAP = pathlib.Path(__file__).parent / "templates"
@@ -99,6 +101,7 @@ def render(
         datum=datum,
         aantal_paginas=aantal_paginas,
         waarschuwingen=waarschuwingen or [],
+        stijl=huisstijl.laad_css(),
     )
 
 

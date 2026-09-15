@@ -28,10 +28,12 @@ packages = [
     "checker.bronnen",
     "checker.detectie",
     "checker.rapport",
+    "huisstijl",
 ]
 
 [tool.setuptools.package-data]
 "checker.rapport" = ["templates/*.j2"]
+"huisstijl" = ["*.css"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

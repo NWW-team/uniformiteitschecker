@@ -1,291 +1,406 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Uniformiteitssignalen NederlandWereldwijd</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-  :root {
-    --ground: #eef1f4;
-    --surface: #ffffff;
-    --surface-zacht: #f7f9fb;
-    --ink: #16202b;
-    --ink-zacht: #4a5a6a;
-    --ink-flets: #74838f;
-    --rand: #d3dbe3;
-    --rand-zacht: #e4eaf0;
-    --accent: #1c4f8f;
-    --voorleggen: #9b2c2c;
-    --voorleggen-vlak: #fbf0ef;
-    --zelf: #0f6e5c;
-    --zelf-vlak: #eef6f3;
-    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
-    --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
-  }
+<style>/*
+ * Rijkshuisstijl-tokens en rapportstijl.
+ *
+ * De tokennamen (--rhc-*) en de klasse .rhc-theme volgen bewust de Rijkshuisstijl
+ * Community (https://www.rijkshuisstijl-community.nl/, npm-pakket
+ * @rijkshuisstijl-community/design-tokens). Deze omgeving heeft geen netwerktoegang
+ * tot npm, dus de tokenwaarden hieronder zijn met de hand overgenomen uit de publiek
+ * gedocumenteerde Rijkshuisstijl-basiskleuren, niet gegenereerd uit het pakket. Zodra
+ * er een omgeving met netwerk is, is dit blok met tokens (tot aan "Componenten")
+ * te vervangen door de echte @rijkshuisstijl-community/design-tokens/dist/index.css
+ * zonder dat de rest van dit bestand of de rapporten hoeven te veranderen — de
+ * componenten hieronder gebruiken uitsluitend deze --rhc-*-namen.
+ *
+ * Lettertype: Rijkshuisstijl Web Sans/Serif zijn niet vrij te distribueren. De
+ * community levert Fira Sans als alternatief (@rijkshuisstijl-community/font,
+ * EUPL-1.2). Zonder netwerktoegang kunnen de woff2-bestanden hier niet als base64
+ * worden ingesloten; de font-stack noemt daarom de huisstijlnamen, valt terug op
+ * Fira Sans als die op het systeem staat, en anders op de schreefloze systeemfont.
+ * Het @font-face-blok hieronder staat klaar voor zodra de woff2's beschikbaar zijn.
+ */
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ground: #10171f;
-      --surface: #18212b;
-      --surface-zacht: #1e2832;
-      --ink: #e8edf2;
-      --ink-zacht: #a9b8c6;
-      --ink-flets: #7d8c99;
-      --rand: #2c3947;
-      --rand-zacht: #243040;
-      --accent: #7bacea;
-      --voorleggen: #e9908c;
-      --voorleggen-vlak: #2b1d1f;
-      --zelf: #5fc3ac;
-      --zelf-vlak: #162724;
-    }
-  }
+.rhc-theme {
+  color-scheme: light;
 
-  :root[data-theme="dark"] {
-    --ground: #10171f;
-    --surface: #18212b;
-    --surface-zacht: #1e2832;
-    --ink: #e8edf2;
-    --ink-zacht: #a9b8c6;
-    --ink-flets: #7d8c99;
-    --rand: #2c3947;
-    --rand-zacht: #243040;
-    --accent: #7bacea;
-    --voorleggen: #e9908c;
-    --voorleggen-vlak: #2b1d1f;
-    --zelf: #5fc3ac;
-    --zelf-vlak: #162724;
-  }
+  /* ---- Kleur: Rijkshuisstijl basiskleuren ---- */
+  --rhc-color-lintblauw-500: #154273;
+  --rhc-color-lintblauw-700: #0e2f52;
+  --rhc-color-hemelblauw-500: #007bc7;
+  --rhc-color-hemelblauw-700: #01689b;
+  --rhc-color-rood-500: #d52b1e;
+  --rhc-color-rood-100: #f9e3e1;
+  --rhc-color-grasgroen-500: #39870c;
+  --rhc-color-grasgroen-100: #e3ecdd;
+  --rhc-color-donkergeel-500: #ffb612;
+  --rhc-color-donkergeel-100: #fff3d9;
+  --rhc-color-violet-500: #a90061;
 
-  body {
-    margin: 0;
-    background: var(--ground);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
+  --rhc-color-grijs-000: #ffffff;
+  --rhc-color-grijs-100: #f3f3f3;
+  --rhc-color-grijs-200: #e6e6e6;
+  --rhc-color-grijs-300: #d0d0d0;
+  --rhc-color-grijs-500: #898989;
+  --rhc-color-grijs-700: #535353;
+  --rhc-color-grijs-900: #1f2326;
 
-  .blad {
-    max-width: 62rem;
-    margin: 0 auto;
-    padding-block: clamp(1.5rem, 4vw, 3rem);
-    padding-inline: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+  /* Semantisch, zoals de rapporten het gebruiken. */
+  --rhc-color-achtergrond: var(--rhc-color-grijs-100);
+  --rhc-color-oppervlak: var(--rhc-color-grijs-000);
+  --rhc-color-tekst: var(--rhc-color-grijs-900);
+  --rhc-color-tekst-zacht: var(--rhc-color-grijs-700);
+  --rhc-color-tekst-flets: var(--rhc-color-grijs-500);
+  --rhc-color-lijn: var(--rhc-color-grijs-300);
+  --rhc-color-lijn-zacht: var(--rhc-color-grijs-200);
+  --rhc-color-accent: var(--rhc-color-hemelblauw-700);
+  --rhc-color-accent-donker: var(--rhc-color-lintblauw-500);
 
-  /* ---- Documentkop ---- */
-  .kop { display: flex; flex-direction: column; gap: 0.75rem; }
+  --rhc-color-voorleggen: var(--rhc-color-rood-500);
+  --rhc-color-voorleggen-vlak: var(--rhc-color-rood-100);
+  --rhc-color-zelf: var(--rhc-color-grasgroen-500);
+  --rhc-color-zelf-vlak: var(--rhc-color-grasgroen-100);
+  --rhc-color-waarschuwing: var(--rhc-color-donkergeel-500);
+  --rhc-color-waarschuwing-vlak: var(--rhc-color-donkergeel-100);
+  --rhc-color-markeer: var(--rhc-color-donkergeel-100);
+  --rhc-color-markeer-tekst: var(--rhc-color-grijs-900);
 
-  .eyebrow {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
+  /* ---- Typografie ---- */
+  --rhc-text-font-family-sans: "RO Sans", "Fira Sans", "Segoe UI", system-ui, sans-serif;
+  --rhc-text-font-family-serif: "RO Serif", "Fira Sans", Georgia, serif;
+  --rhc-text-font-family-mono: "Fira Mono", "SF Mono", Consolas, monospace;
+  --rhc-text-font-size-sm: 0.85rem;
+  --rhc-text-font-size-md: 1rem;
+  --rhc-text-font-size-lg: 1.15rem;
+  --rhc-text-font-size-xl: clamp(1.6rem, 4vw, 2.1rem);
+  --rhc-text-font-weight-regular: 400;
+  --rhc-text-font-weight-bold: 700;
 
-  h1 {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: clamp(1.7rem, 4vw, 2.3rem);
-    line-height: 1.15;
-    margin: 0;
-    text-wrap: balance;
-  }
+  /* ---- Ruimte en vorm: de Rijkshuisstijl is recht, geen afgeronde hoeken. ---- */
+  --rhc-space-xs: 0.25rem;
+  --rhc-space-sm: 0.5rem;
+  --rhc-space-md: 1rem;
+  --rhc-space-lg: 1.5rem;
+  --rhc-space-xl: 2rem;
+  --rhc-border-radius-sm: 0;
+  --rhc-border-radius-md: 0;
 
-  .inleiding {
-    margin: 0;
-    max-width: 60ch;
-    color: var(--ink-zacht);
-  }
+  background: var(--rhc-color-achtergrond);
+  color: var(--rhc-color-tekst);
+}
 
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--rand);
-    font-size: 0.85rem;
-  }
-  .meta div { display: flex; flex-direction: column; }
-  .meta dt {
-    color: var(--ink-flets);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .meta dd {
-    margin: 0;
-    font-family: var(--mono);
-    font-variant-numeric: tabular-nums;
-    font-weight: 500;
-  }
+/*
+@font-face {
+  font-family: "Fira Sans";
+  src: url(data:font/woff2;base64,...) format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+*/
 
-  /* ---- Waarschuwingen ---- */
-  .waarschuwing {
-    border-left: 3px solid var(--voorleggen);
-    background: var(--voorleggen-vlak);
-    padding: 0.85rem 1rem;
-    font-size: 0.9rem;
-    color: var(--ink);
-  }
-  .waarschuwing ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+/* ==================== Componenten ==================== */
 
-  /* ---- Groep per eigenaar ---- */
-  .groep { display: flex; flex-direction: column; gap: 1rem; }
+.rhc-theme {
+  margin: 0;
+  font-family: var(--rhc-text-font-family-sans);
+  font-size: var(--rhc-text-font-size-md);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
 
-  .groepkop {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-  }
-  .groepkop h2 {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0;
-  }
-  .aantal {
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.1rem 0.45rem;
-    border-radius: 3px;
-    background: var(--surface-zacht);
-    border: 1px solid var(--rand);
-    color: var(--ink-zacht);
-  }
-  .groeptoelichting {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--ink-flets);
-    max-width: 62ch;
-  }
+.rhc-theme *,
+.rhc-theme *::before,
+.rhc-theme *::after {
+  box-sizing: border-box;
+}
 
-  /* ---- Bevinding ---- */
-  .bevinding {
-    background: var(--surface);
-    border: 1px solid var(--rand);
-    border-left: 3px solid var(--streep);
-    padding: 1.1rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-  .bevinding.voorleggen { --streep: var(--voorleggen); }
-  .bevinding.zelf { --streep: var(--zelf); }
+.rhc-skiplink {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  background: var(--rhc-color-oppervlak);
+  color: var(--rhc-color-accent-donker);
+  padding: var(--rhc-space-sm) var(--rhc-space-md);
+  border: 1px solid var(--rhc-color-lijn);
+}
+.rhc-skiplink:focus {
+  left: var(--rhc-space-md);
+  top: var(--rhc-space-md);
+}
 
-  .bevinding h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-    text-wrap: balance;
-  }
+.rhc-lint {
+  background: var(--rhc-color-accent-donker);
+  height: 6px;
+}
 
-  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .chip {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.12rem 0.45rem;
-    border-radius: 2px;
-    border: 1px solid currentColor;
-  }
-  .chip.soort-inhoudelijk { color: var(--voorleggen); }
-  .chip.soort-schrijfrichtlijn { color: var(--zelf); }
-  .chip.neutraal { color: var(--ink-flets); }
+.rhc-blad {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-  /* Het bewijs: afwijkende waarde naast de waarde elders. */
-  .bewijs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1px;
-    background: var(--rand-zacht);
-    border: 1px solid var(--rand-zacht);
-  }
-  .kolom { background: var(--surface-zacht); padding: 0.7rem 0.85rem; }
-  .kolom h4 {
-    margin: 0 0 0.4rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--ink-flets);
-    font-weight: 600;
-  }
-  .kolom ul { margin: 0; padding: 0; list-style: none; }
-  .kolom li {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.15rem 0;
-    font-size: 0.88rem;
-  }
-  .land { color: var(--ink-zacht); }
-  .waarde {
-    font-family: var(--mono);
-    font-variant-numeric: tabular-nums;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .kolom.afwijkend .waarde { color: var(--voorleggen); }
+.rhc-kop { display: flex; flex-direction: column; gap: 0.75rem; }
 
-  .toelichting { margin: 0; font-size: 0.88rem; color: var(--ink-zacht); }
+.rhc-eyebrow {
+  font-size: 0.7rem;
+  font-weight: var(--rhc-text-font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rhc-color-accent);
+}
 
-  .actie {
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--rand-zacht);
-  }
-  .actie span {
-    font-weight: 600;
-    color: var(--accent);
-  }
+.rhc-theme h1 {
+  font-family: var(--rhc-text-font-family-serif);
+  font-weight: var(--rhc-text-font-weight-bold);
+  font-size: var(--rhc-text-font-size-xl);
+  line-height: 1.15;
+  margin: 0;
+  color: var(--rhc-color-accent-donker);
+  text-wrap: balance;
+}
 
-  .paginas { display: flex; flex-direction: column; gap: 0.2rem; }
-  .paginas a {
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    overflow-wrap: anywhere;
-  }
-  .paginas a:hover, .paginas a:focus-visible { border-bottom-color: currentColor; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rhc-theme h2 {
+  font-family: var(--rhc-text-font-family-serif);
+  font-size: var(--rhc-text-font-size-lg);
+  font-weight: var(--rhc-text-font-weight-bold);
+  color: var(--rhc-color-accent-donker);
+  margin: 0;
+}
 
-  /* ---- Leeg ---- */
-  .leeg {
-    background: var(--surface);
-    border: 1px solid var(--rand);
-    padding: 1.5rem;
-  }
-  .leeg h2 { font-family: var(--serif); margin: 0 0 0.4rem; font-size: 1.15rem; }
-  .leeg p { margin: 0; color: var(--ink-zacht); max-width: 60ch; }
+.rhc-inleiding {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--rhc-color-tekst-zacht);
+}
 
-  footer {
-    border-top: 1px solid var(--rand);
-    padding-top: 1rem;
-    font-size: 0.82rem;
-    color: var(--ink-flets);
-    max-width: 62ch;
-  }
+.rhc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  padding-top: var(--rhc-space-md);
+  border-top: 1px solid var(--rhc-color-lijn);
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-meta div { display: flex; flex-direction: column; }
+.rhc-meta dt {
+  color: var(--rhc-color-tekst-flets);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.rhc-meta dd {
+  margin: 0;
+  font-family: var(--rhc-text-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.rhc-waarschuwing {
+  border-left: 4px solid var(--rhc-color-waarschuwing);
+  background: var(--rhc-color-waarschuwing-vlak);
+  padding: 0.85rem 1rem;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst);
+}
+.rhc-waarschuwing ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+.rhc-groep { display: flex; flex-direction: column; gap: 1rem; }
+
+.rhc-groepkop {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.rhc-groepkop h2 { font-size: var(--rhc-text-font-size-lg); }
+.rhc-aantal {
+  font-family: var(--rhc-text-font-family-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.1rem 0.45rem;
+  background: var(--rhc-color-achtergrond);
+  border: 1px solid var(--rhc-color-lijn);
+  color: var(--rhc-color-tekst-zacht);
+}
+.rhc-groeptoelichting {
+  margin: 0;
+  font-size: var(--rhc-text-font-size-sm);
+  color: var(--rhc-color-tekst-flets);
+  max-width: 62ch;
+}
+
+.rhc-bevinding {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  border-left: 4px solid var(--rhc-streep, var(--rhc-color-accent));
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.rhc-bevinding.rhc-voorleggen { --rhc-streep: var(--rhc-color-voorleggen); }
+.rhc-bevinding.rhc-zelf { --rhc-streep: var(--rhc-color-zelf); }
+
+.rhc-bevinding h3 {
+  font-size: var(--rhc-text-font-size-md);
+  font-weight: var(--rhc-text-font-weight-bold);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.rhc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rhc-chip {
+  font-size: 0.7rem;
+  font-weight: var(--rhc-text-font-weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid currentColor;
+}
+.rhc-chip.rhc-soort-inhoudelijk { color: var(--rhc-color-voorleggen); }
+.rhc-chip.rhc-soort-schrijfrichtlijn { color: var(--rhc-color-zelf); }
+.rhc-chip.rhc-neutraal { color: var(--rhc-color-tekst-flets); }
+
+.rhc-bewijs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1px;
+  background: var(--rhc-color-lijn-zacht);
+  border: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-kolom { background: var(--rhc-color-achtergrond); padding: 0.7rem 0.85rem; }
+.rhc-kolom h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--rhc-color-tekst-flets);
+  font-weight: var(--rhc-text-font-weight-bold);
+}
+.rhc-kolom ul { margin: 0; padding: 0; list-style: none; }
+.rhc-kolom li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.15rem 0;
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-land { color: var(--rhc-color-tekst-zacht); }
+.rhc-waarde {
+  font-family: var(--rhc-text-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.rhc-kolom.rhc-afwijkend .rhc-waarde { color: var(--rhc-color-voorleggen); }
+
+.rhc-toelichting { margin: 0; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-tekst-zacht); }
+
+.rhc-actie {
+  margin: 0;
+  font-size: var(--rhc-text-font-size-sm);
+  font-weight: 500;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-actie span { font-weight: var(--rhc-text-font-weight-bold); color: var(--rhc-color-accent); }
+
+.rhc-paginas { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.rhc-theme a {
+  color: var(--rhc-color-accent);
+  text-decoration: underline;
+}
+.rhc-paginas a {
+  font-family: var(--rhc-text-font-family-mono);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+.rhc-theme a:focus-visible,
+.rhc-theme button:focus-visible,
+.rhc-theme input:focus-visible {
+  outline: 3px solid var(--rhc-color-donkergeel-500);
+  outline-offset: 2px;
+}
+
+.rhc-leeg {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  padding: 1.5rem;
+}
+.rhc-leeg h2 { margin: 0 0 0.4rem; }
+.rhc-leeg p { margin: 0; color: var(--rhc-color-tekst-zacht); max-width: 60ch; }
+
+.rhc-theme footer {
+  border-top: 1px solid var(--rhc-color-lijn);
+  padding-top: var(--rhc-space-md);
+  font-size: 0.82rem;
+  color: var(--rhc-color-tekst-flets);
+  max-width: 62ch;
+}
+
+/* ---- Statblokken en samenvattingstabel (spoor 1: termenlijstcheck) ---- */
+.rhc-feiten { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0; }
+.rhc-feit {
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  padding: 12px 16px;
+}
+.rhc-feit b { display: block; font-size: 1.5rem; line-height: 1.2; color: var(--rhc-color-accent-donker); }
+.rhc-feit span { color: var(--rhc-color-tekst-flets); font-size: 0.85rem; }
+
+.rhc-theme table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+}
+.rhc-theme th,
+.rhc-theme td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rhc-color-lijn-zacht);
+}
+.rhc-theme th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--rhc-color-tekst-flets);
+}
+.rhc-theme tr:last-child td { border-bottom: none; }
+.rhc-getal { text-align: right; font-variant-numeric: tabular-nums; }
+
+.rhc-fragment { margin: 0 0 8px; }
+.rhc-theme mark {
+  background: var(--rhc-color-markeer);
+  color: var(--rhc-color-markeer-tekst);
+  padding: 0 2px;
+}
 </style>
+</head>
+<body class="rhc-theme">
+<a class="rhc-skiplink" href="#inhoud">Naar de inhoud</a>
+<div class="rhc-lint"></div>
 
-<div class="blad">
-  <header class="kop">
-    <p class="eyebrow">Uniformiteitschecker &middot; webredactie</p>
+<div class="rhc-blad">
+  <header class="rhc-kop">
+    <p class="rhc-eyebrow">Uniformiteitschecker &middot; webredactie</p>
     <h1>Afwijkingen in de consulaire tarieven</h1>
-    <p class="inleiding">
+    <p class="rhc-inleiding">
       Deze pagina's horen hetzelfde te zeggen. Waar &eacute;&eacute;n land afwijkt van de
       rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
       bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
     </p>
-    <dl class="meta">
+    <dl class="rhc-meta">
       <div><dt>Familie</dt><dd>consulaire-tarieven</dd></div>
       <div><dt>Gecontroleerd</dt><dd>2026-09-15</dd></div>
       <div><dt>Pagina's</dt><dd>218</dd></div>
@@ -293,908 +408,910 @@
     </dl>
   </header>
 
+  <main id="inhoud">
 
 
-  <section class="groep">
-    <div class="groepkop">
+  <section class="rhc-groep">
+    <div class="rhc-groepkop">
       <h2>Zelf verbeteren</h2>
-      <span class="aantal">2</span>
+      <span class="rhc-aantal">2</span>
     </div>
-    <p class="groeptoelichting">Het juiste antwoord staat in de schrijfrichtlijn of blijkt uit de zusterpagina&#39;s. De webredactie kan dit zelf corrigeren.</p>
+    <p class="rhc-groeptoelichting">Het juiste antwoord staat in de schrijfrichtlijn of blijkt uit de zusterpagina&#39;s. De webredactie kan dit zelf corrigeren.</p>
 
-    <article class="bevinding zelf">
+    <article class="rhc-bevinding rhc-zelf">
       <div>
         <h3>9 bedragen in afwijkende notatie op irak</h3>
-        <div class="chips">
-          <span class="chip soort-schrijfrichtlijn">schrijfrichtlijn</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">0 van 9 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-schrijfrichtlijn">schrijfrichtlijn</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">0 van 9 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">irak</span><span class="waarde">€60.25</span></li>
-            <li><span class="land">irak</span><span class="waarde">€60.00</span></li>
-            <li><span class="land">irak</span><span class="waarde">€45.00</span></li>
+            <li><span class="rhc-land">irak</span><span class="rhc-waarde">€60.25</span></li>
+            <li><span class="rhc-land">irak</span><span class="rhc-waarde">€60.00</span></li>
+            <li><span class="rhc-land">irak</span><span class="rhc-waarde">€45.00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak">https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
+      <p class="rhc-actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
     </article>
-    <article class="bevinding zelf">
+    <article class="rhc-bevinding rhc-zelf">
       <div>
         <h3>32 bedragen in afwijkende notatie op kenia</h3>
-        <div class="chips">
-          <span class="chip soort-schrijfrichtlijn">schrijfrichtlijn</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">1 van 33 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-schrijfrichtlijn">schrijfrichtlijn</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">1 van 33 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">kenia</span><span class="waarde">€169.15</span></li>
-            <li><span class="land">kenia</span><span class="waarde">€147.40</span></li>
-            <li><span class="land">kenia</span><span class="waarde">€169.15</span></li>
+            <li><span class="rhc-land">kenia</span><span class="rhc-waarde">€169.15</span></li>
+            <li><span class="rhc-land">kenia</span><span class="rhc-waarde">€147.40</span></li>
+            <li><span class="rhc-land">kenia</span><span class="rhc-waarde">€169.15</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">112 van de 114 landenpagina&#39;s gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia">https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
+      <p class="rhc-actie"><span>Actie:</span> Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.</p>
     </article>
   </section>
-  <section class="groep">
-    <div class="groepkop">
+  <section class="rhc-groep">
+    <div class="rhc-groepkop">
       <h2>Voorleggen aan kenniseigenaar</h2>
-      <span class="aantal">24</span>
+      <span class="rhc-aantal">24</span>
     </div>
-    <p class="groeptoelichting">Dit betreft een feit — een bedrag, termijn of voorwaarde. De checker kan niet weten welke kant klopt, ook niet bij een grote meerderheid: geld en juridische voorwaarden wijzig je niet op statistiek.</p>
+    <p class="rhc-groeptoelichting">Dit betreft een feit — een bedrag, termijn of voorwaarde. De checker kan niet weten welke kant klopt, ook niet bij een grote meerderheid: geld en juridische voorwaarden wijzig je niet op statistiek.</p>
 
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Caribisch visum</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">87 van 88 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">87 van 88 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">cyprus</span><span class="waarde">€ 90,00</span></li>
+            <li><span class="rhc-land">cyprus</span><span class="rhc-waarde">€ 90,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 80,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 80,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 80,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 80,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 80,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 80,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 87 van de 88 landenpagina&#39;s met deze rij staat € 80,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 87 van de 88 landenpagina&#39;s met deze rij staat € 80,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Caribisch visum kinderen 6 t/m 11 jaar</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">78 van 79 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">78 van 79 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">cyprus</span><span class="waarde">€ 45,00</span></li>
+            <li><span class="rhc-land">cyprus</span><span class="rhc-waarde">€ 45,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 40,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 40,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 40,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 40,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 40,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 40,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 78 van de 79 landenpagina&#39;s met deze rij staat € 40,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 78 van de 79 landenpagina&#39;s met deze rij staat € 40,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: ID-kaart meerderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">89 van 92 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">89 van 92 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 168,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 168,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 168,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 165,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 168,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 167,80</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 167,80</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 167,80</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 167,80</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 167,80</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 167,80</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 167,80. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 167,80. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: ID-kaart minderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">89 van 92 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">89 van 92 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 129,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 125,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 129,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 129,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 125,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 129,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 128,75</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 128,75</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 128,75</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 128,75</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 128,75</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 128,75</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 128,75. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 128,75. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Laissez-passer of noodpaspoort</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">96 van 99 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">96 van 99 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 60,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 60,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 60,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 60,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 60,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 60,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">albanie</span><span class="waarde">€ 60,25</span></li>
-            <li><span class="land">algerije</span><span class="waarde">€ 60,25</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 60,25</span></li>
+            <li><span class="rhc-land">albanie</span><span class="rhc-waarde">€ 60,25</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 60,25</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 60,25</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 96 van de 99 landenpagina&#39;s met deze rij staat € 60,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 96 van de 99 landenpagina&#39;s met deze rij staat € 60,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Legaliseren document</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">33 van 35 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">33 van 35 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (2 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 25,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">benin</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">benin</span><span class="rhc-waarde">€ 26,25</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 33 van de 35 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 33 van de 35 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Legaliseren handtekening Nederlander</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">100 van 103 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">100 van 103 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 25,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 26,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">albanie</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">albanie</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 26,25</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 100 van de 103 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 100 van de 103 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Luchthaventransitvisum</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">84 van 85 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">84 van 85 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">cyprus</span><span class="waarde">€ 80,00</span></li>
+            <li><span class="rhc-land">cyprus</span><span class="rhc-waarde">€ 80,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 90,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 90,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 90,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 90,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 90,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 90,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 90,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 90,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Luchthaventransitvisum kinderen 6 t/m 11 jaar</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">84 van 85 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">84 van 85 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">cyprus</span><span class="waarde">€ 40,00</span></li>
+            <li><span class="rhc-land">cyprus</span><span class="rhc-waarde">€ 40,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 45,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 45,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 45,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 45,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 45,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 45,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 45,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 84 van de 85 landenpagina&#39;s met deze rij staat € 45,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, standaard</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">94 van 95 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">94 van 95 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">iran</span><span class="waarde">€ 1.135,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 1.135,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 1.139,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 1.139,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 1.139,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 1.139,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 1.139,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 1.139,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 94 van de 95 landenpagina&#39;s met deze rij staat € 1.139,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 94 van de 95 landenpagina&#39;s met deze rij staat € 1.139,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, verlaagd</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">92 van 94 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">92 van 94 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (2 pagina's)</h4>
           <ul>
-            <li><span class="land">egypte</span><span class="waarde">€ 846,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 845,00</span></li>
+            <li><span class="rhc-land">egypte</span><span class="rhc-waarde">€ 846,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 845,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 847,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 847,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 847,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 847,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 847,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 847,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 847,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 847,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte">https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, standaard</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">93 van 94 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">93 van 94 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">iran</span><span class="waarde">€ 1.450,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 1.450,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 1.454,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 1.454,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 1.454,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 1.454,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 1.454,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 1.454,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 1.454,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 1.454,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, verlaagd</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">92 van 93 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">92 van 93 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">iran</span><span class="waarde">€ 1.160,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 1.160,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 1.163,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 1.163,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 1.163,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 1.163,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 1.163,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 1.163,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 92 van de 93 landenpagina&#39;s met deze rij staat € 1.163,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 92 van de 93 landenpagina&#39;s met deze rij staat € 1.163,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Naturalisatie: meenaturaliserende minderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">93 van 94 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">93 van 94 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 165,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 168,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 168,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 168,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 168,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 168,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 168,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 168,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 168,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Optieprocedure: enkelvoudig</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">93 van 94 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">93 van 94 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">iran</span><span class="waarde">€ 240,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 240,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 241,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 241,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 241,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 241,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 241,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 241,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 241,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 93 van de 94 landenpagina&#39;s met deze rij staat € 241,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Optieprocedure: gemeenschappelijk</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">92 van 94 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">92 van 94 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (2 pagina's)</h4>
           <ul>
-            <li><span class="land">bangladesh</span><span class="waarde">€ 395,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 410,00</span></li>
+            <li><span class="rhc-land">bangladesh</span><span class="rhc-waarde">€ 395,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 410,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 412,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 412,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 412,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 412,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 412,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 412,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 412,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 92 van de 94 landenpagina&#39;s met deze rij staat € 412,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Optieprocedure: medeopterende minderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">85 van 91 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">85 van 91 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (6 pagina's)</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">bangladesh</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">belgie</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">brazilie</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">bulgarije</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">bangladesh</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">belgie</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">brazilie</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">bulgarije</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 25,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">angola</span><span class="waarde">€ 27,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 27,00</span></li>
-            <li><span class="land">australie</span><span class="waarde">€ 27,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 27,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 27,00</span></li>
+            <li><span class="rhc-land">australie</span><span class="rhc-waarde">€ 27,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 85 van de 91 landenpagina&#39;s met deze rij staat € 27,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 85 van de 91 landenpagina&#39;s met deze rij staat € 27,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije">https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie">https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie">https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije">https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Paspoort meerderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">89 van 92 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">89 van 92 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 169,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 169,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 169,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 165,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 169,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 169,15</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 169,15</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 169,15</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Paspoort minderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">89 van 92 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">89 van 92 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 147,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 145,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 147,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 147,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 145,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 147,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 147,40</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 147,40</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 147,40</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Schengenvisum laag tarief**</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid hoog</span>
-          <span class="chip neutraal">81 van 82 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid hoog</span>
+          <span class="rhc-chip rhc-neutraal">81 van 82 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af </h4>
           <ul>
-            <li><span class="land">chili</span><span class="waarde">€ 45,00</span></li>
+            <li><span class="rhc-land">chili</span><span class="rhc-waarde">€ 45,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 35,00</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 35,00</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 35,00</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 35,00</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 35,00</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 35,00</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 81 van de 82 landenpagina&#39;s met deze rij staat € 35,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 81 van de 82 landenpagina&#39;s met deze rij staat € 35,00. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili">https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Toeslag aanvraag paspoort of ID-kaart op andere locatie*</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">89 van 92 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">89 van 92 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 27,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 27,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 27,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 25,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 27,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 26,85</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 26,85</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 26,85</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 26,85</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 26,85</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 26,85</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 26,85. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 89 van de 92 landenpagina&#39;s met deze rij staat € 26,85. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Verklaring &#39;afschrift/kopie is conform origineel&#39;</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">99 van 102 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">99 van 102 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 26,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 25,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 26,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 25,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 26,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">albanie</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">algerije</span><span class="waarde">€ 26,25</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">albanie</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 26,25</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 26,25</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 99 van de 102 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 99 van de 102 landenpagina&#39;s met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Zakenpaspoort</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">87 van 90 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">87 van 90 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 169,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 165,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 169,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 169,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 165,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 169,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 169,15</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 169,15</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 169,15</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 169,15</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 87 van de 90 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 87 van de 90 landenpagina&#39;s met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
-    <article class="bevinding voorleggen">
+    <article class="rhc-bevinding rhc-voorleggen">
       <div>
         <h3>Bedrag wijkt af van andere landen: Zakenpaspoort minderjarige</h3>
-        <div class="chips">
-          <span class="chip soort-inhoudelijk">inhoudelijk</span>
-          <span class="chip neutraal">zekerheid middel</span>
-          <span class="chip neutraal">85 van 88 eens</span>
+        <div class="rhc-chips">
+          <span class="rhc-chip rhc-soort-inhoudelijk">inhoudelijk</span>
+          <span class="rhc-chip rhc-neutraal">zekerheid middel</span>
+          <span class="rhc-chip rhc-neutraal">85 van 88 eens</span>
         </div>
       </div>
 
-      <div class="bewijs">
-        <div class="kolom afwijkend">
+      <div class="rhc-bewijs">
+        <div class="rhc-kolom rhc-afwijkend">
           <h4>Wijkt af (3 pagina's)</h4>
           <ul>
-            <li><span class="land">cuba</span><span class="waarde">€ 147,00</span></li>
-            <li><span class="land">iran</span><span class="waarde">€ 145,00</span></li>
-            <li><span class="land">suriname</span><span class="waarde">€ 147,00</span></li>
+            <li><span class="rhc-land">cuba</span><span class="rhc-waarde">€ 147,00</span></li>
+            <li><span class="rhc-land">iran</span><span class="rhc-waarde">€ 145,00</span></li>
+            <li><span class="rhc-land">suriname</span><span class="rhc-waarde">€ 147,00</span></li>
           </ul>
         </div>
-        <div class="kolom">
+        <div class="rhc-kolom">
           <h4>Staat elders</h4>
           <ul>
-            <li><span class="land">algerije</span><span class="waarde">€ 147,40</span></li>
-            <li><span class="land">angola</span><span class="waarde">€ 147,40</span></li>
-            <li><span class="land">argentinie</span><span class="waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">algerije</span><span class="rhc-waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">angola</span><span class="rhc-waarde">€ 147,40</span></li>
+            <li><span class="rhc-land">argentinie</span><span class="rhc-waarde">€ 147,40</span></li>
           </ul>
         </div>
       </div>
 
-<p class="toelichting">Op 85 van de 88 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
-      <div class="paginas">
+<p class="rhc-toelichting">Op 85 van de 88 landenpagina&#39;s met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.</p>
+      <div class="rhc-paginas">
 <a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba">https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran">https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran</a><a href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname">https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname</a>      </div>
 
-      <p class="actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
+      <p class="rhc-actie"><span>Actie:</span> Verifieer welk bedrag klopt en laat de afwijkende pagina(&#39;s) corrigeren.</p>
     </article>
   </section>
+  </main>
 
   <footer>
     Gegenereerd door de uniformiteitschecker op basis van de publieke sitemap van
@@ -1203,3 +1320,5 @@
     iets wijzigt.
   </footer>
 </div>
+</body>
+</html>
