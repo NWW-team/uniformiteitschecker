@@ -1,0 +1,17 @@
+# Welke pagina's horen bij elkaar, en hoe vergelijken we ze.
+#
+# Een nieuwe familie toevoegen is een blok YAML, geen Python -- mits de genoemde
+# detectiestrategie al bestaat. Nieuwe strategieen zijn wel code, en dat is correct:
+# het register in checker/detectie/register.py is de enige plek waar die bijkomen.
+
+families:
+  - id: consulaire-tarieven
+    bron_id: nww-nl
+    taal: nl
+    sitemap: https://www.nederlandwereldwijd.nl/paginas/sitemap.xml
+    pad_prefix: /consulaire-tarieven/
+    detectoren: [zustertabel_waarden, bedragnotatie]
+    # Drempels tegen ruis: onder min_zusters is er geen norm af te leiden, en een
+    # familie die in twee kampen verdeeld is (< min_eensgezind) is variatie, geen fout.
+    min_zusters: 5
+    min_eensgezind: 0.8

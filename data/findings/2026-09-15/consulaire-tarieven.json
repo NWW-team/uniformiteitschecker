@@ -1,0 +1,1096 @@
+{
+  "aantal_paginas": 218,
+  "bevindingen": [
+    {
+      "bewijs_hash": "598885c28911bbbc7a31ff1c0d7d5d9f9de8a525",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 80,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Caribisch visum"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 87,
+        "n": 88
+      },
+      "titel": "Bedrag wijkt af van andere landen: Caribisch visum",
+      "toelichting": "Op 87 van de 88 landenpagina's met deze rij staat € 80,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "vingerafdruk": "0f7f5e68e8c4bf6227991fc1b2f770fe46ff668d",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cyprus: € 90,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 80,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 80,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 80,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "87f7ead6ea12c0a9b350fe5342d7ef6cc2bdf04c",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 40,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Caribisch visum kinderen 6 t/m 11 jaar"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 78,
+        "n": 79
+      },
+      "titel": "Bedrag wijkt af van andere landen: Caribisch visum kinderen 6 t/m 11 jaar",
+      "toelichting": "Op 78 van de 79 landenpagina's met deze rij staat € 40,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "vingerafdruk": "24e54cb788e71cc06fced3421268621a60313363",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cyprus: € 45,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 40,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 40,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 40,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "e54449c5bc3219622ca5fa768ebe640bca9ea7b5",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 167,80",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "ID-kaart meerderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 89,
+        "n": 92
+      },
+      "titel": "Bedrag wijkt af van andere landen: ID-kaart meerderjarige",
+      "toelichting": "Op 89 van de 92 landenpagina's met deze rij staat € 167,80. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "9fd5d4fb922cfef4db601ee11f12388378120ddd",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 168,00 | iran: € 165,00 | suriname: € 168,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 167,80"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 167,80"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 167,80"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "f387bf43f26f072b316736b8332b05dc25966cb4",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 128,75",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "ID-kaart minderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 89,
+        "n": 92
+      },
+      "titel": "Bedrag wijkt af van andere landen: ID-kaart minderjarige",
+      "toelichting": "Op 89 van de 92 landenpagina's met deze rij staat € 128,75. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "050a896b31c25fc79c34df82ccfa64608e411f6f",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 129,00 | iran: € 125,00 | suriname: € 129,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 128,75"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 128,75"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 128,75"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "e05666a13b58921634b42962ecfd4dbefd59174f",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 60,25",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Laissez-passer of noodpaspoort"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 96,
+        "n": 99
+      },
+      "titel": "Bedrag wijkt af van andere landen: Laissez-passer of noodpaspoort",
+      "toelichting": "Op 96 van de 99 landenpagina's met deze rij staat € 60,25. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "85d1e488712599336cf0da63c3d90135d2c15b10",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 60,00 | iran: € 60,00 | suriname: € 60,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "€ 60,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 60,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 60,25"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "fe3292a093de1e937255ec960951b88d9c11d793",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 26,25",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Legaliseren document"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 33,
+        "n": 35
+      },
+      "titel": "Bedrag wijkt af van andere landen: Legaliseren document",
+      "toelichting": "Op 33 van de 35 landenpagina's met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "55fac3428de96f45a26d62b4cf9e9201808d67eb",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 26,00 | iran: € 25,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/benin",
+          "variant": "benin",
+          "waarde": "€ 26,25"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "fc14bcdbda0e9fe96d653b0966537926193a996e",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 26,25",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Legaliseren handtekening Nederlander"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 100,
+        "n": 103
+      },
+      "titel": "Bedrag wijkt af van andere landen: Legaliseren handtekening Nederlander",
+      "toelichting": "Op 100 van de 103 landenpagina's met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "176bbbec410b5749f4482d79207bfbc91284cb6a",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 26,00 | iran: € 25,00 | suriname: € 26,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 26,25"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "11fe03836ad4f9578ef178cbb2f56e331fa79859",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 90,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Luchthaventransitvisum"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 84,
+        "n": 85
+      },
+      "titel": "Bedrag wijkt af van andere landen: Luchthaventransitvisum",
+      "toelichting": "Op 84 van de 85 landenpagina's met deze rij staat € 90,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "vingerafdruk": "266e0d66f2d9a47a1e254436d5b802d110422276",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cyprus: € 80,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 90,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 90,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 90,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "39ce1cca7209b250f4e9238f00939cd3664c1302",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 45,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Luchthaventransitvisum kinderen 6 t/m 11 jaar"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 84,
+        "n": 85
+      },
+      "titel": "Bedrag wijkt af van andere landen: Luchthaventransitvisum kinderen 6 t/m 11 jaar",
+      "toelichting": "Op 84 van de 85 landenpagina's met deze rij staat € 45,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "vingerafdruk": "ad6a5e602c860d7d7ae2910d68573da944bd0525",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cyprus: € 40,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 45,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 45,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 45,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "d951a2e4cc707c87879119e0cc17a2a24295078c",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 1.139,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Naturalisatie: enkelvoudig, standaard"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 94,
+        "n": 95
+      },
+      "titel": "Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, standaard",
+      "toelichting": "Op 94 van de 95 landenpagina's met deze rij staat € 1.139,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "e515479866a94ab6446850c91bb6c1c0392799b4",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "iran: € 1.135,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 1.139,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 1.139,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 1.139,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "deab64aa43b7d45c20485739a7f8664b78e4a175",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 847,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Naturalisatie: enkelvoudig, verlaagd"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 92,
+        "n": 94
+      },
+      "titel": "Bedrag wijkt af van andere landen: Naturalisatie: enkelvoudig, verlaagd",
+      "toelichting": "Op 92 van de 94 landenpagina's met deze rij staat € 847,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "c6f1ec61e0495e5c67a6cbf4de1744afb4d4c3f7",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "egypte: € 846,00 | iran: € 845,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 847,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 847,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 847,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "aa3a3d663733dc932fd9c6ad58f2a07a2ebe4642",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 1.454,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Naturalisatie: gemeenschappelijk, standaard"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 93,
+        "n": 94
+      },
+      "titel": "Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, standaard",
+      "toelichting": "Op 93 van de 94 landenpagina's met deze rij staat € 1.454,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "92935c66d1ce11b466556ba10fc9a50853215754",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "iran: € 1.450,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 1.454,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 1.454,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 1.454,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "88b614fd993f6e21a0529f0c623a9d079b047100",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 1.163,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Naturalisatie: gemeenschappelijk, verlaagd"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 92,
+        "n": 93
+      },
+      "titel": "Bedrag wijkt af van andere landen: Naturalisatie: gemeenschappelijk, verlaagd",
+      "toelichting": "Op 92 van de 93 landenpagina's met deze rij staat € 1.163,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "415074bf4ed881ccab5d964f544c460b56adfa72",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "iran: € 1.160,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 1.163,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 1.163,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 1.163,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "82dc4b009eaf850322bb84e1a69d974410f945ca",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 168,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Naturalisatie: meenaturaliserende minderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 93,
+        "n": 94
+      },
+      "titel": "Bedrag wijkt af van andere landen: Naturalisatie: meenaturaliserende minderjarige",
+      "toelichting": "Op 93 van de 94 landenpagina's met deze rij staat € 168,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "a6aab1fd60a48046996f2db733baa8924d7c7d9d",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "iran: € 165,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 168,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 168,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 168,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "2e63309906d9be808c3f4ba1317f52aacb281093",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 241,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Optieprocedure: enkelvoudig"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 93,
+        "n": 94
+      },
+      "titel": "Bedrag wijkt af van andere landen: Optieprocedure: enkelvoudig",
+      "toelichting": "Op 93 van de 94 landenpagina's met deze rij staat € 241,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "67bdfaf533f4b8897b37dcac259e5d19996ec08b",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "iran: € 240,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 241,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 241,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 241,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "bce54fdde3cfef273ab56a054b66949854e65fa4",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 412,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Optieprocedure: gemeenschappelijk"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 92,
+        "n": 94
+      },
+      "titel": "Bedrag wijkt af van andere landen: Optieprocedure: gemeenschappelijk",
+      "toelichting": "Op 92 van de 94 landenpagina's met deze rij staat € 412,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "c6f7dc66c3107eef98fb63b05864523c5ee81723",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "bangladesh: € 395,00 | iran: € 410,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 412,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 412,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 412,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "d4c668abccf70404aa22dd9369c9c8fdad0dc623",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 27,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Optieprocedure: medeopterende minderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 6,
+        "eens": 85,
+        "n": 91
+      },
+      "titel": "Bedrag wijkt af van andere landen: Optieprocedure: medeopterende minderjarige",
+      "toelichting": "Op 85 van de 91 landenpagina's met deze rij staat € 27,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "vingerafdruk": "e922180f635e668e8cebfea53fece3817e7bc1e6",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "algerije: € 26,00 | bangladesh: € 26,00 | belgie: € 26,00 | brazilie: € 26,00 | bulgarije: € 26,00 | iran: € 25,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 27,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 27,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/australie",
+          "variant": "australie",
+          "waarde": "€ 27,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "540f99cdb56f84b3b3967146430f03b4d4c1dfd1",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 169,15",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Paspoort meerderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 89,
+        "n": 92
+      },
+      "titel": "Bedrag wijkt af van andere landen: Paspoort meerderjarige",
+      "toelichting": "Op 89 van de 92 landenpagina's met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "d44859515d6e207402826232ead095e262fd496b",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 169,00 | iran: € 165,00 | suriname: € 169,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 169,15"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "ec76963585a1050d51b37a18f1f1ca085f0d415a",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 147,40",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Paspoort minderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 89,
+        "n": 92
+      },
+      "titel": "Bedrag wijkt af van andere landen: Paspoort minderjarige",
+      "toelichting": "Op 89 van de 92 landenpagina's met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "b6abb480dd151694d3cb3d275687f4dcf29a4591",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 147,00 | iran: € 145,00 | suriname: € 147,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 147,40"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 147,40"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 147,40"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "07c9729600dc7f81b8dc41b8ef09c32ee10ecb9d",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 35,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Schengenvisum laag tarief**"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 81,
+        "n": 82
+      },
+      "titel": "Bedrag wijkt af van andere landen: Schengenvisum laag tarief**",
+      "toelichting": "Op 81 van de 82 landenpagina's met deze rij staat € 35,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili"
+      ],
+      "vingerafdruk": "c63a5bf6ba4a9a0dbba48c841d7a65b507aed92a",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "chili: € 45,00",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 35,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 35,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 35,00"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "82272b50d38c5e5a0894b92aa05013083acf7a2a",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 26,85",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 89,
+        "n": 92
+      },
+      "titel": "Bedrag wijkt af van andere landen: Toeslag aanvraag paspoort of ID-kaart op andere locatie*",
+      "toelichting": "Op 89 van de 92 landenpagina's met deze rij staat € 26,85. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "f9a070808dd180290237b493b615d56abf1ea674",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 27,00 | iran: € 25,00 | suriname: € 27,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 26,85"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 26,85"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 26,85"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "fc14bcdbda0e9fe96d653b0966537926193a996e",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 26,25",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Verklaring 'afschrift/kopie is conform origineel'"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 99,
+        "n": 102
+      },
+      "titel": "Bedrag wijkt af van andere landen: Verklaring 'afschrift/kopie is conform origineel'",
+      "toelichting": "Op 99 van de 102 landenpagina's met deze rij staat € 26,25. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "f28bcdf3ce7ba4305b446c03c95150943c0f0655",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 26,00 | iran: € 25,00 | suriname: € 26,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 26,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 26,25"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "540f99cdb56f84b3b3967146430f03b4d4c1dfd1",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 169,15",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Zakenpaspoort"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 87,
+        "n": 90
+      },
+      "titel": "Bedrag wijkt af van andere landen: Zakenpaspoort",
+      "toelichting": "Op 87 van de 90 landenpagina's met deze rij staat € 169,15. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "976f22a3b694249a86b67e644928b67a4758744e",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 169,00 | iran: € 165,00 | suriname: € 169,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 169,15"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "ec76963585a1050d51b37a18f1f1ca085f0d415a",
+      "eigenaar": "kenniseigenaar",
+      "elders": "€ 147,40",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "rij_label": "Zakenpaspoort minderjarige"
+      },
+      "regel_id": "zustertabel_waarden",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 85,
+        "n": 88
+      },
+      "titel": "Bedrag wijkt af van andere landen: Zakenpaspoort minderjarige",
+      "toelichting": "Op 85 van de 88 landenpagina's met deze rij staat € 147,40. Dit kan ook een legitiem landspecifiek tarief zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
+      ],
+      "vingerafdruk": "b048a36d6803400470c3679f865c16b57d78266c",
+      "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
+      "waargenomen": "cuba: € 147,00 | iran: € 145,00 | suriname: € 147,00",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 147,40"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 147,40"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "€ 147,40"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "b1bbe555a09ac658f8bc7d144332d0b4ad8c639d",
+      "eigenaar": "webredactie",
+      "elders": "€ 1.139,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "irak"
+      },
+      "regel_id": "bedragnotatie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 9,
+        "eens": 0,
+        "n": 9
+      },
+      "titel": "9 bedragen in afwijkende notatie op irak",
+      "toelichting": "112 van de 114 landenpagina's gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak"
+      ],
+      "vingerafdruk": "8fe35f5a7d79479c93ba3cb69ce6c68bb11e6fe5",
+      "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
+      "waargenomen": "irak: €60.25 | irak: €60.00 | irak: €45.00",
+      "zekerheid": "hoog",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "bbf0cee2b4b407435db40bce7f38411363fc67c1",
+      "eigenaar": "webredactie",
+      "elders": "€ 1.139,00",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "kenia"
+      },
+      "regel_id": "bedragnotatie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 32,
+        "eens": 1,
+        "n": 33
+      },
+      "titel": "32 bedragen in afwijkende notatie op kenia",
+      "toelichting": "112 van de 114 landenpagina's gebruikt Nederlandse notatie. De bedragen zelf zijn gelijk; alleen de schrijfwijze wijkt af.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia"
+      ],
+      "vingerafdruk": "047e035d1182cad646c0d44861f7de6ccbbea7d4",
+      "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
+      "waargenomen": "kenia: €169.15 | kenia: €147.40 | kenia: €169.15",
+      "zekerheid": "hoog",
+      "zusters": []
+    }
+  ],
+  "datum": "2026-09-15",
+  "familie": "consulaire-tarieven",
+  "waarschuwingen": []
+}

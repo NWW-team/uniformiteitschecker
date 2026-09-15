@@ -1,0 +1,374 @@
+<title>Uniformiteitssignalen NederlandWereldwijd</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ground: #eef1f4;
+    --surface: #ffffff;
+    --surface-zacht: #f7f9fb;
+    --ink: #16202b;
+    --ink-zacht: #4a5a6a;
+    --ink-flets: #74838f;
+    --rand: #d3dbe3;
+    --rand-zacht: #e4eaf0;
+    --accent: #1c4f8f;
+    --voorleggen: #9b2c2c;
+    --voorleggen-vlak: #fbf0ef;
+    --zelf: #0f6e5c;
+    --zelf-vlak: #eef6f3;
+    --serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #10171f;
+      --surface: #18212b;
+      --surface-zacht: #1e2832;
+      --ink: #e8edf2;
+      --ink-zacht: #a9b8c6;
+      --ink-flets: #7d8c99;
+      --rand: #2c3947;
+      --rand-zacht: #243040;
+      --accent: #7bacea;
+      --voorleggen: #e9908c;
+      --voorleggen-vlak: #2b1d1f;
+      --zelf: #5fc3ac;
+      --zelf-vlak: #162724;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #10171f;
+    --surface: #18212b;
+    --surface-zacht: #1e2832;
+    --ink: #e8edf2;
+    --ink-zacht: #a9b8c6;
+    --ink-flets: #7d8c99;
+    --rand: #2c3947;
+    --rand-zacht: #243040;
+    --accent: #7bacea;
+    --voorleggen: #e9908c;
+    --voorleggen-vlak: #2b1d1f;
+    --zelf: #5fc3ac;
+    --zelf-vlak: #162724;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .blad {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding-block: clamp(1.5rem, 4vw, 3rem);
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* ---- Documentkop ---- */
+  .kop { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .inleiding {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--ink-zacht);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rand);
+    font-size: 0.85rem;
+  }
+  .meta div { display: flex; flex-direction: column; }
+  .meta dt {
+    color: var(--ink-flets);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .meta dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }
+
+  /* ---- Waarschuwingen ---- */
+  .waarschuwing {
+    border-left: 3px solid var(--voorleggen);
+    background: var(--voorleggen-vlak);
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  .waarschuwing ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+  /* ---- Groep per eigenaar ---- */
+  .groep { display: flex; flex-direction: column; gap: 1rem; }
+
+  .groepkop {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .groepkop h2 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .aantal {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.1rem 0.45rem;
+    border-radius: 3px;
+    background: var(--surface-zacht);
+    border: 1px solid var(--rand);
+    color: var(--ink-zacht);
+  }
+  .groeptoelichting {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-flets);
+    max-width: 62ch;
+  }
+
+  /* ---- Bevinding ---- */
+  .bevinding {
+    background: var(--surface);
+    border: 1px solid var(--rand);
+    border-left: 3px solid var(--streep);
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .bevinding.voorleggen { --streep: var(--voorleggen); }
+  .bevinding.zelf { --streep: var(--zelf); }
+
+  .bevinding h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.12rem 0.45rem;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+  }
+  .chip.soort-inhoudelijk { color: var(--voorleggen); }
+  .chip.soort-schrijfrichtlijn { color: var(--zelf); }
+  .chip.neutraal { color: var(--ink-flets); }
+
+  /* Het bewijs: afwijkende waarde naast de waarde elders. */
+  .bewijs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--rand-zacht);
+    border: 1px solid var(--rand-zacht);
+  }
+  .kolom { background: var(--surface-zacht); padding: 0.7rem 0.85rem; }
+  .kolom h4 {
+    margin: 0 0 0.4rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-flets);
+    font-weight: 600;
+  }
+  .kolom ul { margin: 0; padding: 0; list-style: none; }
+  .kolom li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.15rem 0;
+    font-size: 0.88rem;
+  }
+  .land { color: var(--ink-zacht); }
+  .waarde {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .kolom.afwijkend .waarde { color: var(--voorleggen); }
+
+  .toelichting { margin: 0; font-size: 0.88rem; color: var(--ink-zacht); }
+
+  .actie {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rand-zacht);
+  }
+  .actie span {
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .paginas { display: flex; flex-direction: column; gap: 0.2rem; }
+  .paginas a {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    overflow-wrap: anywhere;
+  }
+  .paginas a:hover, .paginas a:focus-visible { border-bottom-color: currentColor; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- Leeg ---- */
+  .leeg {
+    background: var(--surface);
+    border: 1px solid var(--rand);
+    padding: 1.5rem;
+  }
+  .leeg h2 { font-family: var(--serif); margin: 0 0 0.4rem; font-size: 1.15rem; }
+  .leeg p { margin: 0; color: var(--ink-zacht); max-width: 60ch; }
+
+  footer {
+    border-top: 1px solid var(--rand);
+    padding-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-flets);
+    max-width: 62ch;
+  }
+</style>
+
+<div class="blad">
+  <header class="kop">
+    <p class="eyebrow">Uniformiteitschecker &middot; webredactie</p>
+    <h1>Afwijkingen in de consulaire tarieven</h1>
+    <p class="inleiding">
+      Deze pagina's horen hetzelfde te zeggen. Waar &eacute;&eacute;n land afwijkt van de
+      rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
+      bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
+    </p>
+    <dl class="meta">
+      <div><dt>Familie</dt><dd>{{ familie }}</dd></div>
+      <div><dt>Gecontroleerd</dt><dd>{{ datum }}</dd></div>
+      <div><dt>Pagina's</dt><dd>{{ aantal_paginas }}</dd></div>
+      <div><dt>Signalen</dt><dd>{{ bevindingen|length }}</dd></div>
+    </dl>
+  </header>
+
+  {% if waarschuwingen %}
+  <section class="waarschuwing">
+    <strong>Let op bij het lezen van dit rapport</strong>
+    <ul>
+      {% for w in waarschuwingen %}<li>{{ w }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if not bevindingen %}
+  <section class="leeg">
+    <h2>Geen afwijkingen gevonden</h2>
+    <p>
+      Op {{ aantal_paginas }} pagina's van de familie <em>{{ familie }}</em> week geen
+      enkele waarde af van wat de zusterpagina's zeggen. Dat betekent niet dat de pagina's
+      foutloos zijn &mdash; alleen dat deze controle niets aantrof.
+    </p>
+  </section>
+  {% endif %}
+
+  {% for groep in groepen %}
+  <section class="groep">
+    <div class="groepkop">
+      <h2>{{ groep.titel }}</h2>
+      <span class="aantal">{{ groep.bevindingen|length }}</span>
+    </div>
+    <p class="groeptoelichting">{{ groep.toelichting }}</p>
+
+    {% for b in groep.bevindingen %}
+    <article class="bevinding {{ groep.klasse }}">
+      <div>
+        <h3>{{ b.titel }}</h3>
+        <div class="chips">
+          <span class="chip soort-{{ b.soort }}">{{ b.soort }}</span>
+          <span class="chip neutraal">zekerheid {{ b.zekerheid }}</span>
+          {% if b.telling %}
+          <span class="chip neutraal">{{ b.telling.eens }} van {{ b.telling.n }} eens</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="bewijs">
+        <div class="kolom afwijkend">
+          <h4>Wijkt af {% if b.varianten|length > 1 %}({{ b.varianten|length }} pagina's){% endif %}</h4>
+          <ul>
+            {% for v in b.varianten %}
+            <li><span class="land">{{ v.variant }}</span><span class="waarde">{{ v.waarde }}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="kolom">
+          <h4>Staat elders</h4>
+          <ul>
+            {% for z in b.zusters %}
+            <li><span class="land">{{ z.variant }}</span><span class="waarde">{{ z.waarde }}</span></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {% if b.toelichting %}<p class="toelichting">{{ b.toelichting }}</p>{% endif %}
+
+      <div class="paginas">
+        {% for u in b.urls %}<a href="{{ u }}">{{ u }}</a>{% endfor %}
+      </div>
+
+      <p class="actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
+    </article>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  <footer>
+    Gegenereerd door de uniformiteitschecker op basis van de publieke sitemap van
+    nederlandwereldwijd.nl. De checker signaleert en lost niets op: een afwijking kan ook
+    een legitiem landspecifiek geval zijn. Verifieer altijd via de vindplaats voordat je
+    iets wijzigt.
+  </footer>
+</div>

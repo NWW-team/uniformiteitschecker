@@ -1,0 +1,24 @@
+# Onderdrukte bevindingen: signalen die de redactie heeft beoordeeld als legitiem.
+#
+# Nog niet in gebruik -- de detectie wordt eerst met de redactie doorgelopen. De opzet
+# staat hier omdat het vingerafdrukcontract er nu al op is ontworpen:
+#
+#   vingerafdruk  identiteit van "deze plek, door deze regel gemarkeerd". Bewust ZONDER
+#                 de waargenomen waarde, zodat een entry blijft werken als de tekst
+#                 licht verandert.
+#   bewijs_hash   optioneel. Pin je die vast, dan vervalt de onderdrukking automatisch
+#                 zodra de content wijzigt en komt het signaal terug. Dat voorkomt dat
+#                 deze lijst op termijn echte fouten gaat verbergen.
+#
+# Elke entry heeft een reden, een naam en een datum. Een onderdrukking zonder
+# verantwoording is niet te beoordelen door de volgende redacteur.
+#
+# Voorbeeld:
+#   - vingerafdruk: c6f7dc66c3107eef...
+#     bewijs_hash: b0c2...
+#     reden: "Landspecifiek tarief, bevestigd door consulaire zaken"
+#     door: naam@minbuza.nl
+#     datum: 2026-09-20
+#     vervalt: 2027-09-20      # optioneel; dwingt herbeoordeling
+
+onderdruk: []
