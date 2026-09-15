@@ -16,10 +16,12 @@ bron van waarheid nodig is.
 
 Twee soorten afwijking, met verschillende eigenaar:
 
-| Soort | Voorbeeld | Wie handelt |
-|---|---|---|
-| `schrijfrichtlijn` | Kenia noteert `€169.15` waar de rest `€ 169,15` schrijft | webredactie: zelf verbeteren |
-| `inhoudelijk` | Brazilië noemt `€ 26,00` waar 85 landen `€ 27,00` zeggen | kenniseigenaar: voorleggen |
+| Soort | Regel | Voorbeeld | Wie handelt |
+|---|---|---|---|
+| `inhoudelijk` | `zustertabel_waarden` | Brazilië noemt `€ 26,00` waar 85 landen `€ 27,00` zeggen | kenniseigenaar: voorleggen |
+| `schrijfrichtlijn` | `bedragnotatie` | Kenia noteert `€169.15` waar de rest `€ 169,15` schrijft | webredactie: zelf verbeteren |
+| `schrijfrichtlijn` | `labeldrift` | `Schengenvisum kinderen 6-11 jaar` naast `6 t/m 11 jaar` | webredactie: zelf verbeteren |
+| `schrijfrichtlijn` | `eigen_terminologie` | Indonesië gebruikt `Verklaring omtrent Nederlandse nationaliteit` waar de rest een andere term heeft | webredactie: zelf verbeteren |
 
 Geld en juridische voorwaarden wijzig je niet op statistiek, dus bij een inhoudelijke
 afwijking zegt de app nooit wat fout is — alleen dat het afwijkt, met het bewijs erbij.
@@ -80,13 +82,29 @@ gaf in de verkenning ~90 "tegenstrijdigheden" waarvan er één echt was. Wat dat
   visumrijen omdat het Schengen is, en 48% van de landenpagina's heeft geen tarieftabel.
 - **Bewijs meegeven.** Elke bevinding toont de waarde op zusterpagina's, zodat
   verifiëren tien seconden kost. Vertrouwen komt uit controleerbaarheid.
+- **Geen fuzzy matching bij het samenvoegen van rijen.** Gemeten: `difflib` op ratio
+  >= 0.85 voegt in deze familie twaalf labelparen samen waarvan elf fout, zoals
+  `Paspoort meerderjarige` met `minderjarige` en `Naturalisatie: standaard` met
+  `verlaagd`. Samengevoegde rijen gaan de waardendetector in, dus zo'n fout laat de app
+  tegenstrijdigheden *verzinnen*. Vandaar de regel die het ontwerp stuurt:
+  **gelijkenis mag een vraag stellen, nooit een vergelijking maken.** `labeldrift.py`
+  voegt samen en gebruikt daarom alleen deterministische regels; `terminologie.py`
+  voegt niets samen en mag daar wel een suggestie bij doen.
+- **Negeerlijst die zichzelf laat verlopen.** Een beoordeelde bevinding blijft weg,
+  maar de onderdrukking vervalt automatisch zodra de inhoud van de pagina wijzigt of
+  een `vervalt`-datum verstrijkt. Zonder dat verbergt zo'n lijst op termijn echte
+  fouten. Onderdrukte signalen staan altijd zichtbaar onderaan het rapport.
 
 ## Status
 
-Eerste versie: één familie (`consulaire-tarieven`), handmatig te starten. Volgende
-stappen staan in het bouwplan — negeerlijst in gebruik nemen, labeldrift, een tweede
-familie, terminologielexicon over de hele site, en daarna NL↔EN en semantische
-tegenstrijdigheid.
+Eén familie (`consulaire-tarieven`, 218 pagina's), handmatig te starten. Laatste run:
+**49 signalen** — 24 inhoudelijk (voorleggen) en 25 schrijfrichtlijn (zelf verbeteren).
+
+Volgende stappen: een tweede familie om te bewijzen dat de aanpak ook zonder tabellen
+werkt, een terminologielexicon voor lopende tekst (vergt de schrijfwijzer van de
+redactie), wekelijks automatisch draaien, en daarna NL↔EN en semantische
+tegenstrijdigheid. De NL- en EN-site hebben geen `hreflang`-tags, dus dat koppelen
+vraagt een eigen slug-mapping.
 
 Twee dingen die buiten de code geregeld moeten worden: afstemmen met de beheerder van
 nederlandwereldwijd.nl voordat we structureel wekelijks 218 pagina's ophalen, en

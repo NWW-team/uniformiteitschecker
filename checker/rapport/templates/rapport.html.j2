@@ -219,18 +219,25 @@
   .kolom li {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 0.15rem 0;
+    gap: 0.4rem 1rem;
+    flex-wrap: wrap;
+    padding: 0.2rem 0;
     font-size: 0.88rem;
   }
-  .land { color: var(--ink-zacht); }
+  .land {
+    color: var(--ink-zacht);
+    overflow-wrap: anywhere;
+  }
   .waarde {
     font-family: var(--mono);
     font-variant-numeric: tabular-nums;
     font-weight: 500;
-    white-space: nowrap;
+    text-align: right;
+    overflow-wrap: anywhere;
   }
-  .kolom.afwijkend .waarde { color: var(--voorleggen); }
+  /* Alleen bij inhoudelijke afwijkingen de waarde markeren: bij een schrijfrichtlijn
+     is de afwijkende vorm geen alarm, en dan leest kleur als valse urgentie. */
+  .bevinding.voorleggen .kolom.afwijkend .waarde { color: var(--voorleggen); }
 
   .toelichting { margin: 0; font-size: 0.88rem; color: var(--ink-zacht); }
 
@@ -238,8 +245,6 @@
     margin: 0;
     font-size: 0.9rem;
     font-weight: 500;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--rand-zacht);
   }
   .actie span {
     font-weight: 600;
@@ -257,6 +262,39 @@
   }
   .paginas a:hover, .paginas a:focus-visible { border-bottom-color: currentColor; }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .voet {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--rand-zacht);
+  }
+  .voet .actie { border-top: 0; padding-top: 0; }
+  .vinger {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-flets);
+    user-select: all;
+  }
+
+  /* ---- Onderdrukt ---- */
+  .onderdrukt {
+    background: var(--surface-zacht);
+    border: 1px solid var(--rand);
+    padding: 1.1rem 1.25rem;
+  }
+  .onderdrukt h2 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    margin: 0 0 0.4rem;
+  }
+  .onderdrukt p { margin: 0 0 0.6rem; font-size: 0.88rem; color: var(--ink-zacht); max-width: 62ch; }
+  .onderdrukt ul { margin: 0; padding-left: 1.2rem; font-size: 0.88rem; color: var(--ink-zacht); }
+  .onderdrukt code { font-family: var(--mono); font-size: 0.85em; }
 
   /* ---- Leeg ---- */
   .leeg {
@@ -336,21 +374,27 @@
 
       <div class="bewijs">
         <div class="kolom afwijkend">
-          <h4>Wijkt af {% if b.varianten|length > 1 %}({{ b.varianten|length }} pagina's){% endif %}</h4>
+          <h4>{{ b.kop_afwijkend }}{% if b.varianten|length > 1 %} ({{ b.varianten|length }}){% endif %}</h4>
           <ul>
             {% for v in b.varianten %}
             <li><span class="land">{{ v.variant }}</span><span class="waarde">{{ v.waarde }}</span></li>
             {% endfor %}
           </ul>
         </div>
+        {% if b.kop_elders %}
         <div class="kolom">
-          <h4>Staat elders</h4>
+          <h4>{{ b.kop_elders }}</h4>
           <ul>
+            {% if b.zusters %}
             {% for z in b.zusters %}
             <li><span class="land">{{ z.variant }}</span><span class="waarde">{{ z.waarde }}</span></li>
             {% endfor %}
+            {% else %}
+            <li><span class="land">gangbaar</span><span class="waarde">{{ b.elders }}</span></li>
+            {% endif %}
           </ul>
         </div>
+        {% endif %}
       </div>
 
       {% if b.toelichting %}<p class="toelichting">{{ b.toelichting }}</p>{% endif %}
@@ -359,11 +403,29 @@
         {% for u in b.urls %}<a href="{{ u }}">{{ u }}</a>{% endfor %}
       </div>
 
-      <p class="actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
+      <div class="voet">
+        <p class="actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
+        <p class="vinger" title="Gebruik deze code om de bevinding op de negeerlijst te zetten">{{ b.vingerafdruk[:12] }}</p>
+      </div>
     </article>
     {% endfor %}
   </section>
   {% endfor %}
+
+  {% if onderdrukt %}
+  <section class="onderdrukt">
+    <h2>{{ onderdrukt|length }} signalen onderdrukt</h2>
+    <p>
+      Deze zijn eerder beoordeeld en staan in <code>regels/negeerlijst.yaml</code>. Ze
+      komen automatisch terug zodra de inhoud van de pagina wijzigt.
+    </p>
+    <ul>
+      {% for o in onderdrukt %}
+      <li><strong>{{ o.titel }}</strong>{% if o.reden %} &mdash; {{ o.reden }}{% endif %}{% if o.door %} <em>({{ o.door }})</em>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 
   <footer>
     Gegenereerd door de uniformiteitschecker op basis van de publieke sitemap van

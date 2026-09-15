@@ -21,6 +21,13 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus",
+          "variant": "cyprus",
+          "waarde": "€ 90,00"
+        }
+      ],
       "vingerafdruk": "0f7f5e68e8c4bf6227991fc1b2f770fe46ff668d",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cyprus: € 90,00",
@@ -62,6 +69,13 @@
       "toelichting": "Op 78 van de 79 landenpagina's met deze rij staat € 40,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus",
+          "variant": "cyprus",
+          "waarde": "€ 45,00"
+        }
       ],
       "vingerafdruk": "24e54cb788e71cc06fced3421268621a60313363",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -107,10 +121,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 168,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 165,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 168,00"
+        }
+      ],
       "vingerafdruk": "9fd5d4fb922cfef4db601ee11f12388378120ddd",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 168,00 | iran: € 165,00 | suriname: € 168,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -151,10 +182,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 129,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 125,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 129,00"
+        }
+      ],
       "vingerafdruk": "050a896b31c25fc79c34df82ccfa64608e411f6f",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 129,00 | iran: € 125,00 | suriname: € 129,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -195,10 +243,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 60,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 60,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 60,00"
+        }
+      ],
       "vingerafdruk": "85d1e488712599336cf0da63c3d90135d2c15b10",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 60,00 | iran: € 60,00 | suriname: € 60,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
@@ -237,6 +302,18 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 25,00"
+        }
       ],
       "vingerafdruk": "55fac3428de96f45a26d62b4cf9e9201808d67eb",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -282,10 +359,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 25,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 26,00"
+        }
+      ],
       "vingerafdruk": "176bbbec410b5749f4482d79207bfbc91284cb6a",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 26,00 | iran: € 25,00 | suriname: € 26,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
@@ -323,6 +417,13 @@
       "toelichting": "Op 84 van de 85 landenpagina's met deze rij staat € 90,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus",
+          "variant": "cyprus",
+          "waarde": "€ 80,00"
+        }
       ],
       "vingerafdruk": "266e0d66f2d9a47a1e254436d5b802d110422276",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -366,6 +467,13 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cyprus",
+          "variant": "cyprus",
+          "waarde": "€ 40,00"
+        }
+      ],
       "vingerafdruk": "ad6a5e602c860d7d7ae2910d68573da944bd0525",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cyprus: € 40,00",
@@ -407,6 +515,13 @@
       "toelichting": "Op 94 van de 95 landenpagina's met deze rij staat € 1.139,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 1.135,00"
+        }
       ],
       "vingerafdruk": "e515479866a94ab6446850c91bb6c1c0392799b4",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -451,10 +566,22 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/egypte",
+          "variant": "egypte",
+          "waarde": "€ 846,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 845,00"
+        }
+      ],
       "vingerafdruk": "c6f1ec61e0495e5c67a6cbf4de1744afb4d4c3f7",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "egypte: € 846,00 | iran: € 845,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -492,6 +619,13 @@
       "toelichting": "Op 93 van de 94 landenpagina's met deze rij staat € 1.454,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 1.450,00"
+        }
       ],
       "vingerafdruk": "92935c66d1ce11b466556ba10fc9a50853215754",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -535,6 +669,13 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 1.160,00"
+        }
+      ],
       "vingerafdruk": "415074bf4ed881ccab5d964f544c460b56adfa72",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "iran: € 1.160,00",
@@ -577,6 +718,13 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 165,00"
+        }
+      ],
       "vingerafdruk": "a6aab1fd60a48046996f2db733baa8924d7c7d9d",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "iran: € 165,00",
@@ -618,6 +766,13 @@
       "toelichting": "Op 93 van de 94 landenpagina's met deze rij staat € 241,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 240,00"
+        }
       ],
       "vingerafdruk": "67bdfaf533f4b8897b37dcac259e5d19996ec08b",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -662,10 +817,22 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
+          "variant": "bangladesh",
+          "waarde": "€ 395,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 410,00"
+        }
+      ],
       "vingerafdruk": "c6f7dc66c3107eef98fb63b05864523c5ee81723",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "bangladesh: € 395,00 | iran: € 410,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -708,6 +875,38 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
+          "variant": "bangladesh",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/belgie",
+          "variant": "belgie",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie",
+          "variant": "brazilie",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije",
+          "variant": "bulgarije",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 25,00"
+        }
       ],
       "vingerafdruk": "e922180f635e668e8cebfea53fece3817e7bc1e6",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -753,10 +952,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 169,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 165,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 169,00"
+        }
+      ],
       "vingerafdruk": "d44859515d6e207402826232ead095e262fd496b",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 169,00 | iran: € 165,00 | suriname: € 169,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -797,10 +1013,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 147,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 145,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 147,00"
+        }
+      ],
       "vingerafdruk": "b6abb480dd151694d3cb3d275687f4dcf29a4591",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 147,00 | iran: € 145,00 | suriname: € 147,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -838,6 +1071,13 @@
       "toelichting": "Op 81 van de 82 landenpagina's met deze rij staat € 35,00. Dit kan ook een legitiem landspecifiek tarief zijn.",
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili"
+      ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili",
+          "variant": "chili",
+          "waarde": "€ 45,00"
+        }
       ],
       "vingerafdruk": "c63a5bf6ba4a9a0dbba48c841d7a65b507aed92a",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
@@ -883,10 +1123,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 27,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 25,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 27,00"
+        }
+      ],
       "vingerafdruk": "f9a070808dd180290237b493b615d56abf1ea674",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 27,00 | iran: € 25,00 | suriname: € 27,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -927,10 +1184,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 26,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 25,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 26,00"
+        }
+      ],
       "vingerafdruk": "f28bcdf3ce7ba4305b446c03c95150943c0f0655",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 26,00 | iran: € 25,00 | suriname: € 26,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
@@ -971,10 +1245,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 169,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 165,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 169,00"
+        }
+      ],
       "vingerafdruk": "976f22a3b694249a86b67e644928b67a4758744e",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 169,00 | iran: € 165,00 | suriname: € 169,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -1015,10 +1306,27 @@
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname"
       ],
+      "varianten": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+          "variant": "cuba",
+          "waarde": "€ 147,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/iran",
+          "variant": "iran",
+          "waarde": "€ 145,00"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/suriname",
+          "variant": "suriname",
+          "waarde": "€ 147,00"
+        }
+      ],
       "vingerafdruk": "b048a36d6803400470c3679f865c16b57d78266c",
       "voorgestelde_actie": "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren.",
       "waargenomen": "cuba: € 147,00 | iran: € 145,00 | suriname: € 147,00",
-      "zekerheid": "middel",
+      "zekerheid": "hoog",
       "zusters": [
         {
           "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
@@ -1057,6 +1365,20 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak"
       ],
+      "varianten": [
+        {
+          "variant": "irak",
+          "waarde": "€60.25"
+        },
+        {
+          "variant": "irak",
+          "waarde": "€60.00"
+        },
+        {
+          "variant": "irak",
+          "waarde": "€45.00"
+        }
+      ],
       "vingerafdruk": "8fe35f5a7d79479c93ba3cb69ce6c68bb11e6fe5",
       "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
       "waargenomen": "irak: €60.25 | irak: €60.00 | irak: €45.00",
@@ -1083,14 +1405,1186 @@
       "urls": [
         "https://www.nederlandwereldwijd.nl/consulaire-tarieven/kenia"
       ],
+      "varianten": [
+        {
+          "variant": "kenia",
+          "waarde": "€169.15"
+        },
+        {
+          "variant": "kenia",
+          "waarde": "€147.40"
+        },
+        {
+          "variant": "kenia",
+          "waarde": "€169.15"
+        }
+      ],
       "vingerafdruk": "047e035d1182cad646c0d44861f7de6ccbbea7d4",
       "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
       "waargenomen": "kenia: €169.15 | kenia: €147.40 | kenia: €169.15",
       "zekerheid": "hoog",
       "zusters": []
+    },
+    {
+      "bewijs_hash": "8282237953cbcec9a989f926bf4dc8ccf9ecf028",
+      "eigenaar": "webredactie",
+      "elders": "Verklaring 'afschrift/kopie is conform origineel'",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Verklaring 'afschrift/kopie is conform origineel'",
+        "regel": "schrijfwijze"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 99,
+        "n": 102
+      },
+      "titel": "Zelfde rij, verschillende schrijfwijze: Verklaring 'afschrift/kopie is conform origineel'",
+      "toelichting": "99 pagina's schrijven \"Verklaring 'afschrift/kopie is conform origineel'\". 2x 'Verklaring “afschrift/kopie is conform origineel”'; 1x \"Verklaring 'afschrift/kopie is conform origineel\".",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/estland",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/letland",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/saoedi-arabie"
+      ],
+      "varianten": [
+        {
+          "variant": "2 pagina's",
+          "waarde": "Verklaring “afschrift/kopie is conform origineel”"
+        },
+        {
+          "variant": "saoedi-arabie",
+          "waarde": "Verklaring 'afschrift/kopie is conform origineel"
+        }
+      ],
+      "vingerafdruk": "f1809bb89a27e732885091b9bb8d81d742c8faef",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "2 pagina's: Verklaring “afschrift/kopie is conform origineel” | saoedi-arabie: Verklaring 'afschrift/kopie is conform origineel",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "Verklaring 'afschrift/kopie is conform origineel'"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Verklaring 'afschrift/kopie is conform origineel'"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Verklaring 'afschrift/kopie is conform origineel'"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "181be5eca10397c2b4d14dc1f5e268bbda0335dd",
+      "eigenaar": "webredactie",
+      "elders": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*",
+        "regel": "schrijfwijze"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 91,
+        "n": 92
+      },
+      "titel": "Zelfde rij, verschillende schrijfwijze: Toeslag aanvraag paspoort of ID-kaart op andere locatie*",
+      "toelichting": "91 pagina's schrijven 'Toeslag aanvraag paspoort of ID-kaart op andere locatie*'. 1x 'Toeslag aanvraag paspoort of ID-kaart op andere locatie**'.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/nieuw-zeeland"
+      ],
+      "varianten": [
+        {
+          "variant": "nieuw-zeeland",
+          "waarde": "Toeslag aanvraag paspoort of ID-kaart op andere locatie**"
+        }
+      ],
+      "vingerafdruk": "89a9ade7f8bf914f2d9985fd63947e6f3cbcd48d",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "nieuw-zeeland: Toeslag aanvraag paspoort of ID-kaart op andere locatie**",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Toeslag aanvraag paspoort of ID-kaart op andere locatie*"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "137443eb5a93840d03378a436c8848b4530a13f4",
+      "eigenaar": "webredactie",
+      "elders": "Schengenvisum laag tarief**",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Schengenvisum laag tarief**",
+        "regel": "schrijfwijze"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 6,
+        "eens": 76,
+        "n": 82
+      },
+      "titel": "Zelfde rij, verschillende schrijfwijze: Schengenvisum laag tarief**",
+      "toelichting": "76 pagina's schrijven 'Schengenvisum laag tarief**'. 3x 'Schengenvisum laag tarief*'; 3x 'Schengenvisum laag tarief* *'.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/kazachstan",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/myanmar",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/nieuw-zeeland",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/trinidad-en-tobago",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/verenigd-koninkrijk",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/verenigde-arabische-emiraten"
+      ],
+      "varianten": [
+        {
+          "variant": "3 pagina's",
+          "waarde": "Schengenvisum laag tarief*"
+        },
+        {
+          "variant": "3 pagina's",
+          "waarde": "Schengenvisum laag tarief* *"
+        }
+      ],
+      "vingerafdruk": "5d82db13318913d6a77aaed48e5a234abf8a42b8",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "3 pagina's: Schengenvisum laag tarief* | 3 pagina's: Schengenvisum laag tarief* *",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Schengenvisum laag tarief**"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Schengenvisum laag tarief**"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Schengenvisum laag tarief**"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "97c22858ffc191345488f95253f4025ff7908667",
+      "eigenaar": "webredactie",
+      "elders": "Inburgeringsexamen (voor naturalisatie)",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Inburgeringsexamen (voor naturalisatie)",
+        "regel": "schrijfwijze"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 10,
+        "eens": 80,
+        "n": 90
+      },
+      "titel": "Zelfde rij, verschillende schrijfwijze: Inburgeringsexamen (voor naturalisatie)",
+      "toelichting": "80 pagina's schrijven 'Inburgeringsexamen (voor naturalisatie)'. 10x 'Inburgeringsexamen voor naturalisatie'.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/colombia",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/costa-rica",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/dominicaanse-republiek",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/mexico",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/peru",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/spanje",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/venezuela"
+      ],
+      "varianten": [
+        {
+          "variant": "10 pagina's",
+          "waarde": "Inburgeringsexamen voor naturalisatie"
+        }
+      ],
+      "vingerafdruk": "6da4c4199f6364db4a83e2a1db9c9992ea79f5e8",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "10 pagina's: Inburgeringsexamen voor naturalisatie",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Inburgeringsexamen (voor naturalisatie)"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Inburgeringsexamen (voor naturalisatie)"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/australie",
+          "variant": "australie",
+          "waarde": "Inburgeringsexamen (voor naturalisatie)"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "d5a7fe6ca8291393c440430bca8e3879cc76c281",
+      "eigenaar": "webredactie",
+      "elders": "Schengenvisum kinderen 6 t/m 11 jaar",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Schengenvisum kinderen 6 t/m 11 jaar",
+        "regel": "getalbereik"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 22,
+        "eens": 63,
+        "n": 85
+      },
+      "titel": "Zelfde leeftijdsbereik, verschillend genoteerd: Schengenvisum kinderen 6 t/m 11 jaar",
+      "toelichting": "63 pagina's schrijven 'Schengenvisum kinderen 6 t/m 11 jaar'. 20x 'Schengenvisum kinderen 6-11 jaar'; 2x 'Schengenvisum kinderen 6 - 11 jaar'.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/benin",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/canada",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/chili",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/colombia",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/congo-democratische-republiek",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/costa-rica",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/cuba",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/dominicaanse-republiek",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/frankrijk",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/maleisie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/mali",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/marokko",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/mexico",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/peru",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/senegal",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/spanje",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/tunesie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/venezuela"
+      ],
+      "varianten": [
+        {
+          "variant": "20 pagina's",
+          "waarde": "Schengenvisum kinderen 6-11 jaar"
+        },
+        {
+          "variant": "2 pagina's",
+          "waarde": "Schengenvisum kinderen 6 - 11 jaar"
+        }
+      ],
+      "vingerafdruk": "8821a8139b3dee92f8a605382f822fabfbd84ba3",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "20 pagina's: Schengenvisum kinderen 6-11 jaar | 2 pagina's: Schengenvisum kinderen 6 - 11 jaar",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/australie",
+          "variant": "australie",
+          "waarde": "Schengenvisum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bangladesh",
+          "variant": "bangladesh",
+          "waarde": "Schengenvisum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bosnie-en-herzegovina",
+          "variant": "bosnie-en-herzegovina",
+          "waarde": "Schengenvisum kinderen 6 t/m 11 jaar"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "1c0378b0e223c058c6eac0cc6b6aead091bec284",
+      "eigenaar": "webredactie",
+      "elders": "Caribisch visum kinderen 6 t/m 11 jaar",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Caribisch visum kinderen 6 t/m 11 jaar",
+        "regel": "getalbereik"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 79,
+        "n": 82
+      },
+      "titel": "Zelfde leeftijdsbereik, verschillend genoteerd: Caribisch visum kinderen 6 t/m 11 jaar",
+      "toelichting": "79 pagina's schrijven 'Caribisch visum kinderen 6 t/m 11 jaar'. 2x 'Caribisch visum kinderen 6-11 jaar'; 1x 'Caribisch visum kinderen 6 -11 jaar'.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/peru",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/roemenie",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/verenigde-arabische-emiraten"
+      ],
+      "varianten": [
+        {
+          "variant": "2 pagina's",
+          "waarde": "Caribisch visum kinderen 6-11 jaar"
+        },
+        {
+          "variant": "verenigde-arabische-emiraten",
+          "waarde": "Caribisch visum kinderen 6 -11 jaar"
+        }
+      ],
+      "vingerafdruk": "ea731a165d29e23ffc1930b5df9b17f5fb68c977",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "2 pagina's: Caribisch visum kinderen 6-11 jaar | verenigde-arabische-emiraten: Caribisch visum kinderen 6 -11 jaar",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Caribisch visum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Caribisch visum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Caribisch visum kinderen 6 t/m 11 jaar"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "6955f02638c4a197f827b0c509e55f3de6fb803e",
+      "eigenaar": "webredactie",
+      "elders": "Zakenpaspoort",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Zakenpaspoort",
+        "regel": "toelichting"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 90,
+        "n": 91
+      },
+      "titel": "Zelfde rij, op sommige pagina's met een toelichting erbij: Zakenpaspoort",
+      "toelichting": "90 pagina's schrijven 'Zakenpaspoort'. 1x \"Zakenpaspoort (dubbel aantal visapagina's)\". Een toelichting tussen haakjes kan ook bedoeld zijn: controleer of het echt om dezelfde rij gaat.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/duitsland"
+      ],
+      "varianten": [
+        {
+          "variant": "duitsland",
+          "waarde": "Zakenpaspoort (dubbel aantal visapagina's)"
+        }
+      ],
+      "vingerafdruk": "e13e6cc3de0de325f740496644f5ee2bd18db655",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "duitsland: Zakenpaspoort (dubbel aantal visapagina's)",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Zakenpaspoort"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Zakenpaspoort"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Zakenpaspoort"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "d224c360922145cec9ef814199bc5a408f3fbeff",
+      "eigenaar": "webredactie",
+      "elders": "Zakenpaspoort minderjarige",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Zakenpaspoort minderjarige",
+        "regel": "toelichting"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 88,
+        "n": 89
+      },
+      "titel": "Zelfde rij, op sommige pagina's met een toelichting erbij: Zakenpaspoort minderjarige",
+      "toelichting": "88 pagina's schrijven 'Zakenpaspoort minderjarige'. 1x \"Zakenpaspoort minderjarige (dubbel aantal visapagina's)\". Een toelichting tussen haakjes kan ook bedoeld zijn: controleer of het echt om dezelfde rij gaat.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/duitsland"
+      ],
+      "varianten": [
+        {
+          "variant": "duitsland",
+          "waarde": "Zakenpaspoort minderjarige (dubbel aantal visapagina's)"
+        }
+      ],
+      "vingerafdruk": "27396d0e53eab765451dac9b6a9425012c2d40fa",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "duitsland: Zakenpaspoort minderjarige (dubbel aantal visapagina's)",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Zakenpaspoort minderjarige"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Zakenpaspoort minderjarige"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Zakenpaspoort minderjarige"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "3c3cf279196b86dbd1a9f00904a4c712a2687a39",
+      "eigenaar": "webredactie",
+      "elders": "Caribisch visum",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "gangbaar_label": "Caribisch visum",
+        "regel": "toelichting"
+      },
+      "regel_id": "labeldrift",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 88,
+        "n": 90
+      },
+      "titel": "Zelfde rij, op sommige pagina's met een toelichting erbij: Caribisch visum",
+      "toelichting": "88 pagina's schrijven 'Caribisch visum'. 2x 'Caribisch visum (max 30 dagen)'. Een toelichting tussen haakjes kan ook bedoeld zijn: controleer of het echt om dezelfde rij gaat.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/hongkong",
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/servie"
+      ],
+      "varianten": [
+        {
+          "variant": "2 pagina's",
+          "waarde": "Caribisch visum (max 30 dagen)"
+        }
+      ],
+      "vingerafdruk": "1efb095d548a55e612f0cae037ef56cd1a7d3337",
+      "voorgestelde_actie": "Kies welke formulering de standaard is en pas de afwijkende pagina('s) aan.",
+      "waargenomen": "2 pagina's: Caribisch visum (max 30 dagen)",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "Caribisch visum"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "Caribisch visum"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/argentinie",
+          "variant": "argentinie",
+          "waarde": "Caribisch visum"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "d904d63c83a0b388822568d3f944c110c0c67698",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "bulgarije"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 34,
+        "n": 37
+      },
+      "titel": "3 eigen rijlabels op bulgarije die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 37 rijlabels op deze pagina komen er 3 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/bulgarije"
+      ],
+      "varianten": [
+        {
+          "variant": "Naturalisatie: meenaturaliserende minderjarig",
+          "waarde": "lijkt op: Naturalisatie: meenaturaliserende minderjarige"
+        },
+        {
+          "variant": "Visumondersteuningsbrief",
+          "waarde": "ook op 3 andere pagina('s)"
+        },
+        {
+          "variant": "Meertalig modelformulier",
+          "waarde": "ook op 2 andere pagina('s)"
+        }
+      ],
+      "vingerafdruk": "b4e0c334c5f73100ce970c4621e3c4b61592c2f0",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Naturalisatie: meenaturaliserende minderjarig | Visumondersteuningsbrief | Meertalig modelformulier",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "97c9879c31229bb6d11a67615fb8fe8c917df02b",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "canada"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 5,
+        "eens": 32,
+        "n": 37
+      },
+      "titel": "5 eigen rijlabels op canada die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 37 rijlabels op deze pagina komen er 5 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/canada"
+      ],
+      "varianten": [
+        {
+          "variant": "Nooddocument of laissez-passer",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Schengenvisum kinderen 6 - 11 jaar",
+          "waarde": "lijkt op: Schengenvisum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "variant": "Caribisch visum kinderen (6-11)",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Naturalisatie: meenaturaliserende laag tarief",
+          "waarde": "lijkt op: Naturalisatie: meenaturaliserende minderjarige"
+        },
+        {
+          "variant": "Bemiddeling opvragen en legaliseren/ apostilleren document",
+          "waarde": "lijkt op: Bemiddeling opvragen en legaliseren/apostilleren document"
+        }
+      ],
+      "vingerafdruk": "31af848503000afc8f22e518e4e2da53506fa83b",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Nooddocument of laissez-passer | Schengenvisum kinderen 6 - 11 jaar | Caribisch visum kinderen (6-11) | Naturalisatie: meenaturaliserende laag tarief | Bemiddeling opvragen en legaliseren/ apostilleren document",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "daa37c53007e6532e9187707ea78c42cabdf3530",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "duitsland"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 10,
+        "eens": 18,
+        "n": 28
+      },
+      "titel": "10 eigen rijlabels op duitsland die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 28 rijlabels op deze pagina komen er 10 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/duitsland"
+      ],
+      "varianten": [
+        {
+          "variant": "Zakenpaspoort (dubbel aantal visapagina's)",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Zakenpaspoort minderjarige (dubbel aantal visapagina's)",
+          "waarde": "lijkt op: Zakenpaspoort minderjarige"
+        },
+        {
+          "variant": "Basisexamen inburgering (voor MVV)",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring Nederlanderschap",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van huwelijksbevoegdheid",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van in leven zijn (indien geen voordruk Nederlandse instantie voorhanden)",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van in leven zijn (indien voordruk Nederlandse instantie voorhanden)",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van woonplaats",
+          "waarde": "ook op 2 andere pagina('s)"
+        },
+        {
+          "variant": "Legaliseren handtekening (uitsluitend voor Nederlanders)",
+          "waarde": "lijkt op: Legaliseren handtekening Nederlander"
+        },
+        {
+          "variant": "Deutsche Post bezorging binnen Duitsland",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "c1b28a22c31bc3ad858546c8ac6c84b351d6858b",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Zakenpaspoort (dubbel aantal visapagina's) | Zakenpaspoort minderjarige (dubbel aantal visapagina's) | Basisexamen inburgering (voor MVV) | Verklaring Nederlanderschap | Verklaring van huwelijksbevoegdheid | Verklaring van in leven zijn (indien geen voordruk Nederlandse instantie voorhanden) | Verklaring van in leven zijn (indien voordruk Nederlandse instantie voorhanden) | Verklaring van woonplaats | Legaliseren handtekening (uitsluitend voor Nederlanders) | Deutsche Post bezorging binnen Duitsland",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "1849dff44bb571caedf90f61a28c150c2f0d6f61",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "estland"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 4,
+        "eens": 4,
+        "n": 8
+      },
+      "titel": "4 eigen rijlabels op estland die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 8 rijlabels op deze pagina komen er 4 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/estland"
+      ],
+      "varianten": [
+        {
+          "variant": "Verklaring omtrent bezit Nederlanderschap",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring omtrent de burgerlijke staat",
+          "waarde": "ook op 1 andere pagina('s)"
+        },
+        {
+          "variant": "Verklaring van huwelijksvoornemen",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van in-leven-zijn",
+          "waarde": "ook op 1 andere pagina('s)"
+        }
+      ],
+      "vingerafdruk": "9ae99e319cbd3b21cb1251f0ca651b5991a1b310",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Verklaring omtrent bezit Nederlanderschap | Verklaring omtrent de burgerlijke staat | Verklaring van huwelijksvoornemen | Verklaring van in-leven-zijn",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "80c7ee7e1d4d09a1ebcfd3b58f73f332780cab4f",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "georgie"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 9,
+        "eens": 34,
+        "n": 43
+      },
+      "titel": "9 eigen rijlabels op georgie die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 43 rijlabels op deze pagina komen er 9 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/georgie"
+      ],
+      "varianten": [
+        {
+          "variant": "Schengenvisum kinderen tot 11 jaar laag tarief**",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Luchthaventransitvisum kinderen tot 11 jaar, laag tarief**",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Luchthaventransitvisum laag tarief**",
+          "waarde": "lijkt op: Luchthaventransitvisum"
+        },
+        {
+          "variant": "Inreisvisum kinderen tot 11 jaar, laag tarief**",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Inreisvisum, laag tarief**",
+          "waarde": "lijkt op: Inreisvisum"
+        },
+        {
+          "variant": "Inburgeringsexamen (MVV)",
+          "waarde": "lijkt op: Inburgeringsexamen (voor naturalisatie)"
+        },
+        {
+          "variant": "Inburgeringsexamen (voor naturalisatie) - EPE of OGO deel",
+          "waarde": "lijkt op: Inburgeringsexamen (voor naturalisatie)"
+        },
+        {
+          "variant": "Inburgeringsexamen (voor naturalisatie) - KNS deel",
+          "waarde": "lijkt op: Inburgeringsexamen (voor naturalisatie)"
+        },
+        {
+          "variant": "Inburgeringsexamen (voor naturalisatie) - TGN deel",
+          "waarde": "lijkt op: Inburgeringsexamen (voor naturalisatie)"
+        }
+      ],
+      "vingerafdruk": "a905b653095157ef36ef683716f7df51f73c6aa5",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Schengenvisum kinderen tot 11 jaar laag tarief** | Luchthaventransitvisum kinderen tot 11 jaar, laag tarief** | Luchthaventransitvisum laag tarief** | Inreisvisum kinderen tot 11 jaar, laag tarief** | Inreisvisum, laag tarief** | Inburgeringsexamen (MVV) | Inburgeringsexamen (voor naturalisatie) - EPE of OGO deel | Inburgeringsexamen (voor naturalisatie) - KNS deel | Inburgeringsexamen (voor naturalisatie) - TGN deel",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "a0025c4ed7fc8ac1230af534bfe86050198747ed",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "hongkong"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 35,
+        "n": 38
+      },
+      "titel": "3 eigen rijlabels op hongkong die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 38 rijlabels op deze pagina komen er 3 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/hongkong"
+      ],
+      "varianten": [
+        {
+          "variant": "Noodpaspoort",
+          "waarde": "ook op 1 andere pagina('s)"
+        },
+        {
+          "variant": "Schengenvisum hoog tarief",
+          "waarde": "lijkt op: Schengenvisum laag tarief**"
+        },
+        {
+          "variant": "Caribisch visum (max 30 dagen)",
+          "waarde": "ook op 1 andere pagina('s)"
+        }
+      ],
+      "vingerafdruk": "356a446a776ae15fcbbb9838cb1111ac04153895",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Noodpaspoort | Schengenvisum hoog tarief | Caribisch visum (max 30 dagen)",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "02b30397f4c019937e779a43c86cf83ce109c990",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "india"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 4,
+        "eens": 36,
+        "n": 40
+      },
+      "titel": "4 eigen rijlabels op india die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 40 rijlabels op deze pagina komen er 4 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/india"
+      ],
+      "varianten": [
+        {
+          "variant": "Noodpaspoort",
+          "waarde": "ook op 1 andere pagina('s)"
+        },
+        {
+          "variant": "Visumondersteuningsbrief",
+          "waarde": "ook op 3 andere pagina('s)"
+        },
+        {
+          "variant": "Meertalig modelformulier",
+          "waarde": "ook op 2 andere pagina('s)"
+        },
+        {
+          "variant": "Koerierskosten",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "0fc2223c31b4a5aafd4bb06d838418ccb52d0498",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Noodpaspoort | Visumondersteuningsbrief | Meertalig modelformulier | Koerierskosten",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "b6932d7bd83f1a25a9599de8796e66174427b080",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "indonesie"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 6,
+        "eens": 37,
+        "n": 43
+      },
+      "titel": "6 eigen rijlabels op indonesie die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 43 rijlabels op deze pagina komen er 6 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/indonesie"
+      ],
+      "varianten": [
+        {
+          "variant": "Verklaring omtrent Nederlandse nationaliteit",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring omtrent burgerlijke staat",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring omtrent inkomens",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van voornemen huwelijk",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van in leven zijn",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring van woonplaats",
+          "waarde": "ook op 2 andere pagina('s)"
+        }
+      ],
+      "vingerafdruk": "176acd9e566cf69ff8c17b1fe78b54e3c25dd6a8",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Verklaring omtrent Nederlandse nationaliteit | Verklaring omtrent burgerlijke staat | Verklaring omtrent inkomens | Verklaring van voornemen huwelijk | Verklaring van in leven zijn | Verklaring van woonplaats",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "8358d2ee43dc49f2e15e3dc0bec16cfd87cd401f",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "irak"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 4,
+        "eens": 7,
+        "n": 11
+      },
+      "titel": "4 eigen rijlabels op irak die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 11 rijlabels op deze pagina komen er 4 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/irak"
+      ],
+      "varianten": [
+        {
+          "variant": "Schengenvisum tot 6 jaar",
+          "waarde": "lijkt op: Schengenvisum kinderen tot 6 jaar"
+        },
+        {
+          "variant": "Inreisvisum tot 6 jaar",
+          "waarde": "lijkt op: Inreisvisum kinderen tot 6 jaar"
+        },
+        {
+          "variant": "Inreisvisum normaal tarief",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Legalisatie handtekening Nederlander",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "e9f26ba470020a12d49660c3b16e4e190a65b45d",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Schengenvisum tot 6 jaar | Inreisvisum tot 6 jaar | Inreisvisum normaal tarief | Legalisatie handtekening Nederlander",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "b2f0c852c924201272c8258da0804d234154894d",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "letland"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 9,
+        "n": 12
+      },
+      "titel": "3 eigen rijlabels op letland die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 12 rijlabels op deze pagina komen er 3 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/letland"
+      ],
+      "varianten": [
+        {
+          "variant": "Verklaring omtrent de burgerlijke staat",
+          "waarde": "ook op 1 andere pagina('s)"
+        },
+        {
+          "variant": "Verklaring van in-leven-zijn",
+          "waarde": "ook op 1 andere pagina('s)"
+        },
+        {
+          "variant": "Verklaring van woonplaats",
+          "waarde": "ook op 2 andere pagina('s)"
+        }
+      ],
+      "vingerafdruk": "757e0ad0088fc657e1633565f5da3cb9a6ecf95b",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Verklaring omtrent de burgerlijke staat | Verklaring van in-leven-zijn | Verklaring van woonplaats",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "d8d5f61f44a84ba5c72c8390de34def21aa06aa9",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "maleisie"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 32,
+        "n": 35
+      },
+      "titel": "3 eigen rijlabels op maleisie die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 35 rijlabels op deze pagina komen er 3 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/maleisie"
+      ],
+      "varianten": [
+        {
+          "variant": "Assistentie bij opvragen documenten",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Schengenvisum kinderen 6 - 11 jaar",
+          "waarde": "lijkt op: Schengenvisum kinderen 6 t/m 11 jaar"
+        },
+        {
+          "variant": "Schengenvisum, gereduceerd tarief**",
+          "waarde": "lijkt op: Schengenvisum laag tarief**"
+        }
+      ],
+      "vingerafdruk": "7c319f8b6b698968b51e4821766c1537e1608e63",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Assistentie bij opvragen documenten | Schengenvisum kinderen 6 - 11 jaar | Schengenvisum, gereduceerd tarief**",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "0c7909f53e4690c49ae72bcedca91dc6b9d5ac17",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "polen"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 5,
+        "eens": 34,
+        "n": 39
+      },
+      "titel": "5 eigen rijlabels op polen die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 39 rijlabels op deze pagina komen er 5 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/polen"
+      ],
+      "varianten": [
+        {
+          "variant": "Schengenvisum kinderen tot 11 jaar**",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Schengenvisa hoog",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Visa - laag tarief: visa facilitation**",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Visa - kinderen tot 11 jaar, laag tarief **",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verzendkosten",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "0f0d759cbcf3de437bfd8d311fb62e90b0795d2d",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Schengenvisum kinderen tot 11 jaar** | Schengenvisa hoog | Visa - laag tarief: visa facilitation** | Visa - kinderen tot 11 jaar, laag tarief ** | Verzendkosten",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "c3836c7743e4a0aca85c885472b8617a0de05685",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "tanzania"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 33,
+        "n": 36
+      },
+      "titel": "3 eigen rijlabels op tanzania die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 36 rijlabels op deze pagina komen er 3 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/tanzania"
+      ],
+      "varianten": [
+        {
+          "variant": "Zakenpaspoort minderjarigen",
+          "waarde": "lijkt op: Zakenpaspoort minderjarige"
+        },
+        {
+          "variant": "Verzendkosten binnen Tanzania",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verzendkosten buiten Tanzania",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "d21c7999c5839dd654c733f1ae4b1fd66f33edda",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Zakenpaspoort minderjarigen | Verzendkosten binnen Tanzania | Verzendkosten buiten Tanzania",
+      "zekerheid": "middel",
+      "zusters": []
+    },
+    {
+      "bewijs_hash": "35aaad3db67ffd3f3b77b3b44894728ad404abd8",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "consulaire-tarieven",
+        "familie_sleutel": "zuid-afrika"
+      },
+      "regel_id": "eigen_terminologie",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 5,
+        "eens": 33,
+        "n": 38
+      },
+      "titel": "5 eigen rijlabels op zuid-afrika die andere landenpagina's niet gebruiken",
+      "toelichting": "Van de 38 rijlabels op deze pagina komen er 5 op vier of minder landenpagina's voor. De suggesties hieronder zijn gelijkenis, geen vaststelling: controleer per term of het echt dezelfde dienst is.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/consulaire-tarieven/zuid-afrika"
+      ],
+      "varianten": [
+        {
+          "variant": "Caribisch visum kinderen 6 t/m 12 jaar",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring nationaliteit",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring burgerlijke staat",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring in leven zijn",
+          "waarde": "nergens anders"
+        },
+        {
+          "variant": "Verklaring woonplaats",
+          "waarde": "nergens anders"
+        }
+      ],
+      "vingerafdruk": "cf94d4f98f7293505c2f5b9ec7f47b0023c6076f",
+      "voorgestelde_actie": "Ga na of deze diensten elders anders heten, en breng de termen in lijn. Bestaat een dienst echt alleen hier, zet de bevinding dan op de negeerlijst.",
+      "waargenomen": "Caribisch visum kinderen 6 t/m 12 jaar | Verklaring nationaliteit | Verklaring burgerlijke staat | Verklaring in leven zijn | Verklaring woonplaats",
+      "zekerheid": "middel",
+      "zusters": []
     }
   ],
   "datum": "2026-09-15",
   "familie": "consulaire-tarieven",
+  "onderdrukt": [],
   "waarschuwingen": []
 }

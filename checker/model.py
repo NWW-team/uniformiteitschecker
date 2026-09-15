@@ -95,8 +95,13 @@ class Bevinding:
     titel: str
     urls: list[str]
     locatie: dict[str, Any]
+    # Samenvatting van wat er afwijkt, als één tekst. Dient als bron voor `bewijs_hash`,
+    # dus de inhoud moet stabiel en volledig zijn.
     waargenomen: str = ""
     elders: str = ""
+    # Gestructureerde vorm van hetzelfde, voor het rapport: per afwijkende plek een
+    # variant (meestal het land) en de waarde die er staat.
+    varianten: list[dict[str, str]] = field(default_factory=list)
     zusters: list[dict[str, str]] = field(default_factory=list)
     telling: dict[str, int] = field(default_factory=dict)
     voorgestelde_actie: str = ""

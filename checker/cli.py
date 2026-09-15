@@ -18,7 +18,7 @@ from .bronnen import snapshot
 from .bronnen.extractie import extraheer_main, extraheer_tabellen
 from .bronnen.ophalen import haal_op
 from .bronnen.sitemap import filter_op_prefix, pagina_urls, sub_sitemaps
-from .detectie import register
+from .detectie import onderdruk, register
 from .rapport.html import schrijf_rapport
 
 REGELS_MAP = pathlib.Path("regels")
@@ -71,12 +71,20 @@ def _cmd_controleer(args: argparse.Namespace) -> int:
     for probleem in problemen:
         print(f"  probleem: {probleem}", file=sys.stderr)
 
-    bevindingen, waarschuwingen = register.draai(
+    gevonden, waarschuwingen = register.draai(
         familie["detectoren"],
         paginas,
         min_zusters=familie.get("min_zusters", 5),
         min_eensgezind=familie.get("min_eensgezind", 0.8),
+        max_paginas_zeldzaam=familie.get("max_paginas_zeldzaam", 4),
+        min_eigen_labels=familie.get("min_eigen_labels", 3),
     )
+
+    # De negeerlijst werkt op de bevindingen, niet in de detectoren: zo blijft
+    # zichtbaar wat er onderdrukt is en waarom.
+    uitkomst = onderdruk.pas_toe(gevonden, onderdruk.laad())
+    bevindingen = uitkomst.overgebleven
+    waarschuwingen = waarschuwingen + uitkomst.vervallen
 
     datum = snapshot_pad.parent.name
     findings_map = FINDINGS_MAP / datum
@@ -90,6 +98,10 @@ def _cmd_controleer(args: argparse.Namespace) -> int:
                 "aantal_paginas": len(paginas),
                 "waarschuwingen": waarschuwingen + problemen,
                 "bevindingen": [b.naar_dict() for b in bevindingen],
+                "onderdrukt": [
+                    {**b.naar_dict(), "onderdrukt_om": e.get("reden", "")}
+                    for b, e in uitkomst.onderdrukt
+                ],
             },
             ensure_ascii=False,
             indent=2,
@@ -107,9 +119,12 @@ def _cmd_controleer(args: argparse.Namespace) -> int:
         datum=datum,
         aantal_paginas=len(paginas),
         waarschuwingen=waarschuwingen + problemen,
+        onderdrukt=uitkomst.onderdrukt,
     )
 
     print(f"Bevindingen : {len(bevindingen)}")
+    if uitkomst.onderdrukt:
+        print(f"  onderdrukt: {len(uitkomst.onderdrukt)} via regels/negeerlijst.yaml")
     print(f"  geschreven: {findings_pad}")
     print(f"  rapport   : {RAPPORT_PAD}")
     for w in waarschuwingen:

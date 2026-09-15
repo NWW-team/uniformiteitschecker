@@ -120,3 +120,43 @@ def normaliseer_label(rauw: str) -> str:
 
 def bevat_euroteken(rauw: str) -> bool:
     return "€" in rauw
+
+
+# "6 t/m 11", "6-11", "6 - 11" en "6 tot en met 11" duiden hetzelfde bereik aan.
+_BEREIK = re.compile(r"(\d+)\s*(?:t/m|tot en met|-|–)\s*(\d+)")
+
+# Een toelichting tussen haakjes, bijvoorbeeld "(dubbel aantal visapagina's)".
+_HAAKJES = re.compile(r"\s*\([^)]*\)")
+
+
+def normaliseer_bereik(rauw: str) -> str:
+    """Schrijf getalbereiken in één vorm.
+
+    Veilig omdat de getallen zelf gelijk moeten blijven: `6 t/m 11` en `6-11` worden
+    dezelfde sleutel, maar `tot 6 jaar` en `6 t/m 11 jaar` blijven verschillend.
+    """
+    return _BEREIK.sub(r"\1-\2", rauw)
+
+
+def heeft_haakjes(rauw: str) -> bool:
+    return _HAAKJES.search(rauw) is not None
+
+
+def zonder_haakjes(rauw: str) -> str:
+    """Verwijder toelichtingen tussen haakjes.
+
+    Uitsluitend te gebruiken wanneer één van de vergeleken labels géén haakjes heeft.
+    Anders voegt deze functie `Inburgeringsexamen (voor naturalisatie)` en
+    `Inburgeringsexamen (MVV)` samen, en dat zijn verschillende examens.
+    """
+    return _HAAKJES.sub(" ", rauw)
+
+
+def labelsleutel_bereik(rauw: str) -> str:
+    """Labelsleutel waarin getalbereiken genormaliseerd zijn."""
+    return normaliseer_label(normaliseer_bereik(rauw))
+
+
+def labelsleutel_kaal(rauw: str) -> str:
+    """Labelsleutel zonder haakjes en met genormaliseerd bereik."""
+    return normaliseer_label(zonder_haakjes(normaliseer_bereik(rauw)))

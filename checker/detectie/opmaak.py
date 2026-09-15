@@ -85,6 +85,10 @@ def detecteer(
                     f"{pagina.familie_sleutel}: {v}" for v in voorbeelden
                 ),
                 elders=_voorbeeld_norm(norm),
+                varianten=[
+                    {"variant": pagina.familie_sleutel, "waarde": v}
+                    for v in voorbeelden
+                ],
                 zusters=[],
                 telling={
                     "n": sum(tellingen.values()),

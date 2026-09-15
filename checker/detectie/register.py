@@ -10,13 +10,15 @@ from __future__ import annotations
 from typing import Callable, Iterable
 
 from ..model import Bevinding, Pagina
-from . import opmaak, zustertabellen
+from . import labeldrift, opmaak, terminologie, zustertabellen
 
 Detector = Callable[..., list[Bevinding]]
 
 _REGISTER: dict[str, Detector] = {
     zustertabellen.REGEL_ID: zustertabellen.detecteer,
     opmaak.REGEL_ID: opmaak.detecteer,
+    labeldrift.REGEL_ID: labeldrift.detecteer,
+    terminologie.REGEL_ID: terminologie.detecteer,
 }
 
 # Bovengrens per detector per run. Slaat een detector hierdoorheen, dan is er vrijwel

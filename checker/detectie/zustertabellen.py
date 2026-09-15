@@ -30,6 +30,19 @@ REGEL_ID = "zustertabel_waarden"
 MIN_ZUSTERS = 5
 MIN_EENSGEZIND = 0.8
 
+def _zekerheid(eens: int, totaal: int) -> str:
+    """Hoe eensgezind zijn de zusterpagina's?
+
+    Afgeleid uit de verhouding, niet uit het aantal afwijkers. Anders krijgt de
+    Cuba/Suriname/Iran-cluster `middel` puur omdat het drie pagina's zijn, terwijl 89
+    van de 92 het eens zijn -- en dat is juist een sterk signaal.
+    """
+    aandeel = eens / totaal
+    if aandeel >= 0.95:
+        return "hoog"
+    return "middel" if aandeel >= 0.85 else "laag"
+
+
 # Hoeveel zusterpagina's we als bewijs meegeven. Genoeg om in tien seconden te
 # verifiëren, niet zoveel dat het rapport dichtslibt.
 AANTAL_BEWIJS = 3
@@ -40,6 +53,7 @@ def detecteer(
     *,
     min_zusters: int = MIN_ZUSTERS,
     min_eensgezind: float = MIN_EENSGEZIND,
+    **_: object,
 ) -> list[Bevinding]:
     """Meld per rijlabel de pagina's die een minderheidswaarde hebben."""
     paginas = list(paginas)
@@ -118,6 +132,7 @@ def _beoordeel_label(
         locatie={"familie": familie, "rij_label": leesbaar_label},
         waargenomen=" | ".join(f"{v['variant']}: {v['waarde']}" for v in varianten),
         elders=waarde_elders,
+        varianten=varianten,
         zusters=[
             {"url": pagina.url, "variant": pagina.familie_sleutel, "waarde": rauw}
             for pagina, rauw in sorted(eens, key=lambda v: v[0].url)[:AANTAL_BEWIJS]
@@ -130,7 +145,7 @@ def _beoordeel_label(
         voorgestelde_actie=(
             "Verifieer welk bedrag klopt en laat de afwijkende pagina('s) corrigeren."
         ),
-        zekerheid="hoog" if len(afwijkend) == 1 else "middel",
+        zekerheid=_zekerheid(aantal_eens, len(vermeldingen)),
         toelichting=(
             f"Op {aantal_eens} van de {len(vermeldingen)} landenpagina's met deze rij "
             f"staat {waarde_elders}. Dit kan ook een legitiem landspecifiek tarief zijn."

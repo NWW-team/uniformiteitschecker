@@ -2,13 +2,14 @@
 
 Het rapport groepeert primair op eigenaar, niet op ernst: "wat kan ik zelf doen" versus
 "wat moet ik uitzetten" is de vraag die het werk van de redacteur bepaalt. Elke bevinding
-toont de afwijkende waarde naast de waarde op zusterpagina's, zodat verifiëren tien
-seconden kost — vertrouwen komt uit controleerbaarheid, niet uit zekerheid van de tool.
+toont wat afwijkt naast wat er elders staat, zodat verifiëren tien seconden kost —
+vertrouwen komt uit controleerbaarheid, niet uit zekerheid van de tool.
 """
 
 from __future__ import annotations
 
 import pathlib
+from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -34,19 +35,37 @@ GROEPEN = [
     ),
 ]
 
+# Kolomkoppen per regel. Elke detector meldt iets anders, dus "Wijkt af / Staat elders"
+# klopt niet overal: bij terminologie is er geen tegenhanger om naar te wijzen.
+KOPPEN: dict[str, tuple[str, str | None]] = {
+    "zustertabel_waarden": ("Wijkt af", "Staat elders"),
+    "bedragnotatie": ("Voorbeelden op deze pagina", "Notatie in de rest van de familie"),
+    "labeldrift": ("Afwijkende formulering", "Gangbare formulering"),
+    "eigen_terminologie": ("Eigen term op deze pagina", None),
+}
 
-def _varianten(bevinding: Bevinding) -> list[dict[str, str]]:
-    """Haal de afwijkende pagina's met hun waarde uit `waargenomen`.
 
-    `waargenomen` is opgebouwd als "land: waarde | land: waarde", zodat de bewijs_hash
-    over alle afwijkende waarden gaat en de onderdrukking vervalt zodra er één wijzigt.
-    """
-    varianten = []
-    for deel in bevinding.waargenomen.split(" | "):
-        variant, _, waarde = deel.partition(": ")
-        if waarde:
-            varianten.append({"variant": variant, "waarde": waarde})
-    return varianten
+def _voor_template(bevinding: Bevinding) -> dict[str, Any]:
+    kop_afwijkend, kop_elders = KOPPEN.get(
+        bevinding.regel_id, ("Wijkt af", "Staat elders")
+    )
+    return {
+        "titel": bevinding.titel,
+        "soort": bevinding.soort,
+        "zekerheid": bevinding.zekerheid,
+        "telling": bevinding.telling,
+        "varianten": bevinding.varianten,
+        "zusters": bevinding.zusters,
+        "elders": bevinding.elders,
+        "kop_afwijkend": kop_afwijkend,
+        "kop_elders": kop_elders,
+        "urls": bevinding.urls,
+        "toelichting": bevinding.toelichting,
+        "voorgestelde_actie": bevinding.voorgestelde_actie,
+        # Zichtbaar in het rapport, want zonder vingerafdruk kan de redactie geen
+        # entry op de negeerlijst aanmaken.
+        "vingerafdruk": bevinding.vingerafdruk,
+    }
 
 
 def render(
@@ -56,6 +75,7 @@ def render(
     datum: str,
     aantal_paginas: int,
     waarschuwingen: list[str] | None = None,
+    onderdrukt: list[tuple[Bevinding, dict[str, Any]]] | None = None,
 ) -> str:
     omgeving = Environment(
         loader=FileSystemLoader(TEMPLATE_MAP),
@@ -75,20 +95,7 @@ def render(
                 "klasse": klasse,
                 "titel": titel,
                 "toelichting": toelichting,
-                "bevindingen": [
-                    {
-                        "titel": b.titel,
-                        "soort": b.soort,
-                        "zekerheid": b.zekerheid,
-                        "telling": b.telling,
-                        "varianten": _varianten(b),
-                        "zusters": b.zusters,
-                        "urls": b.urls,
-                        "toelichting": b.toelichting,
-                        "voorgestelde_actie": b.voorgestelde_actie,
-                    }
-                    for b in van_groep
-                ],
+                "bevindingen": [_voor_template(b) for b in van_groep],
             }
         )
 
@@ -99,9 +106,13 @@ def render(
         datum=datum,
         aantal_paginas=aantal_paginas,
         waarschuwingen=waarschuwingen or [],
+        onderdrukt=[
+            {"titel": b.titel, "reden": e.get("reden", ""), "door": e.get("door", "")}
+            for b, e in (onderdrukt or [])
+        ],
     )
 
 
-def schrijf_rapport(pad: pathlib.Path, **kwargs: object) -> pathlib.Path:
-    pad.write_text(render(**kwargs), encoding="utf-8")  # type: ignore[arg-type]
+def schrijf_rapport(pad: pathlib.Path, **kwargs: Any) -> pathlib.Path:
+    pad.write_text(render(**kwargs), encoding="utf-8")
     return pad

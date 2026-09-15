@@ -10,8 +10,22 @@ families:
     taal: nl
     sitemap: https://www.nederlandwereldwijd.nl/paginas/sitemap.xml
     pad_prefix: /consulaire-tarieven/
-    detectoren: [zustertabel_waarden, bedragnotatie]
-    # Drempels tegen ruis: onder min_zusters is er geen norm af te leiden, en een
+    detectoren:
+      - zustertabel_waarden   # inhoudelijk: minderheidswaarde per rij
+      - bedragnotatie         # schrijfrichtlijn: Nederlandse vs Engelse cijfernotatie
+      - labeldrift            # schrijfrichtlijn: zelfde rij, andere schrijfwijze
+      - eigen_terminologie    # schrijfrichtlijn: termen die nergens anders voorkomen
+
+    # Drempels tegen ruis. Onder min_zusters is er geen norm af te leiden, en een
     # familie die in twee kampen verdeeld is (< min_eensgezind) is variatie, geen fout.
-    min_zusters: 5
+    # min_zusters staat op 20 als veiligheidsmarge voor kleine labelgroepen; gemeten op
+    # de snapshot van 218 pagina's verandert dat niets aan de huidige bevindingen,
+    # want die hebben allemaal n >= 35.
+    min_zusters: 20
     min_eensgezind: 0.8
+
+    # Een rijlabel dat op zoveel pagina's of minder voorkomt, geldt als eigen term.
+    max_paginas_zeldzaam: 4
+    # Pagina's met minder eigen termen dan dit melden we niet: een enkele eigen term is
+    # te vaak een dienst die echt alleen daar bestaat.
+    min_eigen_labels: 3
