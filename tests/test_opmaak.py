@@ -38,6 +38,16 @@ class TestBedragnotatie(unittest.TestCase):
     def test_zwijgt_bij_te_weinig_zusters(self):
         self.assertEqual(detecteer(hulp.paginas(["kenia", "frankrijk"])), [])
 
+    def test_geeft_zusterpaginas_mee_als_bewijs_voor_staat_elders(self):
+        """Zonder dit bewijs blijft "Staat elders" leeg in het rapport, ook al is
+        de afwijking overduidelijk vast te stellen aan de rest van de familie."""
+        bevinding = detecteer(hulp.paginas(MET_KENIA))[0]
+        self.assertTrue(bevinding.zusters)
+        for zuster in bevinding.zusters:
+            self.assertNotEqual(zuster["variant"], "kenia")
+            self.assertIn("url", zuster)
+            self.assertIn("waarde", zuster)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -25,6 +25,9 @@ REGEL_ID = "bedragnotatie"
 # Onder dit aandeel is er geen familienorm om aan te toetsen.
 MIN_EENSGEZIND = 0.8
 
+# Hoeveel zusterpagina's we als bewijs meegeven bij "staat elders".
+AANTAL_BEWIJS = 3
+
 
 def detecteer(
     paginas: Iterable[Pagina],
@@ -58,6 +61,13 @@ def detecteer(
     if aantal_norm / len(per_pagina) < min_eensgezind:
         return []
 
+    # Pagina's die zelf de norm volgen: het bewijs voor "staat elders".
+    norm_paginas = [
+        p
+        for p in paginas
+        if per_pagina.get(p.url) and per_pagina[p.url].most_common(1)[0][0] == norm
+    ]
+
     bevindingen: list[Bevinding] = []
     for pagina in sorted(paginas, key=lambda p: p.url):
         tellingen = per_pagina.get(pagina.url)
@@ -68,6 +78,7 @@ def detecteer(
             continue
 
         voorbeelden = _voorbeelden(pagina, norm)
+        zusters = _zusterbewijs(norm_paginas, pagina, norm)
         bevindingen.append(
             Bevinding(
                 regel_id=REGEL_ID,
@@ -85,7 +96,7 @@ def detecteer(
                     f"{pagina.familie_sleutel}: {v}" for v in voorbeelden
                 ),
                 elders=_voorbeeld_norm(norm),
-                zusters=[],
+                zusters=zusters,
                 telling={
                     "n": sum(tellingen.values()),
                     "eens": tellingen.get(norm, 0),
@@ -122,3 +133,30 @@ def _voorbeelden(pagina: Pagina, norm: str, maximum: int = 3) -> list[str]:
 
 def _voorbeeld_norm(norm: str) -> str:
     return "€ 1.139,00" if norm == NOTATIE_NL else "€1,139.00"
+
+
+def _zusterbewijs(
+    norm_paginas: list[Pagina], afwijkende_pagina: Pagina, norm: str
+) -> list[dict[str, str]]:
+    """Zusterpagina's die de norm volgen, als bewijs voor "staat elders"."""
+    bewijs: list[dict[str, str]] = []
+    for zuster in sorted(norm_paginas, key=lambda p: p.url):
+        if zuster.url == afwijkende_pagina.url:
+            continue
+        voorbeeld = _voorbeeld_in_notatie(zuster, norm)
+        if voorbeeld is None:
+            continue
+        bewijs.append(
+            {"url": zuster.url, "variant": zuster.familie_sleutel, "waarde": voorbeeld}
+        )
+        if len(bewijs) == AANTAL_BEWIJS:
+            break
+    return bewijs
+
+
+def _voorbeeld_in_notatie(pagina: Pagina, norm: str) -> str | None:
+    for tabel in pagina.tabellen:
+        for rij in tabel.rijen:
+            if notatie(rij.waarde_rauw) == norm:
+                return rij.waarde_rauw
+    return None
