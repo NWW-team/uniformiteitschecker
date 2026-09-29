@@ -1061,7 +1061,23 @@
       "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
       "waargenomen": "irak: €60.25 | irak: €60.00 | irak: €45.00",
       "zekerheid": "hoog",
-      "zusters": []
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "€ 60,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 169,15"
+        }
+      ]
     },
     {
       "bewijs_hash": "bbf0cee2b4b407435db40bce7f38411363fc67c1",
@@ -1087,7 +1103,23 @@
       "voorgestelde_actie": "Zet de bedragen op deze pagina in Nederlandse notatie: komma als decimaalteken en punt als duizendscheidingsteken.",
       "waargenomen": "kenia: €169.15 | kenia: €147.40 | kenia: €169.15",
       "zekerheid": "hoog",
-      "zusters": []
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/albanie",
+          "variant": "albanie",
+          "waarde": "€ 60,25"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/algerije",
+          "variant": "algerije",
+          "waarde": "€ 169,15"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/consulaire-tarieven/angola",
+          "variant": "angola",
+          "waarde": "€ 169,15"
+        }
+      ]
     }
   ],
   "datum": "2026-09-15",
