@@ -36,9 +36,13 @@ def filter_op_prefix(urls: list[str], pad_prefix: str) -> list[str]:
     """Houd alleen URL's waarvan het pad met `pad_prefix` begint.
 
     Vergelijkt op het pad na het domein, zodat een familie als
-    `/consulaire-tarieven/` exact te selecteren is.
+    `/consulaire-tarieven/` exact te selecteren is. Eindigt de prefix niet op `/`, dan
+    is het een voorvoegsel van de laatste padnaam, zoals
+    `/paspoort-id-kaart/buitenland/paspoort-` voor alle landenpagina's.
     """
-    genormaliseerd = "/" + pad_prefix.strip("/") + "/"
+    genormaliseerd = "/" + pad_prefix.strip("/")
+    if pad_prefix.endswith("/"):
+        genormaliseerd += "/"
     gevonden = [u for u in urls if _pad(u).startswith(genormaliseerd)]
     return sorted(set(gevonden))
 
@@ -49,6 +53,7 @@ def _pad(url: str) -> str:
     return zonder_schema[schuine_streep:] if schuine_streep != -1 else "/"
 
 
-def familie_sleutel(url: str) -> str:
-    """Het laatste padsegment — voor deze families is dat het land."""
-    return _pad(url).rstrip("/").rsplit("/", 1)[-1]
+def familie_sleutel(url: str, strip: str = "") -> str:
+    """Het laatste padsegment, zonder voorvoegsel — voor deze families is dat het land."""
+    sleutel = _pad(url).rstrip("/").rsplit("/", 1)[-1]
+    return sleutel[len(strip):] if strip and sleutel.startswith(strip) else sleutel

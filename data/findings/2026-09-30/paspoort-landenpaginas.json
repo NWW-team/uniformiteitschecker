@@ -1,0 +1,2245 @@
+{
+  "aantal_paginas": 218,
+  "bevindingen": [
+    {
+      "bewijs_hash": "51fccdb295d2b0269e804f2d6b5e46b38beff87f",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "geen-stappenplan"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 8,
+        "eens": 210,
+        "n": 218
+      },
+      "titel": "Pagina volgt het stappenplan niet",
+      "toelichting": "Deze pagina's hebben geen van de gebruikelijke stappen, bijvoorbeeld omdat de ambassade is gesloten. Ze zijn niet meegeteld in de andere controles.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-afghanistan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-jemen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-libie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oekraine",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-somalie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sudan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-syrie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-sudan"
+      ],
+      "vingerafdruk": "f264c19e23ad5868deeca3857b4675823779f5e1",
+      "voorgestelde_actie": "Beoordeel of deze pagina bewust een andere opzet heeft.",
+      "waargenomen": "afghanistan: geen stappen | jemen: geen stappen | libie: geen stappen | oekraine: geen stappen | somalie: alleen: Somalische documenten | sudan: geen stappen | syrie: geen stappen | zuid-sudan: geen stappen",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "6 stappen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "6 stappen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "6 stappen"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "39d56ef9f63cc27c4e0c5091d5596c4fbfa10a6b",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-ontbreekt:maak uw persoonlijke checklist"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 199,
+        "n": 210
+      },
+      "titel": "Stap ontbreekt: Maak uw persoonlijke checklist",
+      "toelichting": "Op 199 van de 210 landenpagina's staat de stap “Stap 1: Maak uw persoonlijke checklist”. Dit kan bewust zijn (bijvoorbeeld bij een Schengenland), maar het kan ook betekenen dat de stap is vergeten.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjechie"
+      ],
+      "vingerafdruk": "d4eb0249afb980d4db1fe4d43172f7762ea8fc0f",
+      "voorgestelde_actie": "Beoordeel of de stap hier bewust ontbreekt.",
+      "waargenomen": "tsjechie: 5 stappen: Stap 2: Check de extra eisen → Stap 3: Maak een afspraak → Stap 4: Ga naar uw afspraak → Stap 5: Paspoort of ID-kaart ophalen of… → Contact",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "77d8b097e6359df7d68fcbfdbae7627dc1ee22db",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-ontbreekt:check de extra eisen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 10,
+        "eens": 196,
+        "n": 210
+      },
+      "titel": "Stap ontbreekt: Check de extra eisen",
+      "toelichting": "Op 196 van de 210 landenpagina's staat de stap “Stap 2: Check de extra eisen”. Dit kan bewust zijn (bijvoorbeeld bij een Schengenland), maar het kan ook betekenen dat de stap is vergeten.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frankrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marokko",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-staten-van-amerika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zwitserland"
+      ],
+      "vingerafdruk": "97ac1f875ea31ef0d8e505913b93fb9d96158932",
+      "voorgestelde_actie": "Beoordeel of de stap hier bewust ontbreekt.",
+      "waargenomen": "australie: 6 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Heeft u ook de Australische nationalite… → Contact | duitsland: 6 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Afspraak in Duitsland → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | frankrijk: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | marokko: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | spanje: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | turkije: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | verenigd-koninkrijk: 7 stappen: Stap 1: Maak de checklist voor de docum… → Stap 2: Print uw persoonlijke checklist → Stap 3: Verzamel alle documenten van uw… → Stap 4: Maak een afspraak → Stap 5: Ga naar uw afspraak → Stap 6: Paspoort of ID-kaart ophalen of… → Contact | verenigde-staten-van-amerika: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact | zuid-afrika: 8 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Afspraak in Zuid-Afrika → Afspraak in Nederland → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen → Heeft u de Zuid-Afrikaanse nationalitei… → Contact | zwitserland: 5 stappen: Stap 1: Verzamel documenten (checklist) → Stap 2: Maak een afspraak → Stap 3: Ga naar uw afspraak → Stap 4: Paspoort of ID-kaart ophalen of… → Contact",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "5cc471b379acae435df65c63c1162e76a7f2c6d5",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-ontbreekt:contact"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 208,
+        "n": 210
+      },
+      "titel": "Stap ontbreekt: Contact",
+      "toelichting": "Op 208 van de 210 landenpagina's staat de stap “Contact”. Dit kan bewust zijn (bijvoorbeeld bij een Schengenland), maar het kan ook betekenen dat de stap is vergeten.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-madagaskar",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tunesie"
+      ],
+      "vingerafdruk": "826fa96da34d96bb6c755afe601ac3ae53871a37",
+      "voorgestelde_actie": "Beoordeel of de stap hier bewust ontbreekt.",
+      "waargenomen": "madagaskar: 5 stappen: Stap 1: Maak uw persoonlijke checklist → Stap 2: Check de extra eisen → Stap 3: Maak een afspraak → Stap 4: Ga naar uw afspraak → Stap 5: Paspoort of ID-kaart ophalen of… | tunesie: 5 stappen: Stap 1: Maak uw persoonlijke checklist → Stap 2: Check de extra eisen → Stap 3: Maak een afspraak → Stap 4: Ga naar uw afspraak → Stap 5: Paspoort of ID-kaart ophalen of…",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Contact”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Contact”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Contact”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "a7ec5bed5c169a36f02d8adc5c139f504bee34c4",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-hernoemd:check de extra eisen:check de extra eisen voor <land>"
+      },
+      "regel_id": "stappenplan",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 4,
+        "eens": 196,
+        "n": 210
+      },
+      "titel": "Stap heet anders: Check de extra eisen",
+      "toelichting": "Op 196 van de 210 pagina's heet deze stap “Stap 2: Check de extra eisen”. Een kleine afwijking in de titel.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-armenie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-eswatini",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-finland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-saint-lucia"
+      ],
+      "vingerafdruk": "78999594a60307e504ac74d24b9da203931445f5",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "armenie: “Stap 2: Check de extra eisen voor Armenië” | eswatini: “Stap 2: Check de extra eisen voor Eswatini” | finland: “Stap 2: Check de extra eisen voor Finland” | saint-lucia: “Stap 2: Check de extra eisen voor Saint Lucia”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 2: Check de extra eisen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "062462e28dc2fb491edc75624303af39ad7a1a6a",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-hernoemd:maak uw persoonlijke checklist:print uw persoonlijke checklist"
+      },
+      "regel_id": "stappenplan",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 199,
+        "n": 210
+      },
+      "titel": "Stap heet anders: Maak uw persoonlijke checklist",
+      "toelichting": "Op 199 van de 210 pagina's heet deze stap “Stap 1: Maak uw persoonlijke checklist”. Een kleine afwijking in de titel.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "6acba762a87a9def5e0c9a15003e3cd01a9a11c9",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "verenigd-koninkrijk: “Stap 2: Print uw persoonlijke checklist”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "bbcb42b90cda8132873cfc580724972342874146",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-hernoemd:maak uw persoonlijke checklist:verzamel documenten checklist"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 9,
+        "eens": 199,
+        "n": 210
+      },
+      "titel": "Stap heet anders: Maak uw persoonlijke checklist",
+      "toelichting": "Op 199 van de 210 pagina's heet deze stap “Stap 1: Maak uw persoonlijke checklist”. Een andere formulering voor dezelfde stap; dat kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frankrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marokko",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-staten-van-amerika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zwitserland"
+      ],
+      "vingerafdruk": "84d6722c974ab7331eae0ccf3ed28f88febf8a10",
+      "voorgestelde_actie": "Beoordeel of de andere formulering bewust is.",
+      "waargenomen": "australie: “Stap 1: Verzamel documenten (checklist)” | duitsland: “Stap 1: Verzamel documenten (checklist)” | frankrijk: “Stap 1: Verzamel documenten (checklist)” | marokko: “Stap 1: Verzamel documenten (checklist)” | spanje: “Stap 1: Verzamel documenten (checklist)” | turkije: “Stap 1: Verzamel documenten (checklist)” | verenigde-staten-van-amerika: “Stap 1: Verzamel documenten (checklist)” | zuid-afrika: “Stap 1: Verzamel documenten (checklist)” | zwitserland: “Stap 1: Verzamel documenten (checklist)”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 1: Maak uw persoonlijke checklist”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "887a6fa9ef48462f24110d7e97953e1fc9d096bc",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-hernoemd:paspoort of id kaart ophalen of laten opsturen:paspoort of id kaart ophalen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Stap heet anders: Paspoort of ID-kaart ophalen of laten opsturen",
+      "toelichting": "Op 209 van de 210 pagina's heet deze stap “Stap 5: Paspoort of ID-kaart ophalen of laten opsturen”. Een kleine afwijking in de titel.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "4774c28a33bef6d7b400af567e87af1e35617403",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "zuid-afrika: “Stap 4: Paspoort of ID-kaart ophalen”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Stap 5: Paspoort of ID-kaart ophalen of laten opsturen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Stap 5: Paspoort of ID-kaart ophalen of laten opsturen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Stap 5: Paspoort of ID-kaart ophalen of laten opsturen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "b19ba567d40a497a415dc2c71e6976c1c4afbafe",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:afspraak in <land>"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 208,
+        "n": 210
+      },
+      "titel": "Extra stap: Afspraak in Duitsland",
+      "toelichting": "Deze stap staat op 2 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "f2af6d5d3bc5ee5921dda4702cdd701b12450688",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "duitsland: stap “Afspraak in Duitsland” | zuid-afrika: stap “Afspraak in Zuid-Afrika”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "a1af648cd865c395818c122c2411c21fed267898",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:afspraak in nederland"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Afspraak in Nederland",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "b858c3ec83dd156c34cb5c91f72ac90953f8b157",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "zuid-afrika: stap “Afspraak in Nederland”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "8f68a81bc7ae85cd7716d63c48fd4d7058c2669e",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:heeft u de <land>anse nationaliteit en wilt u reizen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Heeft u de Zuid-Afrikaanse nationaliteit en wilt u reizen?",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "9d59c301f5b8138d3a666a2d7abffae1f73e013a",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "zuid-afrika: stap “Heeft u de Zuid-Afrikaanse nationaliteit en wilt u reizen?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "2b6dee6ff4253ac7acf219c13a06f63ccb8cb2f9",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:heeft u de <land>ische nationaliteit en wilt u reizen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Heeft u de Israëlische nationaliteit en wilt u reizen?",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-israel"
+      ],
+      "vingerafdruk": "3c7c54533cf722c7f8939c30b68f40e179bd1ba0",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "israel: stap “Heeft u de Israëlische nationaliteit en wilt u reizen?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "a2e6d0dae3b16fbce7ecd8d98bec2d7b0836bb29",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:heeft u ook de australische nationaliteit en wilt u reizen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Heeft u ook de Australische nationaliteit en wilt u reizen?",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie"
+      ],
+      "vingerafdruk": "29583bf5e105d2cf11dc82993f0bb3f67a8a4f15",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "australie: stap “Heeft u ook de Australische nationaliteit en wilt u reizen?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "97485b404048d54d85fa24ebf29c4d29ad296f47",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:maak de checklist voor de documenten die u nodig heeft"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Maak de checklist voor de documenten die u nodig heeft",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "e061aafcc9227ee61f5a7c4abc7858d8ccc62654",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "verenigd-koninkrijk: stap “Stap 1: Maak de checklist voor de documenten die u nodig he…”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "3db175637a92ccdd2510db76b97cf2f39a3a3202",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:stuur uw documenten op"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Stuur uw documenten op",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-israel"
+      ],
+      "vingerafdruk": "1259e1684acd2b6d81aedf8f5de2c347857421b5",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "israel: stap “Stap 4: Stuur uw documenten op”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "53a3c16115e9f7ee9f344f392194234b0d43714b",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:verzamel alle documenten van uw checklist"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Verzamel alle documenten van uw checklist",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "dd7d5d5d79967c8e6d9843802726bfc18c6471de",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "verenigd-koninkrijk: stap “Stap 3: Verzamel alle documenten van uw checklist”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "5047fe3197266994136ae7e4ae17dff0ff0186cf",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:vraagt u voor het eerst een nederlands paspoort aan"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Vraagt u voor het eerst een Nederlands paspoort aan?",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ethiopie"
+      ],
+      "vingerafdruk": "bfb34195b2a12b063c7f44d46804b96fa60c192a",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "ethiopie: stap “Vraagt u voor het eerst een Nederlands paspoort aan?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "7e0be4b99275a35e47b532c37fd82a7f639421a4",
+      "categorie": "Opbouw van het stappenplan",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "stap-extra:wilt u naar een ander land reizen"
+      },
+      "regel_id": "stappenplan",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Extra stap: Wilt u naar een ander land reizen?",
+      "toelichting": "Deze stap staat op 1 van de 210 pagina's en niet in het stappenplan van de meeste landen.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-filipijnen"
+      ],
+      "vingerafdruk": "134c5a6188c8b00229e5d0951e45cea1d11adb84",
+      "voorgestelde_actie": "Beoordeel of deze extra stap bewust is.",
+      "waargenomen": "filipijnen: stap “Wilt u naar een ander land reizen?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "heeft deze stap niet"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "heeft deze stap niet"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "6c1a52de96a4cbc2ce80f1bbbe45b5a2c3cba32b",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ontbreekt:check de extra eisen:documenten vertalen"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 194,
+        "n": 196
+      },
+      "titel": "Uitklapper ontbreekt: Documenten vertalen",
+      "toelichting": "Bij “Stap 2: Check de extra eisen” staat de uitklapper “Documenten vertalen” op 194 van de 196 landenpagina's; hier ontbreekt.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ecuador"
+      ],
+      "vingerafdruk": "c315cd14143aaf6bb7157529d7e400fbc8bf196a",
+      "voorgestelde_actie": "Beoordeel of de uitklapper hier bewust ontbreekt.",
+      "waargenomen": "ecuador: ontbreekt",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Documenten vertalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Documenten vertalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Documenten vertalen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "54ad802d93995d97c5df91a1183faabc17cc25ab",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "heet anders:check de extra eisen:documenten vertalen"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 194,
+        "n": 196
+      },
+      "titel": "Uitklapper heet anders: Documenten vertalen",
+      "toelichting": "Bij “Stap 2: Check de extra eisen” staat de uitklapper “Documenten vertalen” op 194 van de 196 landenpagina's; hier heet anders.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cyprus"
+      ],
+      "vingerafdruk": "28bb3decb96ea431cd0496e68da14ab6344c8075",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "cyprus: “Document vertalen”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Documenten vertalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Documenten vertalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Documenten vertalen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "fc5fb95e18108939ed2b6c82faea011fe76faf0d",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ontbreekt:ga naar uw afspraak:hoeveel moet ik betalen"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Uitklapper ontbreekt: Hoeveel moet ik betalen?",
+      "toelichting": "Bij “Stap 4: Ga naar uw afspraak” staat de uitklapper “Hoeveel moet ik betalen?” op 209 van de 210 landenpagina's; hier ontbreekt.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "e4383185986af0bda088f004386a768d021e8cc1",
+      "voorgestelde_actie": "Beoordeel of de uitklapper hier bewust ontbreekt.",
+      "waargenomen": "verenigd-koninkrijk: ontbreekt",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Hoeveel moet ik betalen?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Hoeveel moet ik betalen?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Hoeveel moet ik betalen?”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "dbae9cfdbb1588d0b2114e6133cc391b1e56b543",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "heet anders:ga naar uw afspraak:moet ik mijn oude paspoort of id kaart meteen inleveren"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Uitklapper heet anders: Moet ik mijn oude paspoort of ID-kaart meteen inleveren?",
+      "toelichting": "Bij “Stap 4: Ga naar uw afspraak” staat de uitklapper “Moet ik mijn oude paspoort of ID-kaart meteen inleveren?” op 209 van de 210 landenpagina's; hier heet anders.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bangladesh"
+      ],
+      "vingerafdruk": "3be96ae6eafa8edf9a2056ccfd972aa672ad2c49",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "bangladesh: “Moet ik mijn paspoort of ID-kaart meteen inleveren?”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Moet ik mijn oude paspoort of ID-kaart meteen inleveren?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Moet ik mijn oude paspoort of ID-kaart meteen inleveren?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Moet ik mijn oude paspoort of ID-kaart meteen inleveren?”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "5f526df1479a8913052a3b8e9b874b5fb2baf29c",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ontbreekt:maak een afspraak:afspraak maken in nederland"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 37,
+        "eens": 170,
+        "n": 210
+      },
+      "titel": "Uitklapper ontbreekt: Afspraak maken in Nederland",
+      "toelichting": "Bij “Stap 3: Maak een afspraak” staat de uitklapper “Afspraak maken in Nederland” op 170 van de 210 landenpagina's; hier ontbreekt.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-argentinie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-brazilie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cambodja",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-canada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-chili",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-colombia",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-denemarken",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ecuador",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-estland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-filipijnen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frankrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-griekenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ierland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-indonesie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-italie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marokko",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-mexico",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nieuw-zeeland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-noorwegen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oostenrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-panama",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-roemenie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-saoedi-arabie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-thailand",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjaad",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjechie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-arabische-emiraten",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-staten-van-amerika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zweden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zwitserland"
+      ],
+      "vingerafdruk": "9b27fa07be9f942939aee752844450f58c313d57",
+      "voorgestelde_actie": "Beoordeel of de uitklapper hier bewust ontbreekt.",
+      "waargenomen": "argentinie: ontbreekt | australie: ontbreekt | brazilie: ontbreekt | cambodja: ontbreekt | canada: ontbreekt | chili: ontbreekt | colombia: ontbreekt | denemarken: ontbreekt | duitsland: ontbreekt | ecuador: ontbreekt | estland: ontbreekt | filipijnen: ontbreekt | frankrijk: ontbreekt | griekenland: ontbreekt | ierland: ontbreekt | indonesie: ontbreekt | italie: ontbreekt | luxemburg: ontbreekt | marokko: ontbreekt | mexico: ontbreekt | nieuw-zeeland: ontbreekt | noorwegen: ontbreekt | oostenrijk: ontbreekt | panama: ontbreekt | roemenie: ontbreekt | saoedi-arabie: ontbreekt | spanje: ontbreekt | thailand: ontbreekt | tsjaad: ontbreekt | tsjechie: ontbreekt | turkije: ontbreekt | verenigd-koninkrijk: ontbreekt | verenigde-arabische-emiraten: ontbreekt | verenigde-staten-van-amerika: ontbreekt | zuid-afrika: ontbreekt | zweden: ontbreekt | zwitserland: ontbreekt",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Afspraak maken in Nederland”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Afspraak maken in Nederland”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Afspraak maken in Nederland”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "25ad9da2fc44293752b96c52244cc7c857164b55",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "heet anders:maak een afspraak:afspraak maken in nederland"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 170,
+        "n": 210
+      },
+      "titel": "Uitklapper heet anders: Afspraak maken in Nederland",
+      "toelichting": "Bij “Stap 3: Maak een afspraak” staat de uitklapper “Afspraak maken in Nederland” op 170 van de 210 landenpagina's; hier heet anders.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahrein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-montenegro",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tuvalu"
+      ],
+      "vingerafdruk": "cfd49d84486f95797f7be3feb8b44585b1ac0415",
+      "voorgestelde_actie": "Pas de titel aan zodat hij gelijk is aan die op de andere pagina's.",
+      "waargenomen": "bahrein: “Afspraak in Nederland” | montenegro: “Afspraak in Nederland” | tuvalu: “Afspraak in Nederland”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Afspraak maken in Nederland”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Afspraak maken in Nederland”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Afspraak maken in Nederland”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "e53701a1a3f0b5369f570897feb293c459935c1a",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ontbreekt:paspoort of id kaart ophalen of laten opsturen:laten opsturen"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 6,
+        "eens": 203,
+        "n": 209
+      },
+      "titel": "Uitklapper ontbreekt: Laten opsturen",
+      "toelichting": "Bij “Stap 5: Paspoort of ID-kaart ophalen of laten opsturen” staat de uitklapper “Laten opsturen” op 203 van de 209 landenpagina's; hier ontbreekt.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-niger",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oostenrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjaad",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "89c1080fbe3a5a17f13d456fe0fab5362b091a3c",
+      "voorgestelde_actie": "Beoordeel of de uitklapper hier bewust ontbreekt.",
+      "waargenomen": "duitsland: ontbreekt | niger: ontbreekt | oostenrijk: ontbreekt | spanje: ontbreekt | tsjaad: ontbreekt | verenigd-koninkrijk: ontbreekt",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Laten opsturen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Laten opsturen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Laten opsturen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "3015e262874261df8f8a697938a993e013ddc229",
+      "categorie": "Ontbrekende of afwijkende uitklapparagrafen",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ontbreekt:paspoort of id kaart ophalen of laten opsturen:ophalen"
+      },
+      "regel_id": "uitklapparagrafen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 208,
+        "n": 209
+      },
+      "titel": "Uitklapper ontbreekt: Ophalen",
+      "toelichting": "Bij “Stap 5: Paspoort of ID-kaart ophalen of laten opsturen” staat de uitklapper “Ophalen” op 208 van de 209 landenpagina's; hier ontbreekt.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjaad"
+      ],
+      "vingerafdruk": "aa049ba218d74b84d5d03f39d6d193943b654668",
+      "voorgestelde_actie": "Beoordeel of de uitklapper hier bewust ontbreekt.",
+      "waargenomen": "tsjaad: ontbreekt",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "“Ophalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "“Ophalen”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "“Ophalen”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "ec71fa9c31452b6fe0e79675663c1de1bfe16436",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "binnen-uitklapper:h0"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 8,
+        "eens": 202,
+        "n": 210
+      },
+      "titel": "Kopje binnen een uitklapper is Vetgedrukte alinea als kopje in plaats van h4",
+      "toelichting": "In uitklapparagrafen staan kopjes bijna altijd als h4. Een ander niveau geeft een afwijkende structuur voor schermlezers.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-italie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-liechtenstein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-monaco",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-niue",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tokelau-eilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tonga",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zwitserland"
+      ],
+      "vingerafdruk": "27045e396deb18a2081c8d946103a06208f5fae7",
+      "voorgestelde_actie": "Maak van dit kopje een h4.",
+      "waargenomen": "italie: vetgedrukte alinea “Afspraak maken” in “Milaan” | liechtenstein: vetgedrukte alinea “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; vetgedrukte alinea “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | luxemburg: vetgedrukte alinea “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; vetgedrukte alinea “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | monaco: vetgedrukte alinea “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; vetgedrukte alinea “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | niue: vetgedrukte alinea “Afspraak wijzigen of afzeggen” in “Afspraak in Nieuw-Zeeland” | tokelau-eilanden: vetgedrukte alinea “Afspraak wijzigen of afzeggen” in “Afspraak in Nieuw-Zeeland” | tonga: vetgedrukte alinea “Afspraak wijzigen of afzeggen” in “Afspraak maken in Nieuw-Zeeland” | zwitserland: vetgedrukte alinea “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; vetgedrukte alinea “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Noord-Macedonië”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "55997ac5f27abc8eb9e79289ef9f8a63f6ace544",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "binnen-uitklapper:h3"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 23,
+        "eens": 187,
+        "n": 210
+      },
+      "titel": "Kopje binnen een uitklapper is h3 in plaats van h4",
+      "toelichting": "In uitklapparagrafen staan kopjes bijna altijd als h4. Een ander niveau geeft een afwijkende structuur voor schermlezers.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-armenie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-canada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-china",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cuba",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-dominicaanse-republiek",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ecuador",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-egypte",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ethiopie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frankrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-liechtenstein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-litouwen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-mexico",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nieuw-zeeland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-peru",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-portugal",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-suriname",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-thailand",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zimbabwe"
+      ],
+      "vingerafdruk": "906ce9d0f8e2dc65eb4a832bed63f79641a6ea58",
+      "voorgestelde_actie": "Maak van dit kopje een h4.",
+      "waargenomen": "armenie: h3 “Bewijs van legaal verblijf” in “Bewijs van legaal verblijf”; h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Georgië”; h3 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | australie: h3 “Maak een afspraak bij het consulaat-gen…” in “Sydney” | belgie: h3 “Aanvraag gedaan in Luxemburg” in “Laten opsturen”; h3 “Aanvraag gedaan bij een grensgemeente” in “Laten opsturen” | canada: h3 “VFS Global Vancouver” in “Vancouver”; h3 “VFS Global Toronto” in “Toronto” | china: h3 “Peking” in “Ophalen”; h3 “Shanghai” in “Ophalen”; h3 “Guangzhou” in “Ophalen” | cuba: h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Cuba”; h3 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | dominicaanse-republiek: h3 “Vertalen” in “Geboorteakte” | ecuador: h3 “Afspraak wijzigen of afzeggen” in “Lima”; h3 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | egypte: h3 “Als u in Sudan woont, dan doet u dit me…” in “Bewijs van legaal verblijf” | ethiopie: h3 “Als u in Sudan woont, dan doet u dit me…” in “Bewijs van legaal verblijf”; h3 “Paspoortformulier” in “Wat neem ik mee?” | frankrijk: h3 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…” | liechtenstein: h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Zwitserland” | litouwen: h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Finland”; h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Zweden”; h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Polen”; h3 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…”; h3 “Finland” in “Ophalen”; h3 “Zweden” in “Ophalen”; h3 “Polen” in “Ophalen”; h3 “Finland” in “Laten opsturen”; h3 “Zweden” in “Laten opsturen”; h3 “Polen” in “Laten opsturen” | luxemburg: h3 “Opsturen paspoort of ID-kaart” in “Wat neem ik mee?” | mexico: h3 “DHL verzendlabel” in “Laten opsturen”; h3 “Lukt het niet om een DHL label te krijg…” in “Laten opsturen” | nieuw-zeeland: h3 “Paspoort of ID-kaart kwijt of gestolen” in “Auckland” | peru: h3 “Ik woon in Peru” in “Laten opsturen”; h3 “Ik woon in Bolivia of Ecuador” in “Laten opsturen” | portugal: h3 “Geen meertalig uittreksel” in “Documenten vertalen”; h3 “Geen meertalig uittreksel of meertalig…” in “Documenten vertalen” | spanje: h3 “VFS Global Madrid” in “Madrid” | suriname: h3 “Aanvraag voor een baby” in “Bewijs van legaal verblijf”; h3 “Aanvraag voor een minderjarig kind” in “Bewijs van legaal verblijf”; h3 “Paspoortaanvraagformulier” in “Wat neem ik mee?”; h3 “Checklist” in “Wat neem ik mee?” | thailand: h3 “Wanneer?” in “Hua Hin”; h3 “Wanneer?” in “Chiang Mai”; h3 “Wanneer?” in “Phuket” | turkije: h3 “Wie kan een aanvraag doen bij VFS?” in “Izmir”; h3 “Geen aanvraag bij VFS” in “Izmir” | zimbabwe: h3 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Zimbabwe”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Afspraak wijzigen of afzeggen” in “Afspraak maken in Noord-Macedonië”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Wanneer moet ik mijn oude paspoort of I…” in “Moet ik mijn oude paspoort of ID-kaart…”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h4 “Ik heb een verblijfsvergunning of visum…” in “Moet ik mijn oude paspoort of ID-kaart…”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "08a1504ef990d03fe1f3089b2c933e2367e6e57e",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "overgeslagen-niveau"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Kopniveau overgeslagen",
+      "toelichting": "Een kop hoort maximaal één niveau dieper te staan dan de vorige.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg"
+      ],
+      "vingerafdruk": "6cabfce4c73e91e38c0dbab3bbbfbfb6f005932b",
+      "voorgestelde_actie": "Pas de koppen aan zodat de niveaus op elkaar aansluiten.",
+      "waargenomen": "luxemburg: h2 → h4 “Aanvrager uit ander land dan Luxemburg”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "geen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "geen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "geen"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "55d053b491ac14243991737c9313244871db4616",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "kopniveau:afspraak in <land>"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 2,
+        "eens": 208,
+        "n": 210
+      },
+      "titel": "Kop staat op ander niveau dan bij de andere landen: Afspraak in <land>",
+      "toelichting": "Op 30 van de 32 pagina's staat deze kop als h3.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "cf03bb34edcbb525a15c9c1007c1196fad8a9a5f",
+      "voorgestelde_actie": "Zet de kop op h3.",
+      "waargenomen": "duitsland: h2 i.p.v. h3 | zuid-afrika: h2 i.p.v. h3",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-argentinie",
+          "variant": "argentinie",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+          "variant": "australie",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-brazilie",
+          "variant": "brazilie",
+          "waarde": "h3"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "e0537b41839bd1e89d4f73feb3358940058fe8a6",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "kopniveau:afspraak in nederland"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Kop staat op ander niveau dan bij de andere landen: Afspraak in Nederland",
+      "toelichting": "Op 36 van de 37 pagina's staat deze kop als h3.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika"
+      ],
+      "vingerafdruk": "78a94ebc8b0f1273b3527283980e55038eba8a3a",
+      "voorgestelde_actie": "Zet de kop op h3.",
+      "waargenomen": "zuid-afrika: h2 i.p.v. h3",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-argentinie",
+          "variant": "argentinie",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-australie",
+          "variant": "australie",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahrein",
+          "variant": "bahrein",
+          "waarde": "h3"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "da4c6dbe40cff10d6b3ef82d3b73d5c09c510b27",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "kopniveau:geboorteakte"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Kop staat op ander niveau dan bij de andere landen: Geboorteakte",
+      "toelichting": "Op 6 van de 7 pagina's staat deze kop als h3.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-denemarken"
+      ],
+      "vingerafdruk": "ce818d6c2fbbb9b61974049c2cfd41ff0b918ac6",
+      "voorgestelde_actie": "Zet de kop op h3.",
+      "waargenomen": "denemarken: h4 i.p.v. h3",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+          "variant": "belgie",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-dominicaanse-republiek",
+          "variant": "dominicaanse-republiek",
+          "waarde": "h3"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-guinee",
+          "variant": "guinee",
+          "waarde": "h3"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "ab04ec6d5e09edcdb515457d15ead6be0ff4818c",
+      "categorie": "Koppenstructuur",
+      "eigenaar": "webredactie",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "kopniveau:maak een afspraak"
+      },
+      "regel_id": "koppenstructuur",
+      "soort": "schrijfrichtlijn",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Kop staat op ander niveau dan bij de andere landen: Stap 3: Maak een afspraak",
+      "toelichting": "Op 210 van de 211 pagina's staat deze kop als h2.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland"
+      ],
+      "vingerafdruk": "f409b23aaa9a79ebc650f454fef45fbdfdc93e46",
+      "voorgestelde_actie": "Zet de kop op h2.",
+      "waargenomen": "duitsland: h4 i.p.v. h2",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "h2"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "h2"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "h2"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "f2c3ad2fb7ef8745f31de586914978c969240e6e",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:check de extra eisen:bewijs van legaal verblijf"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 20,
+        "eens": 176,
+        "n": 196
+      },
+      "titel": "Standaardtekst wijkt af in “Bewijs van legaal verblijf”",
+      "toelichting": "In de uitklapper “Bewijs van legaal verblijf” staan 4 zinnen die op minstens 80% van de 196 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaanse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahamas",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-britse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bulgarije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cookeilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-denemarken",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ethiopie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-griekenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-indonesie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-kaaimaneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-maldiven",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marshalleilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nauru",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-pitcairneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-salomonseilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tokelau-eilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turks-en-caicoseilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zweden"
+      ],
+      "vingerafdruk": "b7c9a33d09285e97f29683bdf2a115f48df0014c",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "amerikaanse-maagdeneilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de Amerikaanse Maagdeneilanden woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | bahamas: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de Bahama's woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | belgie: 2 van 4 standaardzinnen; “Dit doet u met 1 van de volgende documenten:” i.p.v. “Dit kan met 1 van de volgende documenten:”; “Dan gebruikt u een volledig afschrift van de geboorteakte als bewijs van legaal verblijf.” i.p.v. “Dan gebruikt u de geboorteakte als bewijs van legaal verblijf.” | britse-maagdeneilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de Britse Maagdeneilanden woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | bulgarije: 1 van 4 standaardzinnen; “Vraagt u voor uw baby of kind voor het eerst een paspoort of ID-kaart aan?” i.p.v. “Vraagt u voor uw baby voor het eerst een paspoort of ID-kaart aan?” | cookeilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | denemarken: 1 van 4 standaardzinnen; ontbreekt: “Dan gebruikt u de geboorteakte als bewijs van legaal verblijf.” | ethiopie: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal in Somalië woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | griekenland: 1 van 4 standaardzinnen; ontbreekt: “Dan gebruikt u de geboorteakte als bewijs van legaal verblijf.” | indonesie: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal in Indonesië woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | kaaimaneilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | luxemburg: 1 van 4 standaardzinnen; “Dan heeft u voor uw aanvraag de volgende documenten nodig:” i.p.v. “Dit kan met 1 van de volgende documenten:” | maldiven: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | marshalleilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | nauru: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal in Naoero woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | pitcairneilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | salomonseilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | tokelau-eilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal in de <land> woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | turks-en-caicoseilanden: 1 van 4 standaardzinnen; “U moet aantonen dat u legaal op de Turks- en Caicoseilanden woont.” i.p.v. “U moet aantonen dat u legaal in <land> woont.” | zweden: 3 van 4 standaardzinnen; ontbreekt: “Vraagt u voor uw baby voor het eerst een paspoort of ID-kaart aan?”; “Dan kan dit met 1 van de volgende documenten:” i.p.v. “Dit kan met 1 van de volgende documenten:”; ontbreekt: “Dan gebruikt u de geboorteakte als bewijs van legaal verblijf.”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "4 standaardzinnen, o.a. “Vraagt u voor uw baby voor het eerst een paspoort of ID-kaart aan?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "4 standaardzinnen, o.a. “Vraagt u voor uw baby voor het eerst een paspoort of ID-kaart aan?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "4 standaardzinnen, o.a. “Vraagt u voor uw baby voor het eerst een paspoort of ID-kaart aan?”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "39396c58386ec7d81bb9fe1212ba7ab26b9cd690",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:check de extra eisen:documenten legaliseren"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 43,
+        "eens": 153,
+        "n": 196
+      },
+      "titel": "Standaardtekst wijkt af in “Documenten legaliseren”",
+      "toelichting": "In de uitklapper “Documenten legaliseren” staan 3 zinnen die op minstens 80% van de 196 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaanse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahamas",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-britse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bulgarije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-canada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cookeilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cyprus",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-denemarken",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-estland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frans-guyana",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ghana",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-griekenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-guinee",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-heilige-stoel",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-hongarije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ierland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-indonesie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-irak",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-italie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-kaaimaneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-kroatie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-letland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-litouwen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-maldiven",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-malta",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marshalleilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nauru",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oostenrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-pitcairneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-polen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-portugal",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-roemenie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sierra-leone",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-slovenie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-slowakije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tokelau-eilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjechie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turks-en-caicoseilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-uganda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-arabische-emiraten",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zweden"
+      ],
+      "vingerafdruk": "21a221e8f6d49b32dc652432c80e5e68d86f7e31",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "amerikaanse-maagdeneilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de Amerikaanse Maagdeneilanden?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de Amerikaanse Maagdeneila…” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | bahamas: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de Bahama's?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de Bahama's.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | belgie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | britse-maagdeneilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de Britse Maagdeneilanden?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de Britse Maagdeneilanden.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | bulgarije: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | canada: 1 van 3 standaardzinnen; “Heeft u een geboorteakte, huwelijksakte of naturalisatiecertificaat uit <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?” | cookeilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | cyprus: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | denemarken: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | estland: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | frans-guyana: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | ghana: 1 van 3 standaardzinnen; ontbreekt: “Heeft u een geboorteakte of huwelijksakte uit <land>?” | griekenland: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | guinee: 2 van 3 standaardzinnen; ontbreekt: “Heeft u een geboorteakte of huwelijksakte uit <land>?”; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | heilige-stoel: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | hongarije: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | ierland: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | indonesie: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit Indonesië?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit Indonesië.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | irak: 1 van 3 standaardzinnen; ontbreekt: “Heeft u een geboorteakte of huwelijksakte uit <land>?” | italie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | kaaimaneilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | kroatie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | letland: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | litouwen: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | luxemburg: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | maldiven: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | malta: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | marshalleilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | nauru: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit Naoero?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit Naoero.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | oostenrijk: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | pitcairneilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | polen: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | portugal: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | roemenie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | sierra-leone: 1 van 3 standaardzinnen; ontbreekt: “Heeft u een geboorteakte of huwelijksakte uit <land>?” | slovenie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | slowakije: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | tokelau-eilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de <land>.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | tsjechie: 1 van 3 standaardzinnen; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | turks-en-caicoseilanden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte uit de Turks- en Caicoseilanden?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; “Bekijk meer informatie over het legaliseren van documenten uit de Turks- en Caicoseilande…” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | uganda: 1 van 3 standaardzinnen; ontbreekt: “Heeft u een geboorteakte of huwelijksakte uit <land>?” | verenigde-arabische-emiraten: 1 van 3 standaardzinnen; “Bekijk meer informatie over het legaliseren van documenten uit de VAE.” i.p.v. “Bekijk meer informatie over het legaliseren van documenten uit <land>.” | zweden: 2 van 3 standaardzinnen; “Heeft u een geboorteakte of huwelijksakte ( vigselbevis ) uit <land>?” i.p.v. “Heeft u een geboorteakte of huwelijksakte uit <land>?”; ontbreekt: “Bekijk meer informatie over het legaliseren van documenten uit <land>.”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "3 standaardzinnen, o.a. “Bekijk of u het document moet laten legaliseren.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "3 standaardzinnen, o.a. “Bekijk of u het document moet laten legaliseren.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "3 standaardzinnen, o.a. “Bekijk of u het document moet laten legaliseren.”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "7bcfb93ac15ca97260f54f59f57008e62b8b7421",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:check de extra eisen:documenten vertalen"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 7,
+        "eens": 187,
+        "n": 194
+      },
+      "titel": "Standaardtekst wijkt af in “Documenten vertalen”",
+      "toelichting": "In de uitklapper “Documenten vertalen” staan 2 zinnen die op minstens 80% van de 194 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ierland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-kosovo",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-liechtenstein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oostenrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-portugal",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-slowakije"
+      ],
+      "vingerafdruk": "a4836cfb4d5cab06f8ec29a810cd2e25a052b032",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "belgie: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.” | ierland: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.” | kosovo: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.” | liechtenstein: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.” | oostenrijk: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.” | portugal: 1 van 2 standaardzinnen; “U kunt andere documenten inleveren in het Nederlands, Engels, Duits of Frans.” i.p.v. “U kunt documenten inleveren in het Nederlands, Engels, Duits of Frans.” | slowakije: 1 van 2 standaardzinnen; “Dan moet u deze laten vertalen door een beëdigd vertaler.” i.p.v. “Laat het document dan vertalen door een beëdigd vertaler.”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "2 standaardzinnen, o.a. “U kunt documenten inleveren in het Nederlands, Engels, Duits of Frans.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "2 standaardzinnen, o.a. “U kunt documenten inleveren in het Nederlands, Engels, Duits of Frans.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "2 standaardzinnen, o.a. “U kunt documenten inleveren in het Nederlands, Engels, Duits of Frans.”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "09be8166c03d55631bb9a17557d71b499fb2e378",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:ga naar uw afspraak:hoeveel moet ik betalen"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 208,
+        "n": 209
+      },
+      "titel": "Standaardtekst wijkt af in “Hoeveel moet ik betalen?”",
+      "toelichting": "In de uitklapper “Hoeveel moet ik betalen?” staan 1 zinnen die op minstens 80% van de 209 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-mongolie"
+      ],
+      "vingerafdruk": "db792544caa111888b52a26c0c90538675b87a9b",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "mongolie: 1 van 1 standaardzinnen; ontbreekt: “Een paspoort of ID-kaart kost minder bij een grensgemeente.”",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "1 standaardzinnen, o.a. “Een paspoort of ID-kaart kost minder bij een grensgemeente.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "1 standaardzinnen, o.a. “Een paspoort of ID-kaart kost minder bij een grensgemeente.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "1 standaardzinnen, o.a. “Een paspoort of ID-kaart kost minder bij een grensgemeente.”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "fd3392f43ac4458c3c9084e193791f52360255fb",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:ga naar uw afspraak:moet ik mijn oude paspoort of id kaart meteen inleveren"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 39,
+        "eens": 170,
+        "n": 209
+      },
+      "titel": "Standaardtekst wijkt af in “Moet ik mijn oude paspoort of ID-kaart meteen inleveren?”",
+      "toelichting": "In de uitklapper “Moet ik mijn oude paspoort of ID-kaart meteen inleveren?” staan 13 zinnen die op minstens 80% van de 209 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-canada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-denemarken",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-frankrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-georgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-israel",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nicaragua",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nigeria",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-noord-macedonie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oman",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-oost-timor",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-pakistan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-palestijnse-gebieden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-papoea-nieuw-guinea",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-puerto-rico",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-qatar",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-reunion",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-rwanda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sao-tome-en-principe",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-servie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-seychellen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-singapore",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sri-lanka",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-suriname",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tanzania",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-thailand",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjaad",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tunesie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkmenistan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turks-en-caicoseilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-uganda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-vanuatu",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-arabische-emiraten",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-vietnam",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zuid-afrika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-zweden"
+      ],
+      "vingerafdruk": "ef9b8cc696f7e4e4226fd7096915cb664dbbb990",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "belgie: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | canada: 1 van 13 standaardzinnen; “Wilt u uw oude paspoort terug?” i.p.v. “Wilt u uw oude paspoort of ID-kaart terug?” | denemarken: 1 van 13 standaardzinnen; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | duitsland: 2 van 13 standaardzinnen; “inleveren van uw oude paspoort.” i.p.v. “Meld dit bij het inleveren van uw oude paspoort.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | frankrijk: 1 van 13 standaardzinnen; “Dan stuurt u eerst uw oude paspoort naar de ambassade.” i.p.v. “Dan stuurt u eerst uw oude naar de ambassade.” | georgie: 5 van 13 standaardzinnen; ontbreekt: “Wilt u uw oude paspoort of ID-kaart terug?”; ontbreekt: “Geef dit aan bij de ambassade.”; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?” (+2 meer) | israel: 5 van 13 standaardzinnen; ontbreekt: “Wilt u uw oude paspoort of ID-kaart terug?”; ontbreekt: “Geef dit aan bij de ambassade.”; “U levert uw oude paspoort of ID-kaart in wanneer u uw nieuwe paspoort of ID-kaart komt op…” i.p.v. “Komt u uw nieuwe paspoort of ID-kaart ophalen?” (+2 meer) | luxemburg: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | nicaragua: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | nigeria: 4 van 13 standaardzinnen; “Geef dit aan bij het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.” (+1 meer) | noord-macedonie: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | oman: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | oost-timor: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | pakistan: 1 van 13 standaardzinnen; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | palestijnse-gebieden: 5 van 13 standaardzinnen; ontbreekt: “Wilt u uw oude paspoort of ID-kaart terug?”; ontbreekt: “Geef dit aan bij de ambassade.”; “U levert uw oude paspoort of ID-kaart in wanneer u uw nieuwe paspoort of ID-kaart komt op…” i.p.v. “Komt u uw nieuwe paspoort of ID-kaart ophalen?” (+2 meer) | papoea-nieuw-guinea: 2 van 13 standaardzinnen; “Geef dit aan bij het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; “Dan stuurt u eerst uw oude naar het consulaat-generaal.” i.p.v. “Dan stuurt u eerst uw oude naar de ambassade.” | puerto-rico: 2 van 13 standaardzinnen; “Geef dit aan bij het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; “Dan stuurt u eerst uw oude naar het consulaat-generaal.” i.p.v. “Dan stuurt u eerst uw oude naar de ambassade.” | qatar: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | reunion: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | rwanda: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | sao-tome-en-principe: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | servie: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | seychellen: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | singapore: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | sri-lanka: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | suriname: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | tanzania: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | thailand: 5 van 13 standaardzinnen; ontbreekt: “En wilt u die blijven gebruiken?”; ontbreekt: “Ik heb een verblijfsvergunning of visum in mijn oude paspoort staan, wat nu?”; ontbreekt: “Staat er een verblijfsvergunning of visum in uw oude paspoort?” (+2 meer) | tsjaad: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | tunesie: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | turkmenistan: 2 van 13 standaardzinnen; “Geef dit aan bij de ambassade of het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; “Dan stuurt u eerst uw oude naar de ambassade of het consulaat-generaal.” i.p.v. “Dan stuurt u eerst uw oude naar de ambassade.” | turks-en-caicoseilanden: 2 van 13 standaardzinnen; “Geef dit aan bij de ambassade of het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; “Dan stuurt u eerst uw oude naar de ambassade of het consulaat-generaal.” i.p.v. “Dan stuurt u eerst uw oude naar de ambassade.” | uganda: 3 van 13 standaardzinnen; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.”; ontbreekt: “Dan stuurt u eerst uw oude naar de ambassade.” | vanuatu: 1 van 13 standaardzinnen; “Geef dit aan bij het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.” | verenigd-koninkrijk: 4 van 13 standaardzinnen; ontbreekt: “Heeft u uw paspoort of ID-kaart nog nodig?”; ontbreekt: “Dan kunt u deze houden.”; “U levert uw oude paspoort of ID-kaart in bij het ophalen.” i.p.v. “Wanneer moet ik mijn oude paspoort of ID-kaart inleveren?” (+1 meer) | verenigde-arabische-emiraten: 4 van 13 standaardzinnen; “Geef dit aan bij het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.” (+1 meer) | vietnam: 4 van 13 standaardzinnen; “Geef dit aan bij de ambassade of het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.” (+1 meer) | zuid-afrika: 4 van 13 standaardzinnen; “Geef dit aan bij de ambassade of het consulaat-generaal.” i.p.v. “Geef dit aan bij de ambassade.”; ontbreekt: “Komt u uw nieuwe paspoort of ID-kaart ophalen?”; “U levert uw oude paspoort of ID-kaart in op het moment dat u uw nieuwe komt ophalen.” i.p.v. “Dan levert u uw oude paspoort of ID-kaart op dat moment in.” (+1 meer) | zweden: 6 van 13 standaardzinnen; “Nee, u hoeft uw oude paspoort of ID-kaart niet direct in te leveren.” i.p.v. “Wanneer moet ik mijn oude paspoort of ID-kaart inleveren?”; “Nee, u hoeft uw oude paspoort of ID-kaart niet direct in te leveren.” i.p.v. “Wilt u uw oude paspoort of ID-kaart terug?”; ontbreekt: “Geef dit aan bij de ambassade.” (+3 meer)",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "13 standaardzinnen, o.a. “En wilt u die blijven gebruiken?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "13 standaardzinnen, o.a. “En wilt u die blijven gebruiken?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "13 standaardzinnen, o.a. “En wilt u die blijven gebruiken?”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "909b79801d9b762b60351e11355ae15290bbf884",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:ga naar uw afspraak:wat neem ik mee"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 23,
+        "eens": 187,
+        "n": 210
+      },
+      "titel": "Standaardtekst wijkt af in “Wat neem ik mee?”",
+      "toelichting": "In de uitklapper “Wat neem ik mee?” staan 6 zinnen die op minstens 80% van de 210 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaanse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-andorra",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-anguilla",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-antigua-en-barbuda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahrein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-barbados",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belarus-wit-rusland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-britse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-burkina-faso",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cookeilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-equatoriaal-guinea",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-estland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ethiopie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-fiji",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-gabon",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-grenada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-groenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-guadeloupe",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-israel",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-trinidad-en-tobago",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "8fb5fadc3d91da38cce8c5e505be40ce2edb5fd8",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "amerikaans-samoa: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | amerikaanse-maagdeneilanden: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | andorra: 3 van 6 standaardzinnen; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | anguilla: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | antigua-en-barbuda: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | bahrein: 3 van 6 standaardzinnen; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | barbados: 3 van 6 standaardzinnen; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | belarus-wit-rusland: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | britse-maagdeneilanden: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | burkina-faso: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | cookeilanden: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | equatoriaal-guinea: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | estland: 3 van 6 standaardzinnen; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | ethiopie: 3 van 6 standaardzinnen; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee en vul.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | fiji: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | gabon: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | grenada: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | groenland: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | guadeloupe: 4 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”; ontbreekt: “U krijgt uw originele documenten weer mee terug naar huis.”; “Neem alle documenten uit uw persoonlijke checklist mee.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | israel: 1 van 6 standaardzinnen; ontbreekt: “De baliemedewerker maakt kopieën.” | luxemburg: 4 van 6 standaardzinnen; “Print ook de checklist uit en neem deze mee.” i.p.v. “Print de checklist ook uit en neem deze mee.”; “U krijgt uw originele documenten weer mee naar huis.” i.p.v. “U krijgt uw originele documenten weer mee terug naar huis.”; “Alle originele documenten uit de checklist.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.” (+1 meer) | trinidad-en-tobago: 2 van 6 standaardzinnen; “Neem alle originele documenten uit uw persoonlijke checklist mee en kopieën hiervan.” i.p.v. “Neem alle originele documenten uit uw persoonlijke checklist mee.”; ontbreekt: “De baliemedewerker maakt kopieën.” | verenigd-koninkrijk: 1 van 6 standaardzinnen; ontbreekt: “Print de checklist ook uit en neem deze mee.”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "6 standaardzinnen, o.a. “Moet u documenten laten legaliseren en/of vertalen?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "6 standaardzinnen, o.a. “Moet u documenten laten legaliseren en/of vertalen?”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-angola",
+          "variant": "angola",
+          "waarde": "6 standaardzinnen, o.a. “Moet u documenten laten legaliseren en/of vertalen?”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "79dae34362b211b48bc063e4ca6326050f98d12d",
+      "categorie": "Afwijkingen van standaardteksten",
+      "eigenaar": "beoordelen",
+      "elders": "",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "zinnen:paspoort of id kaart ophalen of laten opsturen:ophalen"
+      },
+      "regel_id": "standaardzinnen",
+      "soort": "structuur",
+      "telling": {
+        "afwijkend": 49,
+        "eens": 159,
+        "n": 208
+      },
+      "titel": "Standaardtekst wijkt af in “Ophalen”",
+      "toelichting": "In de uitklapper “Ophalen” staan 2 zinnen die op minstens 80% van de 208 landenpagina's letterlijk hetzelfde zijn. Op deze pagina's ontbreekt er een of staat hij anders. Een landspecifieke aanpassing kan bewust zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belarus-wit-rusland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belgie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belize",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bhutan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-brazilie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-burkina-faso",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-chili",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-costa-rica",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cyprus",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-duitsland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-el-salvador",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-estland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-filipijnen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-finland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ghana",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-griekenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-guatemala",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-haiti",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-honduras",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-hongkong",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ierland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-india",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ivoorkust",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-jordanie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-kenia",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-libanon",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-luxemburg",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-macau-sar",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-marshalleilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-micronesie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nauru",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nepal",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nicaragua",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-niger",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-nigeria",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-pakistan",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-palau",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-panama",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-papoea-nieuw-guinea",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-polen",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-rwanda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-salomonseilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sierra-leone",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-sri-lanka",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjechie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-vanuatu",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-venezuela",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigde-staten-van-amerika",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-vietnam"
+      ],
+      "vingerafdruk": "fee7a4dd63c0bae70d77732f8dab8a802821c9de",
+      "voorgestelde_actie": "Beoordeel of de afwijking bewust is; herstel anders de standaardtekst.",
+      "waargenomen": "belarus-wit-rusland: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | belgie: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | belize: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | bhutan: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | brazilie: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | burkina-faso: 1 van 2 standaardzinnen; “Houd rekening met sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | chili: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | costa-rica: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | cyprus: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | duitsland: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | el-salvador: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | estland: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | filipijnen: 1 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.” | finland: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | ghana: 1 van 2 standaardzinnen; “Houd rekening met sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | griekenland: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | guatemala: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | haiti: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | honduras: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | hongkong: 1 van 2 standaardzinnen; “Hou wel rekening met onze sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | ierland: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | india: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | ivoorkust: 1 van 2 standaardzinnen; “Houd rekening met sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | jordanie: 1 van 2 standaardzinnen; “Hou wel rekening met de sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | kenia: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | libanon: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | luxemburg: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | macau-sar: 1 van 2 standaardzinnen; “Hou wel rekening met onze sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | marshalleilanden: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | micronesie: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | nauru: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | nepal: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | nicaragua: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | niger: 1 van 2 standaardzinnen; “Houd rekening met sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | nigeria: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | pakistan: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | palau: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | panama: 2 van 2 standaardzinnen; “En houd rekening met de sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | papoea-nieuw-guinea: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | polen: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | rwanda: 2 van 2 standaardzinnen; ontbreekt: “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | salomonseilanden: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | sierra-leone: 1 van 2 standaardzinnen; “Houd rekening met sluitingsdagen.” i.p.v. “Houd rekening met de sluitingsdagen.” | sri-lanka: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | tsjechie: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | vanuatu: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | venezuela: 1 van 2 standaardzinnen; ontbreekt: “Een afspraak maken is niet nodig.” | verenigde-staten-van-amerika: 2 van 2 standaardzinnen; “Houd rekening met de sluitingsdagen van de ambassade en de consulaten-generaal:” i.p.v. “Houd rekening met de sluitingsdagen.”; ontbreekt: “Een afspraak maken is niet nodig.” | vietnam: 1 van 2 standaardzinnen; “Houd rekening met de sluitingsdagen in Hanoi en Ho Chi Minh Stad.” i.p.v. “Houd rekening met de sluitingsdagen.”",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "2 standaardzinnen, o.a. “Houd rekening met de sluitingsdagen.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "2 standaardzinnen, o.a. “Houd rekening met de sluitingsdagen.”"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "2 standaardzinnen, o.a. “Houd rekening met de sluitingsdagen.”"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "3fd316568ee39848793c0da8cf02d6fc49be678d",
+      "categorie": "Inhoudelijk mogelijk tegenstrijdig",
+      "eigenaar": "kenniseigenaar",
+      "elders": "originelen",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "originelen-of-kopieen"
+      },
+      "regel_id": "kernbeweringen",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 21,
+        "eens": 189,
+        "n": 210
+      },
+      "titel": "Originelen of kopieën meenemen naar de afspraak: 21 pagina('s) zeggen iets anders",
+      "toelichting": "Op 189 van de 210 landenpagina's geldt: originelen. Bij het ene land moet u originelen meenemen, bij het andere kopieën, en soms bepaalt de checklist het.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaanse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-andorra",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-anguilla",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-antigua-en-barbuda",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-bahrein",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-barbados",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-belarus-wit-rusland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-britse-maagdeneilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-burkina-faso",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-cookeilanden",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-equatoriaal-guinea",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-estland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-ethiopie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-fiji",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-gabon",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-grenada",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-groenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-guadeloupe",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-israel",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-trinidad-en-tobago"
+      ],
+      "vingerafdruk": "91676f71a7e6f75d23217dd713caf16460da5a17",
+      "voorgestelde_actie": "Leg voor aan de kenniseigenaar: welk antwoord klopt, en mag het per land verschillen?",
+      "waargenomen": "amerikaans-samoa: volgens de checklist | amerikaanse-maagdeneilanden: volgens de checklist | andorra: noemt geen originelen of kopieën | anguilla: volgens de checklist | antigua-en-barbuda: volgens de checklist | bahrein: noemt geen originelen of kopieën | barbados: noemt geen originelen of kopieën | belarus-wit-rusland: volgens de checklist | britse-maagdeneilanden: volgens de checklist | burkina-faso: volgens de checklist | cookeilanden: volgens de checklist | equatoriaal-guinea: volgens de checklist | estland: noemt geen originelen of kopieën | ethiopie: noemt geen originelen of kopieën | fiji: volgens de checklist | gabon: volgens de checklist | grenada: volgens de checklist | groenland: volgens de checklist | guadeloupe: volgens de checklist | israel: originelen + kopieën meenemen | trinidad-en-tobago: originelen + kopieën meenemen",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "originelen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "originelen"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-angola",
+          "variant": "angola",
+          "waarde": "originelen"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "b49809ddd5a719ca063c6432dbd8c81c85b7a85f",
+      "categorie": "Inhoudelijk mogelijk tegenstrijdig",
+      "eigenaar": "kenniseigenaar",
+      "elders": "verwijst naar algemene pagina",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "verwerkingstijd"
+      },
+      "regel_id": "kernbeweringen",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 3,
+        "eens": 207,
+        "n": 210
+      },
+      "titel": "Verwerkingstijd: 3 pagina('s) zeggen iets anders",
+      "toelichting": "Op 207 van de 210 landenpagina's geldt: verwijst naar algemene pagina. Sommige pagina's noemen zelf een termijn, andere verwijzen naar de algemene pagina.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-argentinie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-turkije",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "7d40bcb80e80dd488b7bf23e59273d3fba1e949d",
+      "voorgestelde_actie": "Leg voor aan de kenniseigenaar: welk antwoord klopt, en mag het per land verschillen?",
+      "waargenomen": "argentinie: noemt termijn (4 weken) | turkije: verwijst naar algemene pagina + noemt termijn (2 dagen) | verenigd-koninkrijk: noemt geen verwerkingstijd",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "verwijst naar algemene pagina"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "verwijst naar algemene pagina"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "verwijst naar algemene pagina"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "466e2fcf4d4b0e0de40a9b00cb567fbd628abde8",
+      "categorie": "Inhoudelijk mogelijk tegenstrijdig",
+      "eigenaar": "kenniseigenaar",
+      "elders": "binnen (3 maanden)",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "ophaaltermijn"
+      },
+      "regel_id": "kernbeweringen",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 4,
+        "eens": 206,
+        "n": 210
+      },
+      "titel": "Termijn om het nieuwe document op te halen: 4 pagina('s) zeggen iets anders",
+      "toelichting": "Op 206 van de 210 landenpagina's geldt: binnen (3 maanden). Na deze termijn wordt het document vernietigd.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-argentinie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-griekenland",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-italie",
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-spanje"
+      ],
+      "vingerafdruk": "f0ea64bcf90c285f2760705cbe6e4a4c164e9073",
+      "voorgestelde_actie": "Leg voor aan de kenniseigenaar: welk antwoord klopt, en mag het per land verschillen?",
+      "waargenomen": "argentinie: binnen (4 weken) | griekenland: binnen (6 maanden) | italie: binnen (6 maanden) | spanje: binnen (4 maanden)",
+      "zekerheid": "middel",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "binnen (3 maanden)"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "binnen (3 maanden)"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "binnen (3 maanden)"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "e1ad471f201c5e23294699c22c30908b79aa7bb4",
+      "categorie": "Inhoudelijk mogelijk tegenstrijdig",
+      "eigenaar": "kenniseigenaar",
+      "elders": "nee",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "oud-paspoort-meteen-inleveren"
+      },
+      "regel_id": "kernbeweringen",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 209,
+        "n": 210
+      },
+      "titel": "Oud paspoort of ID-kaart meteen inleveren: 1 pagina('s) zeggen iets anders",
+      "toelichting": "Op 209 van de 210 landenpagina's geldt: nee. Het antwoord op deze vraag hoort overal gelijk te zijn.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-verenigd-koninkrijk"
+      ],
+      "vingerafdruk": "2de8ba21bf5cde88e458cdc14f15fe5f4bb0a2e1",
+      "voorgestelde_actie": "Leg voor aan de kenniseigenaar: welk antwoord klopt, en mag het per land verschillen?",
+      "waargenomen": "verenigd-koninkrijk: begint niet met ja of nee",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "nee"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "nee"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "nee"
+        }
+      ]
+    },
+    {
+      "bewijs_hash": "63842b263f030dd4fe1969343c1c628c078f8952",
+      "categorie": "Inhoudelijk mogelijk tegenstrijdig",
+      "eigenaar": "kenniseigenaar",
+      "elders": "verwijst naar consulaire tarieven",
+      "locatie": {
+        "familie": "paspoort-landenpaginas",
+        "sleutel": "betalen"
+      },
+      "regel_id": "kernbeweringen",
+      "soort": "inhoudelijk",
+      "telling": {
+        "afwijkend": 1,
+        "eens": 208,
+        "n": 209
+      },
+      "titel": "Kosten van het paspoort: 1 pagina('s) zeggen iets anders",
+      "toelichting": "Op 208 van de 209 landenpagina's geldt: verwijst naar consulaire tarieven. Sommige pagina's noemen zelf een bedrag, andere verwijzen naar de consulaire tarieven.",
+      "urls": [
+        "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-tsjaad"
+      ],
+      "vingerafdruk": "8bb9b0e9188047498bacc03a8d9c3b6e40886feb",
+      "voorgestelde_actie": "Leg voor aan de kenniseigenaar: welk antwoord klopt, en mag het per land verschillen?",
+      "waargenomen": "tsjaad: noemt geen bedrag en verwijst niet naar de tarieven",
+      "zekerheid": "hoog",
+      "zusters": [
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-albanie",
+          "variant": "albanie",
+          "waarde": "verwijst naar consulaire tarieven"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-algerije",
+          "variant": "algerije",
+          "waarde": "verwijst naar consulaire tarieven"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/buitenland/paspoort-amerikaans-samoa",
+          "variant": "amerikaans-samoa",
+          "waarde": "verwijst naar consulaire tarieven"
+        }
+      ]
+    }
+  ],
+  "datum": "2026-09-30",
+  "familie": "paspoort-landenpaginas",
+  "waarschuwingen": []
+}

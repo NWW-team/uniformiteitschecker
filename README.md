@@ -17,8 +17,8 @@ de code: ze stellen een andere vraag en hebben een andere bron van waarheid.
 |---|---|---|
 | Vraag | Staat er een afgeraden term op de site? | Wijkt één landenpagina af van de rest? |
 | Norm | `config/termen.yaml`, door de redactie beheerd | de zusterpagina's zelf, geen externe bron nodig |
-| Bereik | elke rubriek die je in `config/sites.yaml` afbakent | één familie tegelijk, nu `consulaire-tarieven` |
-| Uitvoer | `rapport/rapport.html` + `rapport/bevindingen.json` | `uitvoer/rapport.html` |
+| Bereik | elke rubriek die je in `config/sites.yaml` afbakent | één familie tegelijk: `consulaire-tarieven` en `paspoort-landenpaginas` |
+| Uitvoer | `rapport/rapport.html` + `rapport/bevindingen.json` | `uitvoer/rapport.html`, één tabblad per familie |
 
 Beide draaien netwerkvrij te testen en beide melden alleen; geen van beide
 schrijft iets terug naar de site.
@@ -97,12 +97,34 @@ python -m checker controleer --familie consulaire-tarieven
 # Opnieuw detecteren op een bestaande snapshot, zonder netwerk
 python -m checker controleer --vanuit-snapshot data/snapshots/<datum>/consulaire-tarieven.jsonl
 
+# Alleen het rapport (alle families, één tabblad per familie) opnieuw bouwen, zonder netwerk
+python -m checker rapport --naar docs/index.html
+
 # Controleren of de site nog is zoals de app verwacht
 python -m checker invarianten
 ```
 
 Het rapport komt in `uitvoer/rapport.html` en is bedoeld om als Artifact gepubliceerd te
 worden, zodat de redactie het in de browser opent en kan delen.
+
+### Familie `paspoort-landenpaginas`
+
+De ~218 pagina's onder `/paspoort-id-kaart/buitenland/paspoort-<land>` volgen hetzelfde
+stappenplan (checklist, extra eisen, afspraak, naar de afspraak, ophalen of laten
+opsturen). Afwijken is vaak bewust, dus deze familie legt vooral vast *waar* een land
+afwijkt, in vijf detectoren (`checker/detectie/stappenplan.py`):
+
+| Detector | Vindt |
+|---|---|
+| `stappenplan` | ontbrekende, hernoemde, extra of verwisselde stappen; pagina's zonder stappenplan |
+| `uitklapparagrafen` | een uitklapper die op vrijwel elke pagina staat maar hier ontbreekt of anders heet |
+| `koppenstructuur` | h3 waar h4 de norm is, uitklaptitels op een ander niveau, overgeslagen niveaus, tweede h1 |
+| `standaardzinnen` | zinnen die vrijwel overal letterlijk staan maar hier ontbreken of afwijken |
+| `kernbeweringen` | inhoudelijke keuzes die tegenstrijdig kunnen zijn: originelen of kopieën, verwerkingstijd, ophaaltermijn, ... |
+
+Wat een pagina "beweert" staat in `regels/kernbeweringen.yaml`; een regel toevoegen is een
+blok YAML. Structuurafwijkingen komen in de groep *Beoordelen: bewust of niet?*, omdat het
+juiste antwoord er niet uit de zusterpagina's volgt.
 
 ### Opbouw
 
@@ -179,9 +201,9 @@ sitemaps, HTML, een mini-corpus en ingekorte landenpagina's staan als fixtures i
 
 ## Status
 
-Spoor 2 staat op zijn eerste versie: één familie (`consulaire-tarieven`), handmatig te
-starten. Volgende stappen staan in het bouwplan — negeerlijst in gebruik nemen,
-labeldrift, een tweede familie, terminologielexicon over de hele site, en daarna NL↔EN en
+Spoor 2 heeft twee families (`consulaire-tarieven` en `paspoort-landenpaginas`),
+handmatig te starten, en een rapport met een tabblad per familie. Volgende stappen staan in het bouwplan — negeerlijst in gebruik nemen,
+labeldrift, meer families, terminologielexicon over de hele site, en daarna NL↔EN en
 semantische tegenstrijdigheid.
 
 Twee dingen die buiten de code geregeld moeten worden: afstemmen met de beheerder van

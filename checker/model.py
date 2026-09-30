@@ -13,7 +13,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
-EXTRACTIE_VERSIE = 1
+EXTRACTIE_VERSIE = 2
 
 # Scheidingsteken voor hashes: mag niet in labels of URL's voorkomen.
 _SCHEIDING = "|~|"
@@ -21,10 +21,14 @@ _SCHEIDING = "|~|"
 # Soorten afwijking, zoals STRATEGY.md ze onderscheidt.
 SOORT_SCHRIJFRICHTLIJN = "schrijfrichtlijn"
 SOORT_INHOUDELIJK = "inhoudelijk"
+# Afwijkende opbouw (een stap, uitklapparagraaf of standaardzin die ontbreekt). Vaak
+# bewust landspecifiek, dus geen fout maar iets om te beoordelen.
+SOORT_STRUCTUUR = "structuur"
 
 # Wie het antwoord kan weten. Zie `bepaal_eigenaar`.
 EIGENAAR_REDACTIE = "webredactie"
 EIGENAAR_KENNISEIGENAAR = "kenniseigenaar"
+EIGENAAR_BEOORDELEN = "beoordelen"
 
 
 def _hash(*delen: str) -> str:
@@ -48,6 +52,23 @@ class Tabel:
 
 
 @dataclass
+class Sectie:
+    """Een stuk van een stappenplan: de inleiding onder een stap, of één uitklapparagraaf.
+
+    `titel` is leeg voor de tekst direct onder de stapkop. `niveau` is het kopniveau
+    van de uitklaptitel zelf (3 voor `<h3><button>`, 0 als de knop niet in een kop
+    staat). `koppen` zijn de kopjes binnen de uitklap, met hun niveau; niveau 0 is een
+    vetgedrukte alinea die als kopje dienstdoet.
+    """
+
+    stap: str
+    titel: str = ""
+    niveau: int = 0
+    tekst: str = ""
+    koppen: list[dict[str, Any]] = field(default_factory=list)
+
+
+@dataclass
 class Pagina:
     """Een uitgelezen, genormaliseerde pagina — de uitvoer van spoor 1."""
 
@@ -62,6 +83,7 @@ class Pagina:
     koppen: list[dict[str, Any]] = field(default_factory=list)
     tekst: str = ""
     tabellen: list[Tabel] = field(default_factory=list)
+    secties: list[Sectie] = field(default_factory=list)
     extractie_versie: int = EXTRACTIE_VERSIE
 
     def naar_json(self) -> str:
@@ -78,7 +100,8 @@ class Pagina:
             )
             for t in d.get("tabellen", [])
         ]
-        return Pagina(**{**d, "tabellen": tabellen})
+        secties = [Sectie(**s) for s in d.get("secties", [])]
+        return Pagina(**{**d, "tabellen": tabellen, "secties": secties})
 
 
 @dataclass
@@ -102,6 +125,9 @@ class Bevinding:
     voorgestelde_actie: str = ""
     zekerheid: str = "hoog"
     toelichting: str = ""
+    # Subgroep in het rapport, bijvoorbeeld "Opbouw van het stappenplan". Leeg voor
+    # detectoren die er maar één soort bevinding hebben.
+    categorie: str = ""
 
     @property
     def vingerafdruk(self) -> str:
@@ -128,6 +154,12 @@ class Bevinding:
         d["bewijs_hash"] = self.bewijs_hash
         return d
 
+    @staticmethod
+    def uit_dict(d: dict[str, Any]) -> "Bevinding":
+        """Terug uit findings-JSON; de afgeleide hashes worden opnieuw berekend."""
+        velden = {k: v for k, v in d.items() if k not in ("vingerafdruk", "bewijs_hash")}
+        return Bevinding(**velden)
+
 
 def canonieke_locatie(locatie: dict[str, Any]) -> str:
     """Stabiele tekstvorm van een locatie, onafhankelijk van sleutelvolgorde."""
@@ -141,5 +173,12 @@ def bepaal_eigenaar(soort: str) -> str:
     staat in de regel. Een inhoudelijke afwijking betreft een feit (bedrag, termijn,
     voorwaarde) waarbij de app niet kan weten welke kant klopt, ook niet bij 217 tegen 1.
     Geld en juridische voorwaarden wijzig je niet op statistiek.
+
+    Een structuurafwijking (een ontbrekende stap of uitklap) is vaak bewust: de redactie
+    beoordeelt of het zo hoort, zonder dat er een kenniseigenaar aan te pas hoeft te komen.
     """
-    return EIGENAAR_REDACTIE if soort == SOORT_SCHRIJFRICHTLIJN else EIGENAAR_KENNISEIGENAAR
+    if soort == SOORT_SCHRIJFRICHTLIJN:
+        return EIGENAAR_REDACTIE
+    if soort == SOORT_STRUCTUUR:
+        return EIGENAAR_BEOORDELEN
+    return EIGENAAR_KENNISEIGENAAR
