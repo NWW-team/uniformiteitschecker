@@ -138,6 +138,37 @@
   height: 6px;
 }
 
+.rhc-sitekop {
+  background: var(--rhc-color-lintblauw-500);
+  color: #fff;
+  border-bottom: 4px solid var(--rhc-color-hemelblauw-500);
+}
+.rhc-sitekop__binnen {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.rhc-sitekop__logo { display: flex; align-items: center; gap: 0.75rem; }
+.rhc-sitekop__globe { flex: none; }
+.rhc-sitekop__naam {
+  font-family: var(--rhc-text-font-family-sans);
+  font-weight: var(--rhc-text-font-weight-bold);
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+.rhc-sitekop__sub {
+  font-size: var(--rhc-text-font-size-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--rhc-color-hemelblauw-500);
+}
+
 .rhc-blad {
   max-width: 62rem;
   margin: 0 auto;
@@ -404,7 +435,7 @@
 </head>
 <body class="rhc-theme">
 <a class="rhc-skiplink" href="#inhoud">Naar de inhoud</a>
-<div class="rhc-lint"></div>
+<header class="rhc-sitekop"><div class="rhc-sitekop__binnen"><span class="rhc-sitekop__logo"><svg class="rhc-sitekop__globe" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2"><circle cx="24" cy="24" r="20"/><ellipse cx="24" cy="24" rx="8.5" ry="20"/><path d="M4 24h40M7 14h34M7 34h34"/></svg><span class="rhc-sitekop__naam">Nederland<br>Wereldwijd</span></span><span class="rhc-sitekop__sub">Uniformiteitschecker</span></div></header>
 
 <div class="rhc-blad">
   <header class="rhc-kop">
