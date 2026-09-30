@@ -161,6 +161,32 @@ gaf in de verkenning ~90 "tegenstrijdigheden" waarvan er één echt was. Wat dat
 - **Bewijs meegeven.** Elke bevinding toont de waarde op zusterpagina's, zodat
   verifiëren tien seconden kost. Vertrouwen komt uit controleerbaarheid.
 
+## Signalen achter een inlog
+
+De pagina in `docs/index.html` bevat zelf **geen signalen**. De bovenkant (titel, uitleg,
+methode) is openbaar; de signalen staan in Supabase en worden pas opgehaald nadat iemand
+is ingelogd. Zo staat er niets in de broncode van de pagina.
+
+```bash
+python -m checker rapport --beveiligd --naar docs/index.html   # pagina met inlog
+python -m checker publiceer                                     # signalen naar de database
+```
+
+- **Inloggen**: één gezamenlijke inlog voor het team (Supabase Auth, e-mail en
+  wachtwoord). Meerdere mensen kunnen tegelijk ingelogd zijn en werken.
+- **Wie er in mag**: alleen e-mailadressen in de tabel `teamleden`. Dat geldt ook als
+  iemand toch een account zou kunnen aanmaken.
+- **Publiceren** kan alleen met de geheime servicesleutel, in de omgevingsvariabele
+  `SUPABASE_SERVICE_KEY` (of het GitHub-geheim met dezelfde naam, voor de workflow
+  *Signalen publiceren*). Die sleutel hoort nooit in de repo.
+- `config/supabase.yaml` bevat alleen de URL en de publishable key; die horen in de
+  pagina te staan.
+- De tabel `afvinkingen` is klaar voor het markeren van bevindingen als opgelost; elk
+  bevinding heeft een vaste `data-id` in de pagina.
+
+Let op: `data/findings/` en `data/snapshots/` staan in git. Is de repo openbaar, dan zijn de
+signalen daar alsnog te lezen.
+
 ## Huisstijl
 
 Beide rapporten gebruiken de [Rijkshuisstijl Community](https://github.com/nl-design-system/rijkshuisstijl-community),

@@ -1,0 +1,6 @@
+# Verbinding met de database waarin de signalen achter de inlog staan.
+# Alleen de URL en de publishable key staan hier: die zijn bedoeld om in de pagina te
+# staan. De geheime servicesleutel gaat NOOIT in dit bestand, maar in de omgevings-
+# variabele SUPABASE_SERVICE_KEY (zie README).
+url: https://xhvzgnqupjzvjorqefzl.supabase.co
+publishable_key: sb_publishable_BnEDSxOsg2BXMN3OiyEgbA_JBjVNSfZ
