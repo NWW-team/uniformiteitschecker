@@ -2,7 +2,7 @@
 
 Het rapport groepeert primair op eigenaar, niet op ernst: "wat kan ik zelf doen" versus
 "wat moet ik uitzetten" is de vraag die het werk van de redacteur bepaalt. Binnen een
-groep staan de bevindingen per categorie, en elke laag is ingeklapt: eerst het overzicht,
+groep staan de bevindingen per categorie, en alleen de bevinding klapt uit: eerst het overzicht,
 dan pas het bewijs. Elke bevinding toont de afwijkende waarde naast de waarde op
 zusterpagina's, zodat verifiëren tien seconden kost — vertrouwen komt uit
 controleerbaarheid, niet uit zekerheid van de tool.
