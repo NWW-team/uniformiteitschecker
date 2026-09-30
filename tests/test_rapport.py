@@ -71,7 +71,9 @@ class TestRapport(unittest.TestCase):
         self.assertNotIn("fonts.googleapis.com", self.html)
 
     def test_volgt_de_rijkshuisstijl(self):
-        self.assertIn('class="rhc-theme"', self.html)
+        self.assertIn('<body class="hemelblauw">', self.html)
+        self.assertIn(".hemelblauw", self.html)
+        self.assertIn("utrecht-", self.html)
         self.assertIn("--rhc-color-", self.html)
 
 

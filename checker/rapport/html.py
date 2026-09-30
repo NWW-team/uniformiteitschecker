@@ -166,6 +166,7 @@ def render_rapport(families: list[dict]) -> str:
         families=families,
         stijl=huisstijl.laad_css(),
         sitekop=huisstijl.sitekop(),
+        thema=huisstijl.THEMA_KLASSE,
     )
 
 

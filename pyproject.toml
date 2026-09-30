@@ -33,7 +33,7 @@ packages = [
 
 [tool.setuptools.package-data]
 "checker.rapport" = ["templates/*.j2"]
-"huisstijl" = ["*.css"]
+"huisstijl" = ["*.css", "vendor/*.css", "vendor/fonts/*.woff2"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
