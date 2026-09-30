@@ -222,8 +222,34 @@
   font-size: var(--rhc-text-font-size-sm);
   color: var(--rhc-color-tekst-zacht);
 }
-.rhc-methode summary { font-weight: 500; color: var(--rhc-color-tekst); cursor: pointer; }
-.rhc-methode summary::marker { color: var(--rhc-color-tekst-zacht); }
+.rhc-methode summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: var(--rhc-color-tekst);
+  cursor: pointer;
+  list-style: none;
+}
+.rhc-methode summary::-webkit-details-marker { display: none; }
+.rhc-methode summary::before {
+  content: "i";
+  flex: none;
+  box-sizing: border-box;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font: italic 700 0.9rem/1.25rem Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+.rhc-methode summary::after {
+  content: "\25BE";
+  margin-left: auto;
+  color: var(--rhc-color-tekst-zacht);
+}
+.rhc-methode[open] summary::after { content: "\25B4"; }
+.rhc-methode summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .rhc-methode[open] summary { margin-bottom: 0.4rem; }
 .rhc-methode ul { margin: 0; padding-left: 1.2rem; }
 .rhc-methode li + li { margin-top: 0.3rem; }
@@ -459,10 +485,12 @@
 .rhc-zoek label { font-size: var(--rhc-text-font-size-sm); font-weight: 500; }
 .rhc-zoek input {
   font: inherit;
-  padding: 0.5rem 0.7rem;
+  padding: 0.65rem 0.9rem 0.65rem 2.7rem;
   border: 1px solid var(--rhc-color-grijs-500);
-  background: var(--rhc-color-oppervlak);
+  border-radius: 999px;
+  background: var(--rhc-color-oppervlak) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23595959' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E") no-repeat 0.95rem center / 1.1rem;
 }
+.rhc-zoek input:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .rhc-zoek__status { margin: 0; min-height: 1.2em; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-tekst-zacht); }
 
 /* Groep en categorie zijn gewone koppen; alleen de bevinding klapt uit. */
