@@ -2615,8 +2615,80 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
 .rhc-toelichting { font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }
 .rhc-actie { font-size: var(--rhc-text-font-size-sm); padding-block-start: var(--rhc-space-md); border-block-start: 1px solid var(--rhc-color-border-subtle); }
 .rhc-actie span { font-weight: 700; color: var(--rhc-color-primary-500); }
-.rhc-paginas { display: flex; flex-direction: column; gap: var(--rhc-space-2xs); }
-.rhc-paginas a { font-size: var(--rhc-text-font-size-sm); overflow-wrap: anywhere; }
+/* Afhandelen per pagina (alleen achter de inlog): één klein statusrondje per regel. */
+.rhc-land a { font-size: inherit; }
+.rhc-kolom li[data-url] { align-items: center; }
+.rhc-kolom li[data-url] .rhc-waarde { margin-inline-start: auto; }
+.rhc-status {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rhc-space-xs);
+  min-inline-size: 1.1rem;
+  min-block-size: 1.1rem;
+  padding: 0;
+  font: inherit;
+  font-size: var(--rhc-text-font-size-sm);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--rhc-color-foreground-default);
+  background: transparent;
+  border: 2px solid var(--rhc-color-border-default, var(--rhc-color-cool-grey-300));
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-status:empty { opacity: .6; }
+.rhc-status:empty:hover, .rhc-status:empty:focus-visible { opacity: 1; }
+.rhc-status:not(:empty) { padding: 0 var(--rhc-space-sm); border-color: transparent; }
+.rhc-status[data-status="in_behandeling"] { background: var(--rhc-color-warning-50); border-color: var(--rhc-color-warning-500); }
+.rhc-status[data-status="gefixt"], .rhc-status[data-status="genegeerd"] { background: var(--rhc-color-positive-100); }
+.rhc-status[data-status="teruggekomen"], .rhc-status[data-status="aanwezig"] { background: var(--rhc-color-negative-100); }
+.rhc-kolom li.rhc-afgehandeld .rhc-waarde { font-weight: 400; color: var(--rhc-color-foreground-subtle); }
+
+.rhc-filter { display: inline-flex; flex-wrap: wrap; gap: var(--rhc-space-xs); margin-block: var(--rhc-space-md); }
+.rhc-filter button {
+  font: inherit;
+  font-size: var(--rhc-text-font-size-sm);
+  padding: var(--rhc-space-2xs) var(--rhc-space-md);
+  background: #fff;
+  color: var(--rhc-color-foreground-default);
+  border: 1px solid var(--rhc-color-border-subtle);
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-filter button span { font-variant-numeric: tabular-nums; color: var(--rhc-color-foreground-subtle); }
+.rhc-filter button[aria-pressed="true"] { background: var(--rhc-color-primary-500); border-color: var(--rhc-color-primary-500); color: #fff; font-weight: 700; }
+.rhc-filter button[aria-pressed="true"] span { color: inherit; }
+.rhc-filter-weg { display: none; }
+.rhc-afhandeling-fout { color: var(--rhc-color-negative-500); font-weight: 700; margin-block-end: var(--rhc-space-md); }
+
+.rhc-menu {
+  position: fixed;
+  z-index: 10;
+  inline-size: min(22rem, calc(100vw - 16px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--rhc-space-sm);
+  padding: var(--rhc-space-md);
+  background: #fff;
+  border: 1px solid var(--rhc-color-border-subtle);
+  box-shadow: 0 4px 16px rgb(0 0 0 / .18);
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-menu__keuzes, .rhc-menu__groep { display: flex; flex-wrap: wrap; gap: var(--rhc-space-xs); align-items: center; }
+.rhc-menu__groep { padding-block-start: var(--rhc-space-sm); border-block-start: 1px solid var(--rhc-color-border-subtle); }
+.rhc-menu__groep span { flex-basis: 100%; }
+.rhc-menu button {
+  font: inherit;
+  padding: var(--rhc-space-2xs) var(--rhc-space-md);
+  background: #fff;
+  color: var(--rhc-color-foreground-default);
+  border: 1px solid var(--rhc-color-border-subtle);
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-menu button[aria-pressed="true"] { background: var(--rhc-color-primary-500); border-color: var(--rhc-color-primary-500); color: #fff; font-weight: 700; }
+.rhc-menu__wie { color: var(--rhc-color-foreground-subtle); }
 
 .rhc-waarschuwing {
   border-inline-start: 4px solid var(--rhc-color-warning-500);
@@ -2734,6 +2806,17 @@ footer {
 </div>
 
 <script>
+// Verbergt categorieën en groepen waar niets meer in zichtbaar is. Een signaal is zichtbaar
+// als het niet door het zoekveld (`hidden`) of het afhandelfilter (`rhc-filter-weg`) is weggehaald.
+function werkZichtbaarheidBij(paneel) {
+  paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
+    c.hidden = c.querySelector(".rhc-bevinding:not([hidden]):not(.rhc-filter-weg)") === null;
+  });
+  paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
+    g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
+  });
+}
+
 // Tabbladen en zoekveld. Losgekoppeld van het laden van de panelen, zodat het ook werkt
 // nadat de bevindingen na het inloggen pas in de pagina zijn gezet.
 function startRapport() {
@@ -2813,13 +2896,7 @@ function startRapport() {
         b.hidden = !raak;
         if (raak) zichtbaar++;
       });
-      paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
-        var heeft = c.querySelector(".rhc-bevinding:not([hidden])") !== null;
-        c.hidden = !heeft;
-      });
-      paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
-        g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
-      });
+      werkZichtbaarheidBij(paneel);
       status.textContent = q
         ? (zichtbaar ? zichtbaar + " signalen gevonden voor “" + invoer.value.trim() + "”"
                      : "Geen signalen gevonden voor “" + invoer.value.trim() + "”")
@@ -2827,6 +2904,349 @@ function startRapport() {
     });
   });
 }
+</script><script>
+// Afhandelen per pagina: gefixt, negeren of in behandeling. Alleen voor ingelogde teamleden;
+// de statussen staan in de tabel `afvinkingen` (Supabase) met als sleutel het signaal (data-id)
+// plus de URL. Zonder status is een pagina "open". Dit script verandert niets aan de signalen.
+(function () {
+  var URL_BASIS, KEY, sessieHaal;
+  var rijen = {};        // "signaal|url" -> rij uit de database
+  var menu = null;       // het ene, gedeelde statusmenu
+  var menuAnker = null;  // de knop waar het menu onder hangt
+  var filterPerFamilie = {};
+
+  var STATUSSEN = [
+    { code: "in_behandeling", label: "In behandeling" },
+    { code: "gefixt", label: "Gefixt" },
+    { code: "negeren", label: "Negeren" }
+  ];
+
+  function sleutel(id, url) { return id + "|" + url; }
+
+  // Wat de redacteur ziet, afgeleid van de opgeslagen status en de huidige situatie.
+  //  - negeren vervalt zodra de waarde op die pagina wijzigt en de pagina nog steeds afwijkt
+  //  - gefixt dat na een latere controle nog in het rapport staat, is niet echt gefixt
+  function weergave(rij, bewijs, datumControle) {
+    if (!rij) return { code: "open", label: "", afgehandeld: false };
+    if (rij.status === "in_behandeling")
+      return { code: "in_behandeling", label: "in behandeling", afgehandeld: false };
+    if (rij.status === "negeren") {
+      return rij.bewijs_hash === bewijs
+        ? { code: "genegeerd", label: "genegeerd", afgehandeld: true }
+        : { code: "teruggekomen", label: "teruggekomen", afgehandeld: false };
+    }
+    return datumControle > rij.datum_controle
+      ? { code: "aanwezig", label: "gefixt, maar nog aanwezig", afgehandeld: false }
+      : { code: "gefixt", label: "gefixt", afgehandeld: true };
+  }
+
+  function datumTekst(iso) {
+    var d = new Date(iso);
+    return isNaN(d) ? "" : d.toLocaleDateString("nl-NL", { day: "numeric", month: "short" });
+  }
+
+  function api(pad, opties) {
+    return sessieHaal().then(function (s) {
+      if (!s) { location.reload(); throw new Error("sessie"); }
+      opties.headers = Object.assign({
+        "apikey": KEY, "Authorization": "Bearer " + s.access_token,
+        "Content-Type": "application/json"
+      }, opties.headers || {});
+      return fetch(URL_BASIS + "/rest/v1/afvinkingen" + pad, opties);
+    }).then(function (r) {
+      if (r.status === 401 || r.status === 403) { location.reload(); throw new Error("sessie"); }
+      if (!r.ok) throw new Error("opslaan");
+      return r.status === 204 ? [] : r.json();
+    });
+  }
+
+  function paneelVan(el) { return el.closest(".rhc-paneel"); }
+  function bevindingVan(el) { return el.closest(".rhc-bevinding"); }
+
+  function tekenRegel(li) {
+    var b = bevindingVan(li), p = paneelVan(li);
+    var w = weergave(rijen[sleutel(b.dataset.id, li.dataset.url)], li.dataset.bewijs, p.dataset.datum);
+    var knop = li.querySelector(".rhc-status");
+    if (!knop) {
+      knop = document.createElement("button");
+      knop.type = "button";
+      knop.className = "rhc-status";
+      knop.setAttribute("aria-haspopup", "dialog");
+      knop.addEventListener("click", function (e) { e.stopPropagation(); opener(li, knop); });
+      li.appendChild(knop);
+    }
+    li.dataset.afgehandeld = w.afgehandeld ? "ja" : "nee";
+    li.classList.toggle("rhc-afgehandeld", w.afgehandeld);
+    knop.dataset.status = w.code;
+    knop.textContent = w.label;
+    var naam = li.querySelector(".rhc-land a").textContent;
+    knop.setAttribute("aria-label", "Status van " + naam + ": " + (w.label || "open") + ". Wijzigen");
+    knop.title = "Status wijzigen";
+    return w;
+  }
+
+  // Telt per signaal hoeveel pagina's zijn afgehandeld en zet de chip in de kop.
+  function tekenBevinding(b) {
+    var regels = b.querySelectorAll(".rhc-afwijkend li[data-url]");
+    var klaar = 0;
+    regels.forEach(function (li) { if (tekenRegel(li).afgehandeld) klaar++; });
+    // Een oud gepubliceerd paneel zonder pagina-regels blijft gewoon "te doen".
+    b.dataset.afgehandeld = regels.length && klaar === regels.length ? "ja" : "nee";
+    var chips = b.querySelector(".rhc-chips");
+    var chip = chips.querySelector(".rhc-voortgang");
+    if (klaar && regels.length > 1) {
+      if (!chip) {
+        chip = document.createElement("span");
+        chip.className = "rhc-chip rhc-neutraal rhc-voortgang";
+        chips.appendChild(chip);
+      }
+      chip.textContent = klaar + " van " + regels.length + " afgehandeld";
+    } else if (chip) {
+      chip.remove();
+    }
+  }
+
+  // Filter Te doen / Afgehandeld / Alles. Een openstaand signaal blijft staan, zodat het niet
+  // onder je handen verdwijnt terwijl je de pagina's afwerkt.
+  function pasFilterToe(paneel) {
+    var modus = filterPerFamilie[paneel.dataset.familie] || "te_doen";
+    var tel = { te_doen: 0, afgehandeld: 0 };
+    paneel.querySelectorAll(".rhc-bevinding").forEach(function (b) {
+      var klaar = b.dataset.afgehandeld === "ja";
+      tel[klaar ? "afgehandeld" : "te_doen"]++;
+      var past = modus === "alles" || (modus === "afgehandeld") === klaar;
+      b.classList.toggle("rhc-filter-weg", !past && !b.open);
+    });
+    werkZichtbaarheidBij(paneel);
+    // Getallen in kopregels, tegels en tabbalk tellen wat nog te doen is.
+    paneel.querySelectorAll(".rhc-groep, .rhc-categorie").forEach(function (blok) {
+      var n = blok.querySelectorAll('.rhc-bevinding[data-afgehandeld="nee"]').length;
+      var getal = blok.querySelector(":scope > .rhc-kopregel > .rhc-aantal");
+      if (getal) getal.textContent = n;
+      if (blok.classList.contains("rhc-groep")) {
+        var tegel = paneel.querySelector('.rhc-tegel[href="#' + blok.id + '"] .rhc-tegel__getal');
+        if (tegel) tegel.textContent = n;
+      }
+    });
+    var tab = document.getElementById("tab-" + paneel.dataset.familie);
+    var tabGetal = tab && tab.querySelector(".rhc-aantal");
+    if (tabGetal) tabGetal.textContent = tel.te_doen;
+    var knoppen = paneel.querySelectorAll(".rhc-filter button");
+    knoppen.forEach(function (k) {
+      var m = k.dataset.modus;
+      var n = m === "alles" ? tel.te_doen + tel.afgehandeld : tel[m];
+      k.querySelector("span").textContent = n;
+      k.setAttribute("aria-pressed", m === modus ? "true" : "false");
+    });
+    var leeg = paneel.querySelector(".rhc-filter-leeg");
+    var past = modus === "alles" ? tel.te_doen + tel.afgehandeld : tel[modus];
+    if (!past) {
+      if (!leeg) {
+        leeg = document.createElement("div");
+        leeg.className = "rhc-leeg rhc-filter-leeg";
+        paneel.querySelector(".rhc-filter").after(leeg);
+      }
+      leeg.innerHTML = modus === "te_doen"
+        ? "<h3>Niets meer te doen</h3><p>Alle signalen in dit tabblad zijn afgehandeld.</p>"
+        : "<h3>Nog niets afgehandeld</h3><p>Afgehandelde pagina's verschijnen hier.</p>";
+    } else if (leeg) {
+      leeg.remove();
+    }
+  }
+
+  function bouwFilter(paneel) {
+    if (paneel.querySelector(".rhc-filter") || !paneel.querySelector(".rhc-bevinding")) return;
+    var blok = document.createElement("div");
+    blok.className = "rhc-filter";
+    blok.setAttribute("role", "group");
+    blok.setAttribute("aria-label", "Toon signalen");
+    [["te_doen", "Te doen"], ["afgehandeld", "Afgehandeld"], ["alles", "Alles"]].forEach(function (m) {
+      var k = document.createElement("button");
+      k.type = "button";
+      k.dataset.modus = m[0];
+      k.appendChild(document.createTextNode(m[1] + " "));
+      k.appendChild(document.createElement("span"));
+      k.addEventListener("click", function () {
+        filterPerFamilie[paneel.dataset.familie] = m[0];
+        pasFilterToe(paneel);
+      });
+      blok.appendChild(k);
+    });
+    var tegels = paneel.querySelector(".rhc-tegels");
+    tegels.parentNode.insertBefore(blok, tegels.nextSibling);
+  }
+
+  function tekenPaneel(paneel) {
+    paneel.querySelectorAll(".rhc-bevinding").forEach(tekenBevinding);
+    bouwFilter(paneel);
+    pasFilterToe(paneel);
+  }
+
+  // ---- het menu --------------------------------------------------------------
+  function sluit() { if (menu) { menu.remove(); menu = null; } }
+
+  function opener(li, knop) {
+    var open = menu && menu.dataset.voor === sleutel(bevindingVan(li).dataset.id, li.dataset.url);
+    sluit();
+    if (open) return;
+    var b = bevindingVan(li), p = paneelVan(li);
+    var id = b.dataset.id, url = li.dataset.url;
+    var rij = rijen[sleutel(id, url)];
+
+    menu = document.createElement("div");
+    menu.className = "rhc-menu";
+    menu.setAttribute("role", "dialog");
+    menu.setAttribute("aria-label", "Status wijzigen");
+    menu.dataset.voor = sleutel(id, url);
+
+    var lijst = document.createElement("div");
+    lijst.className = "rhc-menu__keuzes";
+    function keuze(code, label) {
+      var k = document.createElement("button");
+      k.type = "button";
+      k.textContent = label;
+      var actief = code === "open" ? !rij : rij && rij.status === code;
+      k.setAttribute("aria-pressed", actief ? "true" : "false");
+      k.addEventListener("click", function () {
+        zet([li], code, notitie.value.trim());
+      });
+      lijst.appendChild(k);
+    }
+    keuze("open", "Open");
+    STATUSSEN.forEach(function (s) { keuze(s.code, s.label); });
+    menu.appendChild(lijst);
+
+    var notitie = document.createElement("input");
+    notitie.type = "text";
+    notitie.className = "utrecht-textbox rhc-text-input";
+    notitie.placeholder = "Notitie (optioneel)";
+    notitie.setAttribute("aria-label", "Notitie");
+    notitie.maxLength = 300;
+    notitie.value = (rij && rij.notitie) || "";
+    notitie.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && rij) { e.preventDefault(); zet([li], rij.status, notitie.value.trim()); }
+    });
+    menu.appendChild(notitie);
+
+    if (rij && rij.door) {
+      var wie = document.createElement("p");
+      wie.className = "rhc-menu__wie";
+      wie.textContent = "Laatst door " + rij.door + " op " + datumTekst(rij.bijgewerkt_op);
+      menu.appendChild(wie);
+    }
+
+    var open_ = Array.prototype.filter.call(
+      b.querySelectorAll(".rhc-afwijkend li[data-url]"),
+      function (x) { return !rijen[sleutel(id, x.dataset.url)]; });
+    if (open_.length > 1) {
+      var groep = document.createElement("div");
+      groep.className = "rhc-menu__groep";
+      var kop = document.createElement("span");
+      kop.textContent = "Alle " + open_.length + " open pagina's van dit signaal:";
+      groep.appendChild(kop);
+      STATUSSEN.forEach(function (s) {
+        var k = document.createElement("button");
+        k.type = "button";
+        k.textContent = s.label;
+        k.addEventListener("click", function () { zet(open_, s.code, notitie.value.trim()); });
+        groep.appendChild(k);
+      });
+      menu.appendChild(groep);
+    }
+
+    document.body.appendChild(menu);
+    menuAnker = knop;
+    plaats();
+    menu.querySelector("button").focus();
+  }
+
+  // Het menu hangt onder zijn statusknop en loopt mee bij scrollen of een gewijzigde indeling.
+  function plaats() {
+    if (!menu) return;
+    if (!menuAnker.isConnected) return sluit();
+    var r = menuAnker.getBoundingClientRect();
+    var breed = menu.offsetWidth;
+    menu.style.top = Math.max(8, Math.min(r.bottom + 4, window.innerHeight - menu.offsetHeight - 8)) + "px";
+    menu.style.left = Math.max(8, Math.min(r.right - breed, window.innerWidth - breed - 8)) + "px";
+  }
+
+  function fout(melding) {
+    var m = document.getElementById("afhandeling-fout");
+    if (!m) {
+      m = document.createElement("p");
+      m.id = "afhandeling-fout";
+      m.className = "rhc-afhandeling-fout";
+      m.setAttribute("role", "alert");
+      document.getElementById("inhoud").prepend(m);
+    }
+    m.textContent = melding;
+    m.hidden = !melding;
+  }
+
+  // Bewaart (of wist, bij "open") de status van één of meer pagina's van hetzelfde signaal.
+  function zet(regels, code, notitie) {
+    var b = bevindingVan(regels[0]), p = paneelVan(regels[0]);
+    var id = b.dataset.id;
+    var belofte;
+    if (code === "open") {
+      belofte = Promise.all(regels.map(function (li) {
+        return api("?bevinding_id=eq." + encodeURIComponent(id) + "&url=eq." + encodeURIComponent(li.dataset.url),
+                   { method: "DELETE" }).then(function () { delete rijen[sleutel(id, li.dataset.url)]; });
+      }));
+    } else {
+      var body = regels.map(function (li) {
+        return { bevinding_id: id, url: li.dataset.url, familie: p.dataset.familie, status: code,
+                 bewijs_hash: li.dataset.bewijs, datum_controle: p.dataset.datum,
+                 notitie: notitie || null };
+      });
+      belofte = api("?on_conflict=bevinding_id,url", {
+        method: "POST", body: JSON.stringify(body),
+        headers: { "Prefer": "resolution=merge-duplicates,return=representation" }
+      }).then(function (terug) {
+        terug.forEach(function (r) { rijen[sleutel(r.bevinding_id, r.url)] = r; });
+      });
+    }
+    belofte.then(function () {
+      fout("");
+      sluit();
+      tekenBevinding(b);
+      pasFilterToe(p);
+    }).catch(function (e) {
+      if (e.message !== "sessie") fout("Opslaan is niet gelukt. Probeer het opnieuw.");
+      sluit();
+    });
+  }
+
+  document.addEventListener("click", function (e) { if (menu && !menu.contains(e.target)) sluit(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") sluit(); });
+  window.addEventListener("resize", plaats);
+  document.addEventListener("scroll", plaats, true);
+  // Klapt een signaal dicht, dan mag het filter het weer wegwerken.
+  document.addEventListener("toggle", function (e) {
+    if (e.target.classList && e.target.classList.contains("rhc-bevinding") && !e.target.open)
+      pasFilterToe(paneelVan(e.target));
+  }, true);
+
+  document.addEventListener("rapport-geladen", function (e) {
+    sessieHaal = e.detail.geldigeSessie;
+    URL_BASIS = e.detail.url;
+    KEY = e.detail.sleutel;
+    rijen = {};
+    sluit();
+    var panelen = document.querySelectorAll(".rhc-paneel");
+    if (!panelen.length) return;
+    api("?select=*", { method: "GET" }).then(function (lijst) {
+      lijst.forEach(function (r) { rijen[sleutel(r.bevinding_id, r.url)] = r; });
+    }).catch(function (err) {
+      if (err.message !== "sessie") fout("De afhandelstatus kon niet worden geladen; alle signalen staan nu als open.");
+    }).then(function () {
+      panelen.forEach(tekenPaneel);
+    });
+  });
+
+  // Voor tests en debuggen.
+  window.afhandelingWeergave = weergave;
+})();
 </script><script>
 (function () {
   var SUPABASE_URL = "https://xhvzgnqupjzvjorqefzl.supabase.co";
@@ -2905,7 +3325,7 @@ function startRapport() {
     document.getElementById("sessie-status").textContent = sessie.email || "teamlid";
     inhoud.hidden = false;
     startRapport();
-    document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie } }));
+    document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie, geldigeSessie: geldigeSessie, url: SUPABASE_URL, sleutel: SUPABASE_KEY } }));
   }
 
   function toonInlog(melding) {

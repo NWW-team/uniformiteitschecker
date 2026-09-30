@@ -108,7 +108,7 @@ class TestTabbladen(unittest.TestCase):
         self.assertNotIn('<details class="rhc-categorie"', self.html)
 
     def test_links_naar_nederlandwereldwijd_openen_in_nieuw_tabblad(self):
-        self.assertIn('href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie" target="_blank" rel="noopener noreferrer"', self.html)
+        self.assertIn('href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie" title="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie" target="_blank" rel="noopener noreferrer"', self.html)
 
     def test_tab_zonder_afwijkingen_meldt_dat_eerlijk(self):
         self.assertIn("Geen afwijkingen gevonden", self.html)
