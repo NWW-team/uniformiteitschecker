@@ -132,6 +132,37 @@
   height: 6px;
 }
 
+.rhc-sitekop {
+  background: var(--rhc-color-lintblauw-500);
+  color: #fff;
+  border-bottom: 4px solid var(--rhc-color-hemelblauw-500);
+}
+.rhc-sitekop__binnen {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.rhc-sitekop__logo { display: flex; align-items: center; gap: 0.75rem; }
+.rhc-sitekop__globe { flex: none; }
+.rhc-sitekop__naam {
+  font-family: var(--rhc-text-font-family-sans);
+  font-weight: var(--rhc-text-font-weight-bold);
+  font-size: 1.35rem;
+  line-height: 1.05;
+}
+.rhc-sitekop__sub {
+  font-size: var(--rhc-text-font-size-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--rhc-color-hemelblauw-500);
+}
+
 .rhc-blad {
   max-width: 62rem;
   margin: 0 auto;

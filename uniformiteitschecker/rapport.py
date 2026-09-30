@@ -81,7 +81,7 @@ def schrijf_html(
         "</head>",
         '<body class="rhc-theme">',
         '<a class="rhc-skiplink" href="#inhoud">Naar de inhoud</a>',
-        '<div class="rhc-lint"></div>',
+        huisstijl.sitekop(),
         '<div class="rhc-blad">',
         '<header class="rhc-kop">',
         "<h1>Uniformiteitscheck</h1>",
