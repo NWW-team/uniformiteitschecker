@@ -321,9 +321,8 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
   display: inline-flex;
   align-items: center;
   gap: var(--rhc-space-xs);
-  min-inline-size: 1.1rem;
-  min-block-size: 1.1rem;
-  padding: 0;
+  min-block-size: 1.4rem;
+  padding: 0 var(--rhc-space-sm);
   font: inherit;
   font-size: var(--rhc-text-font-size-sm);
   font-weight: 700;
@@ -336,10 +335,22 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
 }
 .rhc-status:empty { opacity: .6; }
 .rhc-status:empty:hover, .rhc-status:empty:focus-visible { opacity: 1; }
-.rhc-status:not(:empty) { padding: 0 var(--rhc-space-sm); border-color: transparent; }
+.rhc-status:not(:empty) { border-color: transparent; }
 .rhc-status[data-status="in_behandeling"] { background: var(--rhc-color-warning-50); border-color: var(--rhc-color-warning-500); }
-.rhc-status[data-status="gefixt"], .rhc-status[data-status="genegeerd"] { background: var(--rhc-color-positive-100); }
-.rhc-status[data-status="teruggekomen"], .rhc-status[data-status="aanwezig"] { background: var(--rhc-color-negative-100); }
+.rhc-status[data-status="gefixt"] { background: var(--rhc-color-positive-100); }
+.rhc-status[data-status="genegeerd"], .rhc-status[data-status="teruggekomen"], .rhc-status[data-status="aanwezig"] { background: var(--rhc-color-negative-100); }
+/* Uitklap-pijltje: maakt duidelijk dat de status te kiezen is. */
+.rhc-status::after {
+  content: "";
+  flex: none;
+  inline-size: .4em;
+  block-size: .4em;
+  margin-block-start: -.2em;
+  border-inline-end: 2px solid currentColor;
+  border-block-end: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.rhc-status:hover, .rhc-status:focus-visible { border-color: var(--rhc-color-primary-500); }
 .rhc-kolom li.rhc-afgehandeld .rhc-waarde { font-weight: 400; color: var(--rhc-color-foreground-subtle); }
 
 .rhc-filter { display: inline-flex; flex-wrap: wrap; gap: var(--rhc-space-xs); margin-block: var(--rhc-space-md); }
