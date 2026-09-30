@@ -13,6 +13,7 @@ staan op de klasse `hemelblauw`, die op `<body>` moet staan.
 from __future__ import annotations
 
 import base64
+import re
 from functools import lru_cache
 from pathlib import Path
 
@@ -55,20 +56,23 @@ def laad_css() -> str:
     return "\n".join(delen)
 
 
-_GLOBE = (
-    '<svg class="rhc-sitekop__globe" viewBox="0 0 48 48" width="44" height="44" '
-    'aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2">'
-    '<circle cx="24" cy="24" r="20"/>'
-    '<ellipse cx="24" cy="24" rx="8.5" ry="20"/>'
-    '<path d="M4 24h40M7 14h34M7 34h34"/></svg>'
-)
+@lru_cache(maxsize=1)
+def _wereldbol() -> str:
+    """Het NWW-wereldbol-logo (`wereldbol.svg`) als inline SVG, wit via `currentColor`."""
+    bron = (MAP / "wereldbol.svg").read_text(encoding="utf-8")
+    viewbox = re.search(r'viewBox="([^"]+)"', bron).group(1)
+    paden = "".join(re.findall(r"<path[^>]*/>", bron)).replace(' class="cls-1"', "")
+    return (
+        f'<svg class="rhc-sitekop__globe" viewBox="{viewbox}" width="44" height="44" '
+        f'aria-hidden="true" focusable="false" fill="currentColor">{paden}</svg>'
+    )
 
 
 def sitekop(ondertitel: str = "Uniformiteitschecker") -> str:
     """Blauwe sitekop met wereldbol, in de stijl van nederlandwereldwijd.nl."""
     return (
         '<header class="rhc-sitekop"><div class="rhc-sitekop__binnen">'
-        f'<span class="rhc-sitekop__logo">{_GLOBE}'
+        f'<span class="rhc-sitekop__logo">{_wereldbol()}'
         '<span class="rhc-sitekop__naam">Nederland<br>Wereldwijd</span></span>'
         f'<span class="rhc-sitekop__sub">{ondertitel}</span>'
         "</div></header>"
