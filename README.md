@@ -163,23 +163,24 @@ gaf in de verkenning ~90 "tegenstrijdigheden" waarvan er één echt was. Wat dat
 
 ## Huisstijl
 
-Beide rapporten volgen de [Rijkshuisstijl Community](https://github.com/nl-design-system/rijkshuisstijl-community),
-de onofficiële implementatie van de Rijkshuisstijl op de NL Design System-architectuur.
-De tokens (`--rhc-*`) en de `rhc-theme`-klasse staan in één gedeeld bestand,
-`huisstijl/rijkshuisstijl.css`, dat beide sporen inlijnen zodat er geen los verzoek
-naar een lettertype- of stylesheet-CDN nodig is — een rapport blijft één zelfstandig
-HTML-bestand.
+Beide rapporten gebruiken de [Rijkshuisstijl Community](https://github.com/nl-design-system/rijkshuisstijl-community),
+de implementatie van de Rijkshuisstijl op de NL Design System-architectuur, op dezelfde
+manier als [social-media-postmaker](https://github.com/NWW-team/social-media-postmaker):
+de officiële bestanden worden meegeleverd, niet nagebouwd.
 
-Deze tokenwaarden zijn met de hand overgenomen uit de publiek gedocumenteerde
-Rijkshuisstijl-basiskleuren: deze repo kon tijdens het maken niet bij npm. Vervang ze
-door de echte tokens zodra dat wél kan:
+- `huisstijl/vendor/` — onveranderd uit npm: design tokens (lintkleur hemelblauw),
+  componenten-CSS (`utrecht-*`/`rhc-*`: link, tabel, tekstveld) en Fira Sans. Herkomst,
+  versies en licenties staan in `huisstijl/vendor/LEESMIJ.md`.
+- `huisstijl/rapport.css` — alleen de indeling van het rapport, uitsluitend op
+  `--rhc-*`-tokens.
+- `huisstijl/__init__.py` voegt alles (lettertype als base64) samen tot één stijlblok dat
+  in het rapport wordt ingelijnd, zodat een rapport één zelfstandig HTML-bestand blijft
+  zonder CDN. De tokens staan op de klasse `hemelblauw`, die op `<body>` moet staan.
 
-```bash
-npm install @rijkshuisstijl-community/design-tokens
-cp node_modules/@rijkshuisstijl-community/design-tokens/dist/index.css huisstijl/rijkshuisstijl.css
-# tokennamen (--rhc-*) en de klasse .rhc-theme blijven gelijk; alleen het tokenblok
-# bovenin rijkshuisstijl.css hoeft te worden vervangen, de componentenlaag eronder niet.
-```
+Een andere lintkleur is een ander tokenbestand uit `@rijkshuisstijl-community/design-tokens`
+plus een andere klasse (`THEMA_KLASSE`). Het huisstijllettertype RijksSansVF is
+licentieplichtig en zit er niet in; staat hij op de werklaptop, dan gebruikt de browser hem
+vanzelf, anders Fira Sans.
 
 ## Afspraken bij het ophalen
 

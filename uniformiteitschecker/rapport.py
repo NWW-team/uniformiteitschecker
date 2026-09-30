@@ -79,7 +79,7 @@ def schrijf_html(
         "<title>Uniformiteitscheck NederlandWereldwijd</title>",
         f"<style>{huisstijl.laad_css()}</style>",
         "</head>",
-        '<body class="rhc-theme">',
+        f'<body class="{huisstijl.THEMA_KLASSE}">',
         '<a class="rhc-skiplink" href="#inhoud">Naar de inhoud</a>',
         huisstijl.sitekop(),
         '<div class="rhc-blad">',
@@ -112,7 +112,7 @@ def schrijf_html(
         )
     else:
         delen.append(
-            "<table><thead><tr><th>Regel</th><th>Voorkeursterm</th>"
+            '<div class="rhc-tabelwrap"><table class="utrecht-table utrecht-table--html-table rhc-table"><thead><tr><th>Regel</th><th>Voorkeursterm</th>'
             '<th class="rhc-getal">Signalen</th><th class="rhc-getal">Pagina\'s</th></tr></thead><tbody>'
         )
         for regel_id, treffers, paginas_met in rijen:
@@ -121,7 +121,7 @@ def schrijf_html(
                 f"<tr><td>{escape(regel_id)}</td><td>{escape(voorkeur)}</td>"
                 f'<td class="rhc-getal">{treffers}</td><td class="rhc-getal">{paginas_met}</td></tr>'
             )
-        delen.append("</tbody></table>")
+        delen.append("</tbody></table></div>")
 
         for regel_id, treffers, paginas_met in rijen:
             groep = per_regel[regel_id]
@@ -146,7 +146,7 @@ def schrijf_html(
                     '<div class="rhc-meta">'
                     f'<span class="rhc-chip rhc-neutraal">{escape(bevinding.taal)}</span>'
                     f"<span>“{escape(bevinding.gevonden_term)}” → <b>{escape(bevinding.voorkeursterm)}</b>{extra}</span>"
-                    f'<a href="{escape(bevinding.url, quote=True)}">{escape(bevinding.url)}</a>'
+                    f'<a class="utrecht-link rhc-link" href="{escape(bevinding.url, quote=True)}">{escape(bevinding.url)}</a>'
                     "</div></div>"
                 )
 

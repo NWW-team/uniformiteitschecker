@@ -1,23 +1,53 @@
 """Gedeelde Rijkshuisstijl-CSS voor beide rapportsporen.
 
 Eén stijlblok, ingeladen door zowel `checker/rapport/html.py` als
-`uniformiteitschecker/rapport.py`, zodat de twee rapporten niet meer elk hun eigen,
-onderling afwijkende palet hebben. Zie `rijkshuisstijl.css` voor de herkomst van de
-tokens.
+`uniformiteitschecker/rapport.py`. Het bestaat uit de officiële, onveranderde
+Rijkshuisstijl Community (design tokens, componenten-CSS en het lettertype, zie
+`vendor/LEESMIJ.md`) plus `rapport.css` voor de indeling van het rapport.
+
+Rapporten zijn één zelfstandig HTML-bestand: de CSS en het lettertype worden ingesloten
+(base64), zodat er geen los verzoek naar een CDN of ander bestand nodig is. De tokens
+staan op de klasse `hemelblauw`, die op `<body>` moet staan.
 """
 
 from __future__ import annotations
 
+import base64
 from functools import lru_cache
 from pathlib import Path
 
-_CSS_PAD = Path(__file__).parent / "rijkshuisstijl.css"
+MAP = Path(__file__).parent
+_VENDOR = MAP / "vendor"
+
+#: Klasse voor `<body>`: zonder deze zijn alle --rhc-variabelen leeg.
+THEMA_KLASSE = "hemelblauw"
+
+# Alleen de latin-subset, in de drie gewichten die de tokens gebruiken.
+_LETTERS = (400, 600, 700)
+
+
+def _lettertype_css() -> str:
+    blokken = []
+    for gewicht in _LETTERS:
+        data = (_VENDOR / "fonts" / f"fira-sans-latin-{gewicht}-normal.woff2").read_bytes()
+        b64 = base64.b64encode(data).decode("ascii")
+        blokken.append(
+            '@font-face{font-family:"Fira Sans";font-style:normal;font-display:swap;'
+            f"font-weight:{gewicht};src:url(data:font/woff2;base64,{b64}) format(\"woff2\");}}"
+        )
+    return "\n".join(blokken)
 
 
 @lru_cache(maxsize=1)
 def laad_css() -> str:
-    """Lees de gedeelde stijl. Gecachet: beide rapporten lezen dezelfde string."""
-    return _CSS_PAD.read_text(encoding="utf-8")
+    """Lettertype, tokens, componenten en rapportindeling als één string. Gecachet."""
+    delen = [
+        _lettertype_css(),
+        (_VENDOR / "rhc-tokens-hemelblauw.css").read_text(encoding="utf-8"),
+        (_VENDOR / "rhc-components.css").read_text(encoding="utf-8"),
+        (MAP / "rapport.css").read_text(encoding="utf-8"),
+    ]
+    return "\n".join(delen)
 
 
 _GLOBE = (

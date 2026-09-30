@@ -6,7 +6,7 @@
 <title>Uniformiteitssignalen NederlandWereldwijd</title>
 <style>{{ stijl | safe }}</style>
 </head>
-<body class="rhc-theme">
+<body class="{{ thema }}">
 <a class="rhc-skiplink" href="#inhoud">Naar de inhoud</a>
 {{ sitekop | safe }}
 
@@ -100,8 +100,8 @@
     </ul>
 
     <div class="rhc-zoek" hidden>
-      <label for="zoek-{{ f.id }}">Zoek op land of onderwerp</label>
-      <input type="search" id="zoek-{{ f.id }}" data-zoek="{{ f.id }}" placeholder="bijvoorbeeld duitsland">
+      <label class="utrecht-form-label" for="zoek-{{ f.id }}">Zoek op land of onderwerp</label>
+      <input type="search" class="utrecht-textbox rhc-text-input" id="zoek-{{ f.id }}" data-zoek="{{ f.id }}" placeholder="bijvoorbeeld duitsland">
       <p class="rhc-zoek__status" data-status="{{ f.id }}" aria-live="polite"></p>
     </div>
 
@@ -158,7 +158,7 @@
             {% if b.toelichting %}<p class="rhc-toelichting">{{ b.toelichting }}</p>{% endif %}
 
             <div class="rhc-paginas">
-              {% for u in b.urls %}<a href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ u }}</a>{% endfor %}
+              {% for u in b.urls %}<a class="utrecht-link rhc-link" href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ u }}</a>{% endfor %}
             </div>
 
             <p class="rhc-actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
