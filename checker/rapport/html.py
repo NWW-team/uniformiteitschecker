@@ -102,6 +102,7 @@ def render(
         aantal_paginas=aantal_paginas,
         waarschuwingen=waarschuwingen or [],
         stijl=huisstijl.laad_css(),
+        sitekop=huisstijl.sitekop(),
     )
 
 
