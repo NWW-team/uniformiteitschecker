@@ -34,7 +34,7 @@
   </section>
 
   <div class="rhc-sessie" id="sessie" hidden>
-    <span id="sessie-status">Ingelogd</span>
+    <span class="rhc-sessie__account"><svg class="rhc-sessie__icoon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg><span id="sessie-status"></span></span>
     <button type="button" class="utrecht-button utrecht-button--secondary-action" id="uitlog-knop">Uitloggen</button>
   </div>
 
@@ -124,7 +124,7 @@
     }
     inlog.hidden = true;
     sessieBalk.hidden = false;
-    document.getElementById("sessie-status").textContent = "Ingelogd als " + (sessie.email || "teamlid");
+    document.getElementById("sessie-status").textContent = sessie.email || "teamlid";
     inhoud.hidden = false;
     startRapport();
     document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie } }));
