@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Uniformiteitssignalen NederlandWereldwijd</title>
+<style>{{ stijl | safe }}</style>
+</head>
+<body class="{{ thema }}">
+<a class="rhc-skiplink" href="#inlog">Naar het inloggen</a>
+{{ sitekop | safe }}
+
+{% include "_kop.html.j2" %}
+
+  <section class="rhc-inlog" id="inlog" aria-labelledby="inlog-kop">
+    <h2 id="inlog-kop">Inloggen om de signalen te zien</h2>
+    <p>De signalen zelf zijn alleen zichtbaar voor de webredactie. Log in met de
+      gezamenlijke inlog van het team.</p>
+    <form id="inlogformulier" novalidate>
+      <div class="rhc-inlog__veld">
+        <label class="utrecht-form-label" for="inlog-email">E-mailadres</label>
+        <input class="utrecht-textbox rhc-text-input" type="email" id="inlog-email"
+               autocomplete="username" required>
+      </div>
+      <div class="rhc-inlog__veld">
+        <label class="utrecht-form-label" for="inlog-wachtwoord">Wachtwoord</label>
+        <input class="utrecht-textbox rhc-text-input" type="password" id="inlog-wachtwoord"
+               autocomplete="current-password" required>
+      </div>
+      <p class="rhc-inlog__fout" id="inlog-fout" role="alert"></p>
+      <button type="submit" class="utrecht-button utrecht-button--primary-action" id="inlog-knop">Inloggen</button>
+    </form>
+  </section>
+
+  <div class="rhc-sessie" id="sessie" hidden>
+    <span id="sessie-status">Ingelogd</span>
+    <button type="button" class="utrecht-button utrecht-button--secondary-action" id="uitlog-knop">Uitloggen</button>
+  </div>
+
+  <main id="inhoud" hidden></main>
+
+  <footer>
+    Gegenereerd door de uniformiteitschecker op basis van de publieke sitemap van
+    nederlandwereldwijd.nl. De checker signaleert en lost niets op: een afwijking kan ook
+    een legitiem landspecifiek geval zijn. Verifieer altijd via de vindplaats voordat je
+    iets wijzigt.
+  </footer>
+</div>
+
+{% include "_script.html.j2" %}
+<script>
+(function () {
+  var SUPABASE_URL = {{ supabase_url | tojson }};
+  var SUPABASE_KEY = {{ supabase_sleutel | tojson }};
+  var OPSLAG = "uniformiteit-sessie";
+
+  var formulier = document.getElementById("inlogformulier");
+  var inlog = document.getElementById("inlog");
+  var fout = document.getElementById("inlog-fout");
+  var knop = document.getElementById("inlog-knop");
+  var sessieBalk = document.getElementById("sessie");
+  var inhoud = document.getElementById("inhoud");
+
+  function bewaar(sessie) {
+    try { localStorage.setItem(OPSLAG, JSON.stringify(sessie)); } catch (e) {}
+  }
+  function lees() {
+    try { return JSON.parse(localStorage.getItem(OPSLAG) || "null"); } catch (e) { return null; }
+  }
+  function wis() {
+    try { localStorage.removeItem(OPSLAG); } catch (e) {}
+  }
+
+  function tokenAanvraag(soort, body) {
+    return fetch(SUPABASE_URL + "/auth/v1/token?grant_type=" + soort, {
+      method: "POST",
+      headers: { "apikey": SUPABASE_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      return r.json().then(function (d) { return { ok: r.ok, data: d }; });
+    });
+  }
+  function alsSessie(d) {
+    return {
+      access_token: d.access_token,
+      refresh_token: d.refresh_token,
+      verloopt: Date.now() + (d.expires_in || 3600) * 1000,
+      email: (d.user && d.user.email) || ""
+    };
+  }
+
+  // Geeft een geldige sessie terug, en ververst die stilletjes als hij bijna verloopt.
+  function geldigeSessie() {
+    var s = lees();
+    if (!s) return Promise.resolve(null);
+    if (s.verloopt - Date.now() > 60000) return Promise.resolve(s);
+    return tokenAanvraag("refresh_token", { refresh_token: s.refresh_token }).then(function (a) {
+      if (!a.ok) { wis(); return null; }
+      var nieuw = alsSessie(a.data);
+      if (!nieuw.email) nieuw.email = s.email;
+      bewaar(nieuw);
+      return nieuw;
+    });
+  }
+
+  function laadPanelen(sessie) {
+    return fetch(SUPABASE_URL + "/rest/v1/rapport_panelen?select=familie,html&order=volgorde", {
+      headers: { "apikey": SUPABASE_KEY, "Authorization": "Bearer " + sessie.access_token }
+    }).then(function (r) {
+      if (r.status === 401 || r.status === 403) { wis(); throw new Error("sessie"); }
+      if (!r.ok) throw new Error("laden");
+      return r.json();
+    });
+  }
+
+  function toonPanelen(rijen, sessie) {
+    // De html komt uit ons eigen rapportproces (Jinja met autoescape) en kan alleen met
+    // de servicesleutel worden geschreven; bezoekers kunnen er niets in zetten.
+    inhoud.innerHTML = rijen.map(function (r) { return r.html; }).join("");
+    if (!rijen.length) {
+      inhoud.innerHTML = '<div class="rhc-leeg"><h3>Nog geen signalen gepubliceerd</h3>' +
+        "<p>Zodra de checker is gedraaid en het rapport is gepubliceerd, staan de signalen hier.</p></div>";
+    }
+    inlog.hidden = true;
+    sessieBalk.hidden = false;
+    document.getElementById("sessie-status").textContent = "Ingelogd als " + (sessie.email || "teamlid");
+    inhoud.hidden = false;
+    startRapport();
+    document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie } }));
+  }
+
+  function toonInlog(melding) {
+    inhoud.hidden = true;
+    inhoud.innerHTML = "";
+    sessieBalk.hidden = true;
+    inlog.hidden = false;
+    fout.textContent = melding || "";
+    knop.disabled = false;
+  }
+
+  function start() {
+    geldigeSessie().then(function (sessie) {
+      if (!sessie) return toonInlog("");
+      return laadPanelen(sessie).then(function (rijen) {
+        toonPanelen(rijen, sessie);
+      });
+    }).catch(function (e) {
+      toonInlog(e.message === "sessie" ? "Je sessie is verlopen. Log opnieuw in."
+                                        : "De signalen konden niet worden geladen. Probeer het later opnieuw.");
+    });
+  }
+
+  formulier.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = document.getElementById("inlog-email").value.trim();
+    var wachtwoord = document.getElementById("inlog-wachtwoord").value;
+    if (!email || !wachtwoord) { fout.textContent = "Vul je e-mailadres en wachtwoord in."; return; }
+    fout.textContent = "";
+    knop.disabled = true;
+    tokenAanvraag("password", { email: email, password: wachtwoord }).then(function (a) {
+      if (!a.ok) {
+        toonInlog("Inloggen is niet gelukt. Controleer je e-mailadres en wachtwoord.");
+        return;
+      }
+      var sessie = alsSessie(a.data);
+      bewaar(sessie);
+      document.getElementById("inlog-wachtwoord").value = "";
+      return laadPanelen(sessie).then(function (rijen) { toonPanelen(rijen, sessie); });
+    }).catch(function () {
+      toonInlog("Inloggen is niet gelukt. Probeer het later opnieuw.");
+    });
+  });
+
+  document.getElementById("uitlog-knop").addEventListener("click", function () {
+    var s = lees();
+    wis();
+    if (s) {
+      fetch(SUPABASE_URL + "/auth/v1/logout", {
+        method: "POST",
+        headers: { "apikey": SUPABASE_KEY, "Authorization": "Bearer " + s.access_token }
+      }).catch(function () {});
+    }
+    toonInlog("");
+  });
+
+  start();
+})();
+</script>
+</body>
+</html>

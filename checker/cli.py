@@ -3,6 +3,8 @@
     python -m checker controleer --familie consulaire-tarieven --limiet 25
     python -m checker controleer --vanuit-snapshot data/snapshots/2026-09-15/...jsonl
     python -m checker rapport --naar docs/index.html
+    python -m checker rapport --beveiligd --naar docs/index.html
+    python -m checker publiceer
     python -m checker invarianten
 
 `controleer` werkt één familie bij en bouwt daarna het rapport met een tabblad voor elke
@@ -24,7 +26,13 @@ from .bronnen.extractie import extraheer_main, extraheer_tabellen
 from .bronnen.ophalen import haal_op
 from .bronnen.sitemap import filter_op_prefix, pagina_urls, sub_sitemaps
 from .detectie import register
-from .rapport.html import schrijf_samengesteld_rapport
+from . import publiceren
+from .rapport.html import (
+    alle_families,
+    render_beveiligd,
+    render_paneel,
+    schrijf_samengesteld_rapport,
+)
 
 REGELS_MAP = pathlib.Path("regels")
 FINDINGS_MAP = pathlib.Path("data/findings")
@@ -119,11 +127,49 @@ def _cmd_controleer(args: argparse.Namespace) -> int:
 def _cmd_rapport(args: argparse.Namespace) -> int:
     """Bouw het rapport met alle families opnieuw uit de bestaande findings."""
     doel = pathlib.Path(args.naar)
+    if args.beveiligd:
+        config = publiceren.laad_config()
+        doel.parent.mkdir(parents=True, exist_ok=True)
+        doel.write_text(
+            render_beveiligd(
+                supabase_url=config["url"], supabase_sleutel=config["publishable_key"]
+            ),
+            encoding="utf-8",
+        )
+        print(f"Beveiligde pagina geschreven: {doel} (zonder signalen; die staan achter de inlog)")
+        return 0
     opgenomen = schrijf_samengesteld_rapport(doel, laad_families().values(), FINDINGS_MAP)
     if not opgenomen:
         print(f"Geen findings gevonden onder {FINDINGS_MAP}/.", file=sys.stderr)
         return 1
     print(f"Rapport geschreven: {doel} (tabbladen: {', '.join(opgenomen)})")
+    return 0
+
+
+def _cmd_publiceer(args: argparse.Namespace) -> int:
+    """Zet de signalen in de database, waar ze alleen na het inloggen te lezen zijn."""
+    tabbladen = alle_families(laad_families().values(), FINDINGS_MAP)
+    if not tabbladen:
+        print(f"Geen findings gevonden onder {FINDINGS_MAP}/.", file=sys.stderr)
+        return 1
+    panelen = [
+        {
+            "familie": t["id"],
+            "naam": t["naam"],
+            "datum": t["datum"],
+            "volgorde": volgorde,
+            "aantal": t["aantal"],
+            "html": render_paneel(t),
+        }
+        for volgorde, t in enumerate(tabbladen)
+    ]
+    config = publiceren.laad_config()
+    n = publiceren.publiceer_panelen(
+        panelen,
+        url=config["url"],
+        servicesleutel=publiceren.servicesleutel_uit_omgeving(),
+    )
+    print(f"Gepubliceerd: {n} tabbladen ({', '.join(p['familie'] for p in panelen)})")
     return 0
 
 
@@ -221,7 +267,15 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("rapport", help="rapport met alle families opnieuw bouwen, zonder netwerk")
     p.add_argument("--naar", default=str(RAPPORT_PAD), help="doelbestand (docs/index.html voor Pages)")
+    p.add_argument(
+        "--beveiligd",
+        action="store_true",
+        help="pagina zonder signalen met een inlog; de signalen komen uit de database",
+    )
     p.set_defaults(func=_cmd_rapport)
+
+    p = sub.add_parser("publiceer", help="signalen in de database zetten (achter de inlog)")
+    p.set_defaults(func=_cmd_publiceer)
 
     p = sub.add_parser("invarianten", help="controleer of de site nog is zoals verwacht")
     p.add_argument("--familie", default="consulaire-tarieven")

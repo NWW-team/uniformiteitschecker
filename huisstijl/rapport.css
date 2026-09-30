@@ -338,3 +338,22 @@ footer {
   color: var(--rhc-color-foreground-subtle);
   max-inline-size: 64ch;
 }
+
+/* ---------------------------------------------------------------- inlog */
+
+.rhc-inlog {
+  max-inline-size: 32rem;
+  margin-block-start: var(--rhc-space-2xl);
+  background: var(--rhc-color-primary-50);
+  border-inline-start: 4px solid var(--rhc-color-primary-500);
+  padding: var(--rhc-space-lg);
+}
+.rhc-inlog h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc-color-primary-500); margin-block-end: var(--rhc-space-xs); }
+.rhc-inlog p { margin-block-end: var(--rhc-space-md); }
+.rhc-inlog form { display: flex; flex-direction: column; gap: var(--rhc-space-md); }
+.rhc-inlog__veld { display: flex; flex-direction: column; gap: var(--rhc-space-2xs); }
+.rhc-inlog label { font-weight: 700; }
+.rhc-inlog input { inline-size: 100%; background: #fff; border: 2px solid var(--rhc-color-primary-500); }
+.rhc-inlog .utrecht-button { align-self: flex-start; font-weight: 700; padding-inline: var(--rhc-space-xl); }
+.rhc-inlog__fout { color: var(--rhc-color-negative-500); font-weight: 700; min-block-size: 1.2em; margin: 0; }
+.rhc-sessie { display: flex; justify-content: space-between; align-items: center; gap: var(--rhc-space-md); flex-wrap: wrap; margin-block-start: var(--rhc-space-lg); font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }

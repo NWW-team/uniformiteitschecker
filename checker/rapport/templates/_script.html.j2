@@ -1,0 +1,95 @@
+<script>
+// Tabbladen en zoekveld. Losgekoppeld van het laden van de panelen, zodat het ook werkt
+// nadat de bevindingen na het inloggen pas in de pagina zijn gezet.
+function startRapport() {
+  var panelen = Array.prototype.slice.call(document.querySelectorAll(".rhc-paneel"));
+  var tabbalk = document.getElementById("tabbalk");
+  if (!panelen.length) return;
+
+  // Zijn de panelen pas na het inloggen geladen, dan bouwen we de tabbalk hier.
+  if (!tabbalk && panelen.length > 1) {
+    tabbalk = document.createElement("nav");
+    tabbalk.className = "rhc-tabs";
+    tabbalk.id = "tabbalk";
+    tabbalk.setAttribute("aria-label", "Onderwerpen");
+    var lijst = document.createElement("div");
+    lijst.setAttribute("role", "tablist");
+    panelen.forEach(function (p, i) {
+      var id = p.dataset.familie;
+      var knop = document.createElement("button");
+      knop.type = "button";
+      knop.setAttribute("role", "tab");
+      knop.id = "tab-" + id;
+      knop.setAttribute("aria-controls", "paneel-" + id);
+      knop.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      knop.tabIndex = i === 0 ? 0 : -1;
+      knop.appendChild(document.createTextNode(p.dataset.naam + " "));
+      var aantal = document.createElement("span");
+      aantal.className = "rhc-aantal";
+      aantal.textContent = p.dataset.aantal;
+      knop.appendChild(aantal);
+      lijst.appendChild(knop);
+      p.setAttribute("role", "tabpanel");
+      p.setAttribute("aria-labelledby", "tab-" + id);
+    });
+    tabbalk.appendChild(lijst);
+    panelen[0].parentNode.parentNode.insertBefore(tabbalk, panelen[0].parentNode);
+  }
+
+  // Tabbladen: zonder script staan de panelen onder elkaar.
+  if (tabbalk) {
+    var tabs = Array.prototype.slice.call(tabbalk.querySelectorAll('[role="tab"]'));
+    var toon = function (id, focus) {
+      tabs.forEach(function (t) {
+        var actief = t.id === "tab-" + id;
+        t.setAttribute("aria-selected", actief ? "true" : "false");
+        t.tabIndex = actief ? 0 : -1;
+        if (actief && focus) t.focus();
+      });
+      panelen.forEach(function (p) { p.hidden = p.dataset.familie !== id; });
+      try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { toon(t.id.slice(4)); });
+      t.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        toon(tabs[(i + d + tabs.length) % tabs.length].id.slice(4), true);
+      });
+    });
+    tabbalk.hidden = false;
+    var start = location.hash.slice(1);
+    var bekend = panelen.some(function (p) { return p.dataset.familie === start; });
+    toon(bekend ? start : panelen[0].dataset.familie);
+  }
+
+  // Zoeken op land of onderwerp: verbergt wat niet past.
+  document.querySelectorAll(".rhc-zoek").forEach(function (blok) {
+    blok.hidden = false;
+    var invoer = blok.querySelector("input");
+    var status = blok.querySelector(".rhc-zoek__status");
+    var paneel = blok.closest(".rhc-paneel");
+    invoer.addEventListener("input", function () {
+      var q = invoer.value.trim().toLowerCase();
+      var zichtbaar = 0;
+      paneel.querySelectorAll(".rhc-bevinding").forEach(function (b) {
+        var raak = !q || b.dataset.zoektekst.indexOf(q) !== -1;
+        b.hidden = !raak;
+        if (raak) zichtbaar++;
+      });
+      paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
+        var heeft = c.querySelector(".rhc-bevinding:not([hidden])") !== null;
+        c.hidden = !heeft;
+      });
+      paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
+        g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
+      });
+      status.textContent = q
+        ? (zichtbaar ? zichtbaar + " signalen gevonden voor “" + invoer.value.trim() + "”"
+                     : "Geen signalen gevonden voor “" + invoer.value.trim() + "”")
+        : "";
+    });
+  });
+}
+</script>

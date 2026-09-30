@@ -115,6 +115,8 @@ def bouw_familie(
             varianten = _varianten(b)
             per_categorie.setdefault(_categorie(b), []).append(
                 {
+                    # Blijft gelijk tussen runs, zodat een vinkje bij dezelfde bevinding blijft staan.
+                    "id": b.vingerafdruk,
                     "titel": b.titel,
                     "soort": b.soort,
                     "zekerheid": b.zekerheid,
@@ -156,17 +158,44 @@ def bouw_familie(
 
 def render_rapport(families: list[dict]) -> str:
     """Render één rapport met een tabblad per familie (uit `bouw_familie`)."""
-    omgeving = Environment(
+    return _omgeving().get_template("rapport.html.j2").render(
+        families=families,
+        stijl=huisstijl.laad_css(),
+        sitekop=huisstijl.sitekop(),
+        thema=huisstijl.THEMA_KLASSE,
+    )
+
+
+def _omgeving() -> Environment:
+    return Environment(
         loader=FileSystemLoader(TEMPLATE_MAP),
         autoescape=select_autoescape(["html", "j2"]),
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    return omgeving.get_template("rapport.html.j2").render(
-        families=families,
+
+
+def render_paneel(familie: dict) -> str:
+    """Alleen het tabblad van één familie, zonder pagina eromheen.
+
+    Dit fragment gaat naar de database en wordt na het inloggen in de pagina gezet.
+    """
+    return _omgeving().get_template("_paneel.html.j2").render(f=familie, tabs=False)
+
+
+def render_beveiligd(*, supabase_url: str, supabase_sleutel: str) -> str:
+    """De pagina zonder signalen: openbare kop en inlog, de rest volgt na het inloggen.
+
+    In dit bestand staat geen enkele bevinding. De signalen staan in de database en zijn
+    alleen op te vragen met een geldige inlog. De publieke (publishable) sleutel hoort
+    in de pagina te staan; nooit hier de servicesleutel gebruiken.
+    """
+    return _omgeving().get_template("beveiligd.html.j2").render(
         stijl=huisstijl.laad_css(),
         sitekop=huisstijl.sitekop(),
         thema=huisstijl.THEMA_KLASSE,
+        supabase_url=supabase_url,
+        supabase_sleutel=supabase_sleutel,
     )
 
 
@@ -201,6 +230,16 @@ def schrijf_rapport(pad: pathlib.Path, **kwargs: object) -> pathlib.Path:
     return pad
 
 
+def alle_families(families: Iterable[dict], findings_map: pathlib.Path) -> list[dict]:
+    """De tabbladen van alle families die al eens zijn gecontroleerd."""
+    tabbladen = []
+    for familie in families:
+        findings = nieuwste_findings(findings_map, familie["id"])
+        if findings is not None:
+            tabbladen.append(familie_uit_findings(findings, familie))
+    return tabbladen
+
+
 def familie_uit_findings(findings_pad: pathlib.Path, familie: dict) -> dict:
     """Lees een findings-bestand en bouw er het tabblad van `familie` mee."""
     data = json.loads(findings_pad.read_text(encoding="utf-8"))
@@ -229,11 +268,7 @@ def schrijf_samengesteld_rapport(
     findings-bestand (nog nooit gedraaid) valt weg in plaats van een leeg tabblad te
     tonen dat op "geen afwijkingen" lijkt.
     """
-    tabbladen = []
-    for familie in families:
-        findings = nieuwste_findings(findings_map, familie["id"])
-        if findings is not None:
-            tabbladen.append(familie_uit_findings(findings, familie))
+    tabbladen = alle_families(families, findings_map)
     pad.parent.mkdir(parents=True, exist_ok=True)
     pad.write_text(render_rapport(tabbladen), encoding="utf-8")
     return [t["id"] for t in tabbladen]

@@ -1,0 +1,31 @@
+# Zet de laatste signalen in de database, waar ze alleen na het inloggen te lezen zijn.
+#
+# Handmatig te starten. Vereist het geheim SUPABASE_SERVICE_KEY (Settings > Secrets and
+# variables > Actions). Die sleutel mag nooit in de repo of in de pagina staan.
+
+name: Signalen publiceren
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publiceren:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installeren
+        run: pip install --quiet -e .
+
+      - name: Signalen publiceren
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python -m checker publiceer
