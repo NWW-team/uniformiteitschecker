@@ -2659,7 +2659,10 @@ footer {
 .rhc-inlog input { inline-size: 100%; background: #fff; border: 2px solid var(--rhc-color-primary-500); }
 .rhc-inlog .utrecht-button { align-self: flex-start; font-weight: 700; padding-inline: var(--rhc-space-xl); }
 .rhc-inlog__fout { color: var(--rhc-color-negative-500); font-weight: 700; min-block-size: 1.2em; margin: 0; }
-.rhc-sessie { display: flex; justify-content: space-between; align-items: center; gap: var(--rhc-space-md); flex-wrap: wrap; margin-block-start: var(--rhc-space-lg); font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }
+.rhc-sessie { order: -1; align-self: flex-end; display: flex; align-items: center; gap: var(--rhc-space-md); flex-wrap: wrap; justify-content: flex-end; margin-block-end: calc(var(--rhc-space-lg) * -1); font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }
+.rhc-sessie[hidden] { display: none; }
+.rhc-sessie__account { display: inline-flex; align-items: center; gap: var(--rhc-space-2xs); }
+.rhc-sessie__icoon { flex: none; }
 </style>
 </head>
 <body class="hemelblauw">
@@ -2716,7 +2719,7 @@ footer {
   </section>
 
   <div class="rhc-sessie" id="sessie" hidden>
-    <span id="sessie-status">Ingelogd</span>
+    <span class="rhc-sessie__account"><svg class="rhc-sessie__icoon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg><span id="sessie-status"></span></span>
     <button type="button" class="utrecht-button utrecht-button--secondary-action" id="uitlog-knop">Uitloggen</button>
   </div>
 
@@ -2899,7 +2902,7 @@ function startRapport() {
     }
     inlog.hidden = true;
     sessieBalk.hidden = false;
-    document.getElementById("sessie-status").textContent = "Ingelogd als " + (sessie.email || "teamlid");
+    document.getElementById("sessie-status").textContent = sessie.email || "teamlid";
     inhoud.hidden = false;
     startRapport();
     document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie } }));
