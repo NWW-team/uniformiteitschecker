@@ -178,9 +178,9 @@ de officiële bestanden worden meegeleverd, niet nagebouwd.
   zonder CDN. De tokens staan op de klasse `hemelblauw`, die op `<body>` moet staan.
 
 Een andere lintkleur is een ander tokenbestand uit `@rijkshuisstijl-community/design-tokens`
-plus een andere klasse (`THEMA_KLASSE`). Het huisstijllettertype RijksSansVF is
-licentieplichtig en zit er niet in; staat hij op de werklaptop, dan gebruikt de browser hem
-vanzelf, anders Fira Sans.
+plus een andere klasse (`THEMA_KLASSE`). Het huisstijllettertype RijksSansVF zit er wel in (`huisstijl/vendor/fonts/`), met Fira Sans als
+terugval. Het is licentieplichtig en alleen bedoeld voor medewerkers van de Rijksoverheid:
+deel de repo en de rapporten dus niet daarbuiten.
 
 ## Afspraken bij het ophalen
 

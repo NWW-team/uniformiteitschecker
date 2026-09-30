@@ -22,12 +22,17 @@ _VENDOR = MAP / "vendor"
 #: Klasse voor `<body>`: zonder deze zijn alle --rhc-variabelen leeg.
 THEMA_KLASSE = "hemelblauw"
 
-# Alleen de latin-subset, in de drie gewichten die de tokens gebruiken.
+# Terugval Fira Sans: alleen de latin-subset, in de drie gewichten die de tokens gebruiken.
 _LETTERS = (400, 600, 700)
 
 
 def _lettertype_css() -> str:
-    blokken = []
+    # RijksSansVF: variabel lettertype (gewichtsas), de eerste keuze van de tokens.
+    rijks = base64.b64encode((_VENDOR / "fonts" / "RijksSansWeb-Regular.woff2").read_bytes()).decode("ascii")
+    blokken = [
+        '@font-face{font-family:"RijksSansVF";font-style:normal;font-display:swap;'
+        f'font-weight:100 900;src:url(data:font/woff2;base64,{rijks}) format("woff2");}}'
+    ]
     for gewicht in _LETTERS:
         data = (_VENDOR / "fonts" / f"fira-sans-latin-{gewicht}-normal.woff2").read_bytes()
         b64 = base64.b64encode(data).decode("ascii")
