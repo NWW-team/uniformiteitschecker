@@ -6,6 +6,10 @@
 
 families:
   - id: consulaire-tarieven
+    naam: Consulaire tarieven
+    inleiding: >-
+      Deze pagina's horen hetzelfde te zeggen. Waar één land afwijkt van de rest, staat
+      dat hieronder, met de vindplaats en het bewijs erbij.
     bron_id: nww-nl
     taal: nl
     sitemap: https://www.nederlandwereldwijd.nl/paginas/sitemap.xml
@@ -13,5 +17,25 @@ families:
     detectoren: [zustertabel_waarden, bedragnotatie]
     # Drempels tegen ruis: onder min_zusters is er geen norm af te leiden, en een
     # familie die in twee kampen verdeeld is (< min_eensgezind) is variatie, geen fout.
+    min_zusters: 5
+    min_eensgezind: 0.8
+
+  # Landenpagina's met een vast stappenplan. Afwijken mag (een Schengenland, een land met
+  # meerdere posten); de detectoren leggen vast *waar*, zodat de redactie kan beoordelen
+  # of dat bewust is.
+  - id: paspoort-landenpaginas
+    naam: Paspoort landenpagina's
+    inleiding: >-
+      Deze landenpagina's volgen hetzelfde stappenplan: checklist maken, documenten
+      verzamelen, afspraak maken, naar de afspraak, paspoort ophalen of laten opsturen.
+      Kleine verschillen per land zijn vaak bewust; hieronder staat waar een pagina
+      afwijkt in opbouw, koppen, standaardteksten of inhoud.
+    bron_id: nww-nl
+    taal: nl
+    sitemap: https://www.nederlandwereldwijd.nl/paginas/sitemap.xml
+    # Geen map maar een voorvoegsel: alle pagina's waarvan de naam met paspoort- begint.
+    pad_prefix: /paspoort-id-kaart/buitenland/paspoort-
+    sleutel_strip: paspoort-
+    detectoren: [stappenplan, uitklapparagrafen, koppenstructuur, standaardzinnen, kernbeweringen]
     min_zusters: 5
     min_eensgezind: 0.8

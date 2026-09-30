@@ -1,0 +1,72 @@
+# Inhoudelijke keuzes waarop landenpagina's van dezelfde familie hetzelfde horen te
+# antwoorden. Een regel toevoegen is een blok YAML, geen Python.
+#
+#   id          stabiele sleutel (vingerafdruk van het signaal)
+#   titel       wat de redacteur in het rapport leest
+#   zoek_in     waar de checker kijkt:
+#                 pagina            de hele pagina
+#                 stap:<tekst>      alle tekst onder de stap waarvan de titel <tekst> bevat
+#                 uitklap:<tekst>   de uitklapper waarvan de titel <tekst> bevat
+#               Ontbreekt dat deel op een pagina, dan doet die pagina niet mee: een
+#               ontbrekende uitklapper meldt de detector uitklapparagrafen al.
+#   anders      naam van het antwoord als geen enkele variant past (standaard "geen van deze")
+#   varianten   naam van een antwoord -> reguliere expressie. Staat er een groep in
+#               (haakjes), dan wordt die waarde onderdeel van het antwoord, zodat "3
+#               maanden" en "6 maanden" verschillende antwoorden zijn.
+#
+# De norm is het antwoord dat minstens 80% van de pagina's geeft. Een pagina met een
+# ander antwoord komt in het rapport als "mogelijk tegenstrijdig", voor de kenniseigenaar.
+
+beweringen:
+  - id: originelen-of-kopieen
+    titel: Originelen of kopieën meenemen naar de afspraak
+    zoek_in: "uitklap:wat neem ik mee"
+    toelichting: Bij het ene land moet u originelen meenemen, bij het andere kopieën, en soms bepaalt de checklist het.
+    anders: noemt geen originelen of kopieën
+    varianten:
+      originelen: 'originele documenten'
+      volgens de checklist: 'origineel en/of (?:een )?kopie'
+      kopieën meenemen: '(?:neem|breng)[^.\n]*\bkopie|kopie(?:ën)? (?:mee|inleveren)|kopie van (?:al )?uw'
+
+  - id: verwerkingstijd
+    titel: Verwerkingstijd
+    zoek_in: "stap:ophalen"
+    toelichting: Sommige pagina's noemen zelf een termijn, andere verwijzen naar de algemene pagina.
+    anders: noemt geen verwerkingstijd
+    varianten:
+      verwijst naar algemene pagina: 'hoelang duurt het'
+      noemt termijn: '(?:duurt|verwerk\w*|klaar)[^.\n]{0,80}?(\d+(?:\s*(?:tot|-|–)\s*\d+)?\s*(?:weken|werkdagen|dagen))'
+
+  - id: ophaaltermijn
+    titel: Termijn om het nieuwe document op te halen
+    zoek_in: "pagina"
+    toelichting: Na deze termijn wordt het document vernietigd.
+    anders: noemt geen termijn
+    varianten:
+      binnen: 'binnen (\d+ (?:maanden|weken|dagen))'
+
+  - id: oud-paspoort-meteen-inleveren
+    titel: Oud paspoort of ID-kaart meteen inleveren
+    zoek_in: "uitklap:meteen inleveren"
+    toelichting: Het antwoord op deze vraag hoort overal gelijk te zijn.
+    anders: begint niet met ja of nee
+    varianten:
+      nee: '^\s*nee\b'
+      ja: '^\s*ja\b'
+
+  - id: betalen
+    titel: Kosten van het paspoort
+    zoek_in: "uitklap:hoeveel moet ik betalen"
+    toelichting: Sommige pagina's noemen zelf een bedrag, andere verwijzen naar de consulaire tarieven.
+    anders: noemt geen bedrag en verwijst niet naar de tarieven
+    varianten:
+      verwijst naar consulaire tarieven: 'consulaire tarieven'
+      noemt zelf een bedrag: '€\s?\d'
+
+  - id: id-kaart-opsturen
+    titel: ID-kaart laten opsturen
+    zoek_in: "stap:ophalen"
+    toelichting: Op de meeste pagina's staat dat de ID-kaart meestal niet kan worden opgestuurd.
+    varianten:
+      meestal niet: 'id-kaart meestal niet'
+      niet: 'id-kaart (?:kunt u )?niet (?:laten )?opsturen'

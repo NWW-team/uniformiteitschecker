@@ -13,17 +13,19 @@
 <div class="rhc-blad">
   <header class="rhc-kop">
     <p class="rhc-eyebrow">Uniformiteitschecker &middot; webredactie</p>
-    <h1>Afwijkingen in de consulaire tarieven</h1>
+    <h1>Uniformiteitssignalen</h1>
     <p class="rhc-inleiding">
-      Deze pagina's horen hetzelfde te zeggen. Waar &eacute;&eacute;n land afwijkt van de
-      rest, staat dat hieronder &mdash; met de vindplaats en het bewijs erbij. De checker
-      bepaalt niet wat juist is; dat doet de webredactie of de kenniseigenaar.
+      Pagina's over hetzelfde onderwerp horen hetzelfde te zeggen. Waar &eacute;&eacute;n
+      pagina afwijkt van de rest, staat dat hieronder &mdash; met de vindplaats en het
+      bewijs erbij. De checker bepaalt niet wat juist is; dat doet de webredactie of de
+      kenniseigenaar.
     </p>
     <details class="rhc-methode">
       <summary>Hoe de checker afwijkingen vindt</summary>
       <ul>
         <li>Hij legt pagina's over hetzelfde onderwerp naast elkaar &mdash; bijvoorbeeld
-          dezelfde tarievenlijst voor alle landen (de &ldquo;zusterpagina's&rdquo;).</li>
+          dezelfde tarievenlijst of hetzelfde stappenplan voor alle landen (de
+          &ldquo;zusterpagina's&rdquo;).</li>
         <li>Hij telt zelf uit wat de meeste zusterpagina's zeggen; die meerderheid geldt
           als de norm, er wordt niets vooraf als &ldquo;juist&rdquo; ingevoerd.</li>
         <li>Pas als minstens 80% van de zusterpagina's hetzelfde zegt, gebruikt de checker
@@ -36,84 +38,138 @@
           kunt nakijken.</li>
       </ul>
     </details>
-    <dl class="rhc-meta">
-      <div><dt>Familie</dt><dd>{{ familie }}</dd></div>
-      <div><dt>Gecontroleerd</dt><dd>{{ datum }}</dd></div>
-      <div><dt>Pagina's</dt><dd>{{ aantal_paginas }}</dd></div>
-      <div><dt>Signalen</dt><dd>{{ bevindingen|length }}</dd></div>
-    </dl>
   </header>
 
-  <main id="inhoud">
-  {% if waarschuwingen %}
-  <section class="rhc-waarschuwing">
-    <strong>Let op bij het lezen van dit rapport</strong>
-    <ul>
-      {% for w in waarschuwingen %}<li>{{ w }}</li>{% endfor %}
-    </ul>
-  </section>
-  {% endif %}
-
-  {% if not bevindingen %}
-  <section class="rhc-leeg">
-    <h2>Geen afwijkingen gevonden</h2>
-    <p>
-      Op {{ aantal_paginas }} pagina's van de familie <em>{{ familie }}</em> week geen
-      enkele waarde af van wat de zusterpagina's zeggen. Dat betekent niet dat de pagina's
-      foutloos zijn &mdash; alleen dat deze controle niets aantrof.
-    </p>
-  </section>
-  {% endif %}
-
-  {% for groep in groepen %}
-  <section class="rhc-groep">
-    <div class="rhc-groepkop">
-      <h2>{{ groep.titel }}</h2>
-      <span class="rhc-aantal">{{ groep.bevindingen|length }}</span>
+  {% if families|length > 1 %}
+  <nav class="rhc-tabs" id="tabbalk" aria-label="Onderwerpen" hidden>
+    <div role="tablist">
+      {% for f in families %}
+      <button type="button" role="tab" id="tab-{{ f.id }}" aria-controls="paneel-{{ f.id }}"
+              aria-selected="{{ 'true' if loop.first else 'false' }}"
+              tabindex="{{ '0' if loop.first else '-1' }}">
+        {{ f.naam }} <span class="rhc-aantal">{{ f.aantal }}</span>
+      </button>
+      {% endfor %}
     </div>
-    <p class="rhc-groeptoelichting">{{ groep.toelichting }}</p>
+  </nav>
+  {% endif %}
 
-    {% for b in groep.bevindingen %}
-    <article class="rhc-bevinding rhc-{{ groep.klasse }}">
-      <div>
-        <h3>{{ b.titel }}</h3>
-        <div class="rhc-chips">
-          <span class="rhc-chip rhc-soort-{{ b.soort }}">{{ b.soort }}</span>
-          <span class="rhc-chip rhc-neutraal">zekerheid {{ b.zekerheid }}</span>
-          {% if b.telling %}
-          <span class="rhc-chip rhc-neutraal">{{ b.telling.eens }} van {{ b.telling.n }} eens</span>
-          {% endif %}
-        </div>
-      </div>
+  <main id="inhoud">
+  {% for f in families %}
+  <section class="rhc-paneel" id="paneel-{{ f.id }}" data-familie="{{ f.id }}"
+           {% if families|length > 1 %}role="tabpanel" aria-labelledby="tab-{{ f.id }}"{% endif %}>
+    <div class="rhc-paneelkop">
+      <h2>{{ f.naam }}</h2>
+      {% if f.inleiding %}<p class="rhc-inleiding">{{ f.inleiding }}</p>{% endif %}
+      <dl class="rhc-meta">
+        <div><dt>Familie</dt><dd>{{ f.id }}</dd></div>
+        <div><dt>Gecontroleerd</dt><dd>{{ f.datum }}</dd></div>
+        <div><dt>Pagina's</dt><dd>{{ f.aantal_paginas }}</dd></div>
+        <div><dt>Signalen</dt><dd>{{ f.aantal }}</dd></div>
+      </dl>
+    </div>
 
-      <div class="rhc-bewijs">
-        <div class="rhc-kolom rhc-afwijkend">
-          <h4>Wijkt af {% if b.varianten|length > 1 %}({{ b.varianten|length }} pagina's){% endif %}</h4>
-          <ul>
-            {% for v in b.varianten %}
-            <li><span class="rhc-land">{{ v.variant }}</span><span class="rhc-waarde">{{ v.waarde }}</span></li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="rhc-kolom">
-          <h4>Staat elders</h4>
-          <ul>
-            {% for z in b.zusters %}
-            <li><span class="rhc-land">{{ z.variant }}</span><span class="rhc-waarde">{{ z.waarde }}</span></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+    {% if f.waarschuwingen %}
+    <div class="rhc-waarschuwing">
+      <strong>Let op bij het lezen van dit rapport</strong>
+      <ul>
+        {% for w in f.waarschuwingen %}<li>{{ w }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
-      {% if b.toelichting %}<p class="rhc-toelichting">{{ b.toelichting }}</p>{% endif %}
+    {% if not f.aantal %}
+    <div class="rhc-leeg">
+      <h3>Geen afwijkingen gevonden</h3>
+      <p>
+        Op {{ f.aantal_paginas }} pagina's van de familie <em>{{ f.id }}</em> week niets
+        af van wat de zusterpagina's zeggen. Dat betekent niet dat de pagina's
+        foutloos zijn &mdash; alleen dat deze controle niets aantrof.
+      </p>
+    </div>
+    {% else %}
+    <ul class="rhc-tegels">
+      {% for g in f.groepen %}
+      <li>
+        <a class="rhc-tegel rhc-{{ g.klasse }}" href="#groep-{{ f.id }}-{{ g.klasse }}">
+          <span class="rhc-tegel__getal">{{ g.aantal }}</span>
+          <span class="rhc-tegel__label">{{ g.titel }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
 
-      <div class="rhc-paginas">
-        {% for u in b.urls %}<a href="{{ u }}">{{ u }}</a>{% endfor %}
-      </div>
+    <div class="rhc-zoek" hidden>
+      <label for="zoek-{{ f.id }}">Zoek op land of onderwerp</label>
+      <input type="search" id="zoek-{{ f.id }}" data-zoek="{{ f.id }}" placeholder="bijvoorbeeld duitsland">
+      <p class="rhc-zoek__status" data-status="{{ f.id }}" aria-live="polite"></p>
+    </div>
 
-      <p class="rhc-actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
-    </article>
+    {% for g in f.groepen %}
+    <details class="rhc-groep" id="groep-{{ f.id }}-{{ g.klasse }}" open>
+      <summary>
+        <h3>{{ g.titel }}</h3>
+        <span class="rhc-aantal">{{ g.aantal }}</span>
+      </summary>
+      <p class="rhc-groeptoelichting">{{ g.toelichting }}</p>
+
+      {% for c in g.categorieen %}
+      <details class="rhc-categorie">
+        <summary>
+          <h4>{{ c.naam }}</h4>
+          <span class="rhc-aantal">{{ c.bevindingen|length }}</span>
+        </summary>
+
+        {% for b in c.bevindingen %}
+        <details class="rhc-bevinding rhc-{{ g.klasse }}" data-zoektekst="{{ b.zoek }}">
+          <summary>
+            <h5>{{ b.titel }}</h5>
+            <span class="rhc-chips">
+              <span class="rhc-chip rhc-soort-{{ b.soort }}">{{ b.soort }}</span>
+              {% if b.varianten|length > 1 %}
+              <span class="rhc-chip rhc-neutraal">{{ b.varianten|length }} pagina's</span>
+              {% endif %}
+              {% if b.telling %}
+              <span class="rhc-chip rhc-neutraal">{{ b.telling.eens }} van {{ b.telling.n }} eens</span>
+              {% endif %}
+            </span>
+          </summary>
+
+          <div class="rhc-bevinding__inhoud">
+            <div class="rhc-bewijs">
+              <div class="rhc-kolom rhc-afwijkend">
+                <h6>Wijkt af {% if b.varianten|length > 1 %}({{ b.varianten|length }} pagina's){% endif %}</h6>
+                <ul>
+                  {% for v in b.varianten %}
+                  <li><span class="rhc-land">{{ v.variant }}</span><span class="rhc-waarde{% if v.waarde|length > 24 %} rhc-waarde--tekst{% endif %}">{{ v.waarde }}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="rhc-kolom">
+                <h6>Staat elders</h6>
+                <ul>
+                  {% for z in b.zusters %}
+                  <li><span class="rhc-land">{{ z.variant }}</span><span class="rhc-waarde{% if z.waarde|length > 24 %} rhc-waarde--tekst{% endif %}">{{ z.waarde }}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            {% if b.toelichting %}<p class="rhc-toelichting">{{ b.toelichting }}</p>{% endif %}
+
+            <div class="rhc-paginas">
+              {% for u in b.urls %}<a href="{{ u }}">{{ u }}</a>{% endfor %}
+            </div>
+
+            <p class="rhc-actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
+          </div>
+        </details>
+        {% endfor %}
+      </details>
+      {% endfor %}
+    </details>
     {% endfor %}
+    {% endif %}
   </section>
   {% endfor %}
   </main>
@@ -125,5 +181,78 @@
     iets wijzigt.
   </footer>
 </div>
+
+<script>
+(function () {
+  var panelen = Array.prototype.slice.call(document.querySelectorAll(".rhc-paneel"));
+  var tabbalk = document.getElementById("tabbalk");
+
+  // Tabbladen: zonder script staan de panelen onder elkaar.
+  if (tabbalk) {
+    var tabs = Array.prototype.slice.call(tabbalk.querySelectorAll('[role="tab"]'));
+    var toon = function (id, focus) {
+      tabs.forEach(function (t) {
+        var actief = t.id === "tab-" + id;
+        t.setAttribute("aria-selected", actief ? "true" : "false");
+        t.tabIndex = actief ? 0 : -1;
+        if (actief && focus) t.focus();
+      });
+      panelen.forEach(function (p) { p.hidden = p.dataset.familie !== id; });
+      try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { toon(t.id.slice(4)); });
+      t.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        toon(tabs[(i + d + tabs.length) % tabs.length].id.slice(4), true);
+      });
+    });
+    tabbalk.hidden = false;
+    var start = location.hash.slice(1);
+    var bekend = panelen.some(function (p) { return p.dataset.familie === start; });
+    toon(bekend ? start : panelen[0].dataset.familie);
+  }
+
+  // Tegels springen naar hun groep en klappen die open.
+  document.querySelectorAll(".rhc-tegel").forEach(function (a) {
+    a.addEventListener("click", function () {
+      var g = document.getElementById(a.getAttribute("href").slice(1));
+      if (g) g.open = true;
+    });
+  });
+
+  // Zoeken op land of onderwerp: verbergt wat niet past en klapt het overige open.
+  document.querySelectorAll(".rhc-zoek").forEach(function (blok) {
+    blok.hidden = false;
+    var invoer = blok.querySelector("input");
+    var status = blok.querySelector(".rhc-zoek__status");
+    var paneel = blok.closest(".rhc-paneel");
+    invoer.addEventListener("input", function () {
+      var q = invoer.value.trim().toLowerCase();
+      var zichtbaar = 0;
+      paneel.querySelectorAll(".rhc-bevinding").forEach(function (b) {
+        var raak = !q || b.dataset.zoektekst.indexOf(q) !== -1;
+        b.hidden = !raak;
+        if (raak) zichtbaar++;
+      });
+      paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
+        var heeft = c.querySelector(".rhc-bevinding:not([hidden])") !== null;
+        c.hidden = !heeft;
+        if (q && heeft) c.open = true;
+      });
+      paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
+        g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
+        if (q && !g.hidden) g.open = true;
+      });
+      status.textContent = q
+        ? (zichtbaar ? zichtbaar + " signalen gevonden voor “" + invoer.value.trim() + "”"
+                     : "Geen signalen gevonden voor “" + invoer.value.trim() + "”")
+        : "";
+    });
+  });
+})();
+</script>
 </body>
 </html>

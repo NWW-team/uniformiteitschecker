@@ -10,13 +10,18 @@ from __future__ import annotations
 from typing import Callable, Iterable
 
 from ..model import Bevinding, Pagina
-from . import opmaak, zustertabellen
+from . import opmaak, stappenplan, zustertabellen
 
 Detector = Callable[..., list[Bevinding]]
 
 _REGISTER: dict[str, Detector] = {
     zustertabellen.REGEL_ID: zustertabellen.detecteer,
     opmaak.REGEL_ID: opmaak.detecteer,
+    stappenplan.REGEL_STAPPEN: stappenplan.detecteer_stappen,
+    stappenplan.REGEL_UITKLAPPERS: stappenplan.detecteer_uitklappers,
+    stappenplan.REGEL_KOPPEN: stappenplan.detecteer_koppen,
+    stappenplan.REGEL_ZINNEN: stappenplan.detecteer_zinnen,
+    stappenplan.REGEL_BEWERINGEN: stappenplan.detecteer_beweringen,
 }
 
 # Bovengrens per detector per run. Slaat een detector hierdoorheen, dan is er vrijwel

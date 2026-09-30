@@ -388,6 +388,153 @@
   max-width: 62ch;
 }
 
+/* ---- Tabbladen, tegels en inklapbare lagen (spoor 2: zusterpaginacheck) ---- */
+.rhc-tabs {
+  border-bottom: 2px solid var(--rhc-color-lijn);
+  margin-bottom: -1rem;
+}
+.rhc-tabs [role="tablist"] { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.rhc-tabs button {
+  font: inherit;
+  font-weight: var(--rhc-text-font-weight-bold);
+  color: var(--rhc-color-tekst-zacht);
+  background: transparent;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+.rhc-tabs button:hover { color: var(--rhc-color-accent-donker); }
+.rhc-tabs button[aria-selected="true"] {
+  color: var(--rhc-color-accent-donker);
+  border-bottom-color: var(--rhc-color-hemelblauw-500);
+}
+
+.rhc-paneel { display: flex; flex-direction: column; gap: 1.5rem; }
+.rhc-paneel[hidden] { display: none; }
+.rhc-paneelkop { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.rhc-tegels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+.rhc-tegel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  height: 100%;
+  background: var(--rhc-color-oppervlak);
+  border: 1px solid var(--rhc-color-lijn);
+  border-left: 4px solid var(--rhc-streep, var(--rhc-color-accent));
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: var(--rhc-color-tekst);
+}
+.rhc-tegel:hover { background: var(--rhc-color-achtergrond); }
+.rhc-tegel.rhc-voorleggen { --rhc-streep: var(--rhc-color-voorleggen); }
+.rhc-tegel.rhc-zelf { --rhc-streep: var(--rhc-color-zelf); }
+.rhc-tegel.rhc-beoordelen { --rhc-streep: var(--rhc-color-waarschuwing); }
+.rhc-tegel__getal {
+  font-family: var(--rhc-text-font-family-serif);
+  font-size: 1.6rem;
+  font-weight: var(--rhc-text-font-weight-bold);
+  color: var(--rhc-color-accent-donker);
+  font-variant-numeric: tabular-nums;
+}
+.rhc-tegel__label { font-size: var(--rhc-text-font-size-sm); font-weight: 500; }
+
+.rhc-zoek { display: flex; flex-direction: column; gap: 0.35rem; max-width: 26rem; }
+.rhc-zoek[hidden] { display: none; }
+.rhc-zoek label { font-size: var(--rhc-text-font-size-sm); font-weight: 500; }
+.rhc-zoek input {
+  font: inherit;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--rhc-color-grijs-500);
+  background: var(--rhc-color-oppervlak);
+}
+.rhc-zoek__status { margin: 0; min-height: 1.2em; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-tekst-zacht); }
+
+/* Drie lagen, allemaal <details>: groep, categorie, bevinding. */
+.rhc-groep, .rhc-categorie { display: flex; flex-direction: column; gap: 0.75rem; }
+.rhc-groep[hidden], .rhc-categorie[hidden], .rhc-bevinding[hidden] { display: none; }
+.rhc-groep > summary, .rhc-categorie > summary, .rhc-bevinding > summary {
+  cursor: pointer;
+  list-style: none;
+}
+.rhc-groep > summary::-webkit-details-marker,
+.rhc-categorie > summary::-webkit-details-marker,
+.rhc-bevinding > summary::-webkit-details-marker { display: none; }
+.rhc-groep > summary, .rhc-categorie > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.rhc-groep > summary::before, .rhc-categorie > summary::before,
+.rhc-bevinding > summary::before {
+  content: "\25B8";
+  color: var(--rhc-color-accent);
+  flex: none;
+  width: 1em;
+}
+.rhc-groep[open] > summary::before, .rhc-categorie[open] > summary::before,
+.rhc-bevinding[open] > summary::before { content: "\25BE"; }
+.rhc-groep > summary h3 {
+  font-family: var(--rhc-text-font-family-serif);
+  font-size: var(--rhc-text-font-size-lg);
+  font-weight: var(--rhc-text-font-weight-bold);
+  color: var(--rhc-color-accent-donker);
+  margin: 0;
+}
+.rhc-categorie { margin-left: 1rem; }
+.rhc-categorie > summary h4 {
+  font-size: var(--rhc-text-font-size-md);
+  font-weight: var(--rhc-text-font-weight-bold);
+  margin: 0;
+}
+.rhc-groep > .rhc-groeptoelichting { margin-left: 1rem; }
+
+.rhc-bevinding { gap: 0; padding: 0.8rem 1.1rem; }
+.rhc-bevinding.rhc-beoordelen { --rhc-streep: var(--rhc-color-waarschuwing); }
+.rhc-bevinding > summary {
+  display: grid;
+  grid-template-columns: 1em 1fr;
+  column-gap: 0.4rem;
+  row-gap: 0.4rem;
+  align-items: baseline;
+}
+.rhc-bevinding > summary > .rhc-chips { grid-column: 2; }
+.rhc-bevinding > summary h5 {
+  font-size: var(--rhc-text-font-size-md);
+  font-weight: var(--rhc-text-font-weight-bold);
+  margin: 0;
+  text-wrap: balance;
+}
+.rhc-bevinding__inhoud { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 0.9rem; }
+.rhc-kolom h6 {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--rhc-color-tekst-flets);
+  font-weight: var(--rhc-text-font-weight-bold);
+}
+.rhc-chip.rhc-soort-structuur { color: #8a5a00; }
+.rhc-waarde--tekst {
+  font-family: inherit;
+  font-weight: 400;
+  white-space: normal;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.rhc-kolom li { align-items: baseline; }
+.rhc-kolom ul { max-height: 24rem; overflow-y: auto; }
+
 /* ---- Statblokken en samenvattingstabel (spoor 1: termenlijstcheck) ---- */
 .rhc-feiten { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 0; }
 .rhc-feit {
