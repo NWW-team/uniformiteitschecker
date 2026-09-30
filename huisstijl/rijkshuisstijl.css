@@ -459,45 +459,39 @@
 }
 .rhc-zoek__status { margin: 0; min-height: 1.2em; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-tekst-zacht); }
 
-/* Drie lagen, allemaal <details>: groep, categorie, bevinding. */
+/* Groep en categorie zijn gewone koppen; alleen de bevinding klapt uit. */
 .rhc-groep, .rhc-categorie { display: flex; flex-direction: column; gap: 0.75rem; }
 .rhc-groep[hidden], .rhc-categorie[hidden], .rhc-bevinding[hidden] { display: none; }
-.rhc-groep > summary, .rhc-categorie > summary, .rhc-bevinding > summary {
-  cursor: pointer;
-  list-style: none;
-}
-.rhc-groep > summary::-webkit-details-marker,
-.rhc-categorie > summary::-webkit-details-marker,
-.rhc-bevinding > summary::-webkit-details-marker { display: none; }
-.rhc-groep > summary, .rhc-categorie > summary {
+.rhc-kopregel {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
   flex-wrap: wrap;
 }
-.rhc-groep > summary::before, .rhc-categorie > summary::before,
+.rhc-bevinding > summary {
+  cursor: pointer;
+  list-style: none;
+}
+.rhc-bevinding > summary::-webkit-details-marker { display: none; }
 .rhc-bevinding > summary::before {
   content: "\25B8";
   color: var(--rhc-color-accent);
   flex: none;
   width: 1em;
 }
-.rhc-groep[open] > summary::before, .rhc-categorie[open] > summary::before,
 .rhc-bevinding[open] > summary::before { content: "\25BE"; }
-.rhc-groep > summary h3 {
+.rhc-groep > .rhc-kopregel h3 {
   font-family: var(--rhc-text-font-family-serif);
   font-size: var(--rhc-text-font-size-lg);
   font-weight: var(--rhc-text-font-weight-bold);
   color: var(--rhc-color-accent-donker);
   margin: 0;
 }
-.rhc-categorie { margin-left: 1rem; }
-.rhc-categorie > summary h4 {
+.rhc-categorie > .rhc-kopregel h4 {
   font-size: var(--rhc-text-font-size-md);
   font-weight: var(--rhc-text-font-weight-bold);
   margin: 0;
 }
-.rhc-groep > .rhc-groeptoelichting { margin-left: 1rem; }
 
 .rhc-bevinding { gap: 0; padding: 0.8rem 1.1rem; }
 .rhc-bevinding.rhc-beoordelen { --rhc-streep: var(--rhc-color-waarschuwing); }

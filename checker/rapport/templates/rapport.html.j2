@@ -106,19 +106,19 @@
     </div>
 
     {% for g in f.groepen %}
-    <details class="rhc-groep" id="groep-{{ f.id }}-{{ g.klasse }}" open>
-      <summary>
+    <section class="rhc-groep" id="groep-{{ f.id }}-{{ g.klasse }}">
+      <div class="rhc-kopregel">
         <h3>{{ g.titel }}</h3>
         <span class="rhc-aantal">{{ g.aantal }}</span>
-      </summary>
+      </div>
       <p class="rhc-groeptoelichting">{{ g.toelichting }}</p>
 
       {% for c in g.categorieen %}
-      <details class="rhc-categorie">
-        <summary>
+      <section class="rhc-categorie">
+        <div class="rhc-kopregel">
           <h4>{{ c.naam }}</h4>
           <span class="rhc-aantal">{{ c.bevindingen|length }}</span>
-        </summary>
+        </div>
 
         {% for b in c.bevindingen %}
         <details class="rhc-bevinding rhc-{{ g.klasse }}" data-zoektekst="{{ b.zoek }}">
@@ -158,16 +158,16 @@
             {% if b.toelichting %}<p class="rhc-toelichting">{{ b.toelichting }}</p>{% endif %}
 
             <div class="rhc-paginas">
-              {% for u in b.urls %}<a href="{{ u }}">{{ u }}</a>{% endfor %}
+              {% for u in b.urls %}<a href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ u }}</a>{% endfor %}
             </div>
 
             <p class="rhc-actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
           </div>
         </details>
         {% endfor %}
-      </details>
+      </section>
       {% endfor %}
-    </details>
+    </section>
     {% endfor %}
     {% endif %}
   </section>
@@ -215,15 +215,7 @@
     toon(bekend ? start : panelen[0].dataset.familie);
   }
 
-  // Tegels springen naar hun groep en klappen die open.
-  document.querySelectorAll(".rhc-tegel").forEach(function (a) {
-    a.addEventListener("click", function () {
-      var g = document.getElementById(a.getAttribute("href").slice(1));
-      if (g) g.open = true;
-    });
-  });
-
-  // Zoeken op land of onderwerp: verbergt wat niet past en klapt het overige open.
+  // Zoeken op land of onderwerp: verbergt wat niet past.
   document.querySelectorAll(".rhc-zoek").forEach(function (blok) {
     blok.hidden = false;
     var invoer = blok.querySelector("input");
@@ -240,11 +232,9 @@
       paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
         var heeft = c.querySelector(".rhc-bevinding:not([hidden])") !== null;
         c.hidden = !heeft;
-        if (q && heeft) c.open = true;
       });
       paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
         g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
-        if (q && !g.hidden) g.open = true;
       });
       status.textContent = q
         ? (zichtbaar ? zichtbaar + " signalen gevonden voor “" + invoer.value.trim() + "”"

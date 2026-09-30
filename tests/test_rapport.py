@@ -98,10 +98,15 @@ class TestTabbladen(unittest.TestCase):
     def test_bevindingen_zijn_standaard_ingeklapt(self):
         self.assertIn('<details class="rhc-bevinding', self.html)
         self.assertNotIn('<details class="rhc-bevinding rhc-voorleggen" open', self.html)
-        self.assertNotIn('<details class="rhc-categorie" open', self.html)
 
-    def test_groepen_staan_open_zodat_de_aantallen_zichtbaar_zijn(self):
-        self.assertIn('class="rhc-groep" id="groep-consulaire-tarieven-voorleggen" open', self.html)
+    def test_groepen_en_categorieen_zijn_gewone_koppen(self):
+        self.assertIn('<section class="rhc-groep" id="groep-consulaire-tarieven-voorleggen">', self.html)
+        self.assertIn('<section class="rhc-categorie">', self.html)
+        self.assertNotIn('<details class="rhc-groep"', self.html)
+        self.assertNotIn('<details class="rhc-categorie"', self.html)
+
+    def test_links_naar_nederlandwereldwijd_openen_in_nieuw_tabblad(self):
+        self.assertIn('href="https://www.nederlandwereldwijd.nl/consulaire-tarieven/brazilie" target="_blank" rel="noopener noreferrer"', self.html)
 
     def test_tab_zonder_afwijkingen_meldt_dat_eerlijk(self):
         self.assertIn("Geen afwijkingen gevonden", self.html)
