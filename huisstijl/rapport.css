@@ -162,7 +162,7 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
 
 /* ------------------------------------------------------------- tabbladen */
 
-.rhc-tabs { border-block-end: 2px solid var(--rhc-color-border-default); margin-block-end: calc(var(--rhc-space-lg) * -1); }
+.rhc-tabs { border-block-end: 2px solid var(--rhc-color-border-default); margin-block-start: var(--rhc-space-lg); }
 .rhc-tabs [role="tablist"] { display: flex; flex-wrap: wrap; gap: var(--rhc-space-xs); }
 .rhc-tabs button {
   color: var(--rhc-color-foreground-subtle);
@@ -179,7 +179,7 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
   color: var(--rhc-color-primary-500);
   border-block-end-color: var(--rhc-color-primary-500);
 }
-.rhc-paneel { display: flex; flex-direction: column; gap: var(--rhc-space-xl); }
+.rhc-paneel { display: flex; flex-direction: column; gap: var(--rhc-space-2xl); padding-block-start: var(--rhc-space-lg); }
 .rhc-paneelkop { display: flex; flex-direction: column; gap: var(--rhc-space-md); }
 
 /* ---------------------------------------------------------------- tegels */
@@ -210,13 +210,41 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
 
 /* ------------------------------------------------------------------ zoek */
 
-.rhc-zoek { display: flex; flex-direction: column; gap: var(--rhc-space-xs); max-inline-size: 26rem; }
-.rhc-zoek input { inline-size: 100%; }
+.rhc-zoek {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rhc-space-xs);
+  max-inline-size: 32rem;
+  background: var(--rhc-color-primary-50);
+  border-inline-start: 4px solid var(--rhc-color-primary-500);
+  padding: var(--rhc-space-md);
+}
+.rhc-zoek label { font-weight: 700; color: var(--rhc-color-primary-500); }
+.rhc-zoek__veld { position: relative; }
+.rhc-zoek__icoon {
+  position: absolute;
+  inset-inline-start: var(--rhc-space-md);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  color: var(--rhc-color-primary-500);
+  pointer-events: none;
+}
+.rhc-zoek input {
+  inline-size: 100%;
+  background: #fff;
+  border: 2px solid var(--rhc-color-primary-500);
+  padding-inline-start: calc(var(--rhc-space-md) + 1.25rem + var(--rhc-space-sm));
+}
 .rhc-zoek__status { min-block-size: 1.2em; font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }
 
 /* ------------------------------------------------- groepen en bevindingen */
 
-.rhc-groep, .rhc-categorie { display: flex; flex-direction: column; gap: var(--rhc-space-md); }
+.rhc-groep { display: flex; flex-direction: column; gap: var(--rhc-space-lg); }
+.rhc-categorie { display: flex; flex-direction: column; gap: var(--rhc-space-md); }
+.rhc-groep > .rhc-categorie { margin-block-start: var(--rhc-space-lg); }
+.rhc-categorie > .rhc-kopregel { margin-block-end: var(--rhc-space-sm); }
 .rhc-kopregel { display: flex; align-items: baseline; gap: var(--rhc-space-sm); flex-wrap: wrap; }
 .rhc-groep > .rhc-kopregel h3 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc-color-primary-500); }
 .rhc-categorie > .rhc-kopregel h4 { font-size: var(--rhc-text-font-size-lg); font-weight: 700; }
