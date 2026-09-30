@@ -49,6 +49,7 @@
 </div>
 
 {% include "_script.html.j2" %}
+{% include "_afhandeling.html.j2" %}
 <script>
 (function () {
   var SUPABASE_URL = {{ supabase_url | tojson }};
@@ -127,7 +128,7 @@
     document.getElementById("sessie-status").textContent = sessie.email || "teamlid";
     inhoud.hidden = false;
     startRapport();
-    document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie } }));
+    document.dispatchEvent(new CustomEvent("rapport-geladen", { detail: { sessie: sessie, geldigeSessie: geldigeSessie, url: SUPABASE_URL, sleutel: SUPABASE_KEY } }));
   }
 
   function toonInlog(melding) {

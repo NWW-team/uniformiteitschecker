@@ -1,4 +1,15 @@
 <script>
+// Verbergt categorieën en groepen waar niets meer in zichtbaar is. Een signaal is zichtbaar
+// als het niet door het zoekveld (`hidden`) of het afhandelfilter (`rhc-filter-weg`) is weggehaald.
+function werkZichtbaarheidBij(paneel) {
+  paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
+    c.hidden = c.querySelector(".rhc-bevinding:not([hidden]):not(.rhc-filter-weg)") === null;
+  });
+  paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
+    g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
+  });
+}
+
 // Tabbladen en zoekveld. Losgekoppeld van het laden van de panelen, zodat het ook werkt
 // nadat de bevindingen na het inloggen pas in de pagina zijn gezet.
 function startRapport() {
@@ -78,13 +89,7 @@ function startRapport() {
         b.hidden = !raak;
         if (raak) zichtbaar++;
       });
-      paneel.querySelectorAll(".rhc-categorie").forEach(function (c) {
-        var heeft = c.querySelector(".rhc-bevinding:not([hidden])") !== null;
-        c.hidden = !heeft;
-      });
-      paneel.querySelectorAll(".rhc-groep").forEach(function (g) {
-        g.hidden = !g.querySelector(".rhc-categorie:not([hidden])");
-      });
+      werkZichtbaarheidBij(paneel);
       status.textContent = q
         ? (zichtbaar ? zichtbaar + " signalen gevonden voor “" + invoer.value.trim() + "”"
                      : "Geen signalen gevonden voor “" + invoer.value.trim() + "”")

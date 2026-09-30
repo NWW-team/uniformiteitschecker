@@ -27,6 +27,7 @@ from ..model import (
     EIGENAAR_KENNISEIGENAAR,
     EIGENAAR_REDACTIE,
     Bevinding,
+    _hash,
 )
 
 TEMPLATE_MAP = pathlib.Path(__file__).parent / "templates"
@@ -86,6 +87,30 @@ def _varianten(bevinding: Bevinding) -> list[dict[str, str]]:
     return varianten
 
 
+def _paginas(bevinding: Bevinding) -> list[dict[str, object]]:
+    """Eén regel per afwijkende pagina, met de waarde(n) die daar staan.
+
+    De redactie handelt per pagina af, niet per signaal. `bewijs` is de hash van alleen
+    de waarde(n) op die pagina: verandert die, dan weet de pagina dat het afgehandelde
+    signaal opnieuw beoordeeld moet worden; verandert een andere pagina, dan blijft hij gelijk.
+    """
+    varianten = _varianten(bevinding)
+    if len(varianten) == len(bevinding.urls):
+        per_url = [(u, [v]) for u, v in zip(bevinding.urls, varianten)]
+    else:
+        # Bijvoorbeeld een bedragnotatie: één pagina met meerdere afwijkende bedragen.
+        per_url = [(u, varianten) for u in bevinding.urls]
+    return [
+        {
+            "url": url,
+            "variant": (v[0]["variant"] if v else url),
+            "waarden": [x["waarde"] for x in v],
+            "bewijs": _hash(url, *(x["waarde"] for x in v)),
+        }
+        for url, v in per_url
+    ]
+
+
 def _categorie(b: Bevinding) -> str:
     return b.categorie or CATEGORIE_PER_REGEL.get(b.regel_id, "Overig")
 
@@ -122,6 +147,7 @@ def bouw_familie(
                     "zekerheid": b.zekerheid,
                     "telling": b.telling,
                     "varianten": varianten,
+                    "paginas": _paginas(b),
                     "zusters": b.zusters,
                     "urls": b.urls,
                     "toelichting": b.toelichting,

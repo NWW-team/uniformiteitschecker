@@ -1,4 +1,4 @@
-  <section class="rhc-paneel" id="paneel-{{ f.id }}" data-familie="{{ f.id }}" data-naam="{{ f.naam }}" data-aantal="{{ f.aantal }}"
+  <section class="rhc-paneel" id="paneel-{{ f.id }}" data-familie="{{ f.id }}" data-naam="{{ f.naam }}" data-aantal="{{ f.aantal }}" data-datum="{{ f.datum }}"
            {% if tabs %}role="tabpanel" aria-labelledby="tab-{{ f.id }}"{% endif %}>
     <div class="rhc-paneelkop">
       <h2>{{ f.naam }}</h2>
@@ -71,8 +71,8 @@
             <h5>{{ b.titel }}</h5>
             <span class="rhc-chips">
               <span class="rhc-chip rhc-soort-{{ b.soort }}">{{ b.soort }}</span>
-              {% if b.varianten|length > 1 %}
-              <span class="rhc-chip rhc-neutraal">{{ b.varianten|length }} pagina's</span>
+              {% if b.paginas|length > 1 %}
+              <span class="rhc-chip rhc-neutraal">{{ b.paginas|length }} pagina's</span>
               {% endif %}
               {% if b.telling %}
               <span class="rhc-chip rhc-neutraal">{{ b.telling.eens }} van {{ b.telling.n }} eens</span>
@@ -83,10 +83,11 @@
           <div class="rhc-bevinding__inhoud">
             <div class="rhc-bewijs">
               <div class="rhc-kolom rhc-afwijkend">
-                <h6>Wijkt af {% if b.varianten|length > 1 %}({{ b.varianten|length }} pagina's){% endif %}</h6>
+                <h6>Wijkt af {% if b.paginas|length > 1 %}({{ b.paginas|length }} pagina's){% endif %}</h6>
                 <ul>
-                  {% for v in b.varianten %}
-                  <li><span class="rhc-land">{{ v.variant }}</span><span class="rhc-waarde{% if v.waarde|length > 24 %} rhc-waarde--tekst{% endif %}">{{ v.waarde }}</span></li>
+                  {% for p in b.paginas %}
+                  {% set waarde = p.waarden|join(" · ") %}
+                  <li data-url="{{ p.url }}" data-bewijs="{{ p.bewijs }}"><span class="rhc-land"><a class="utrecht-link rhc-link" href="{{ p.url }}" title="{{ p.url }}" target="_blank" rel="noopener noreferrer">{{ p.variant }}</a></span><span class="rhc-waarde{% if waarde|length > 24 %} rhc-waarde--tekst{% endif %}">{{ waarde }}</span></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -101,10 +102,6 @@
             </div>
 
             {% if b.toelichting %}<p class="rhc-toelichting">{{ b.toelichting }}</p>{% endif %}
-
-            <div class="rhc-paginas">
-              {% for u in b.urls %}<a class="utrecht-link rhc-link" href="{{ u }}" target="_blank" rel="noopener noreferrer">{{ u }}</a>{% endfor %}
-            </div>
 
             <p class="rhc-actie"><span>Actie:</span> {{ b.voorgestelde_actie }}</p>
           </div>

@@ -1,7 +1,9 @@
 # Onderdrukte bevindingen: signalen die de redactie heeft beoordeeld als legitiem.
 #
-# Nog niet in gebruik -- de detectie wordt eerst met de redactie doorgelopen. De opzet
-# staat hier omdat het vingerafdrukcontract er nu al op is ontworpen:
+# Voor dagelijks gebruik door de redactie: in het rapport achter de inlog kun je per pagina
+# "negeren" kiezen (tabel `afvinkingen`, zie README). Dit bestand is voor vaste, in de repo
+# beheerde uitzonderingen en is nog niet in gebruik. De opzet staat hier omdat het
+# vingerafdrukcontract er al op is ontworpen:
 #
 #   vingerafdruk  identiteit van "deze plek, door deze regel gemarkeerd". Bewust ZONDER
 #                 de waargenomen waarde, zodat een entry blijft werken als de tekst

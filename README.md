@@ -181,8 +181,21 @@ python -m checker publiceer                                     # signalen naar 
   *Signalen publiceren*). Die sleutel hoort nooit in de repo.
 - `config/supabase.yaml` bevat alleen de URL en de publishable key; die horen in de
   pagina te staan.
-- De tabel `afvinkingen` is klaar voor het markeren van bevindingen als opgelost; elk
-  bevinding heeft een vaste `data-id` in de pagina.
+- **Afhandelen per pagina.** Bij elke afwijkende pagina staat een klein rondje; daarmee
+  leg je vast wat ermee is gebeurd. De status staat in de tabel `afvinkingen` (sleutel:
+  signaal + URL; migratie in `supabase/migraties/`) en is voor het hele team zichtbaar.
+  - *Open*: nog niets mee gedaan (geen rij).
+  - *In behandeling*: bijvoorbeeld uitgezet bij een kenniseigenaar.
+  - *Gefixt*: aangepast in het CMS. Staat de pagina na een latere controle nog in het
+    rapport, dan staat er *gefixt, maar nog aanwezig* en komt hij terug bij Te doen.
+    Verdwijnt hij uit het rapport, dan is hij klaar.
+  - *Negeren*: geen echte fout. Verandert de afwijkende waarde op die pagina later en
+    wijkt de pagina dan nog steeds af, dan komt hij terug als *teruggekomen*. Wijkt hij
+    niet meer af, dan komt er niets terug.
+  - Met het filter *Te doen / Afgehandeld / Alles* boven de signalen zie je waar je gebleven
+    bent; de getallen in de tabbladen en tegels tellen wat nog te doen is. Wie een
+    status zette en wanneer wordt door de database vastgelegd.
+  - Na een wijziging van de opbouw van het paneel moet *Signalen publiceren* opnieuw draaien.
 
 Let op: `data/findings/` en `data/snapshots/` staan in git. Is de repo openbaar, dan zijn de
 signalen daar alsnog te lezen.

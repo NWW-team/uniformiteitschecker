@@ -312,8 +312,80 @@ h2 { font-size: var(--rhc-text-font-size-xl); font-weight: 700; color: var(--rhc
 .rhc-toelichting { font-size: var(--rhc-text-font-size-sm); color: var(--rhc-color-foreground-subtle); }
 .rhc-actie { font-size: var(--rhc-text-font-size-sm); padding-block-start: var(--rhc-space-md); border-block-start: 1px solid var(--rhc-color-border-subtle); }
 .rhc-actie span { font-weight: 700; color: var(--rhc-color-primary-500); }
-.rhc-paginas { display: flex; flex-direction: column; gap: var(--rhc-space-2xs); }
-.rhc-paginas a { font-size: var(--rhc-text-font-size-sm); overflow-wrap: anywhere; }
+/* Afhandelen per pagina (alleen achter de inlog): één klein statusrondje per regel. */
+.rhc-land a { font-size: inherit; }
+.rhc-kolom li[data-url] { align-items: center; }
+.rhc-kolom li[data-url] .rhc-waarde { margin-inline-start: auto; }
+.rhc-status {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--rhc-space-xs);
+  min-inline-size: 1.1rem;
+  min-block-size: 1.1rem;
+  padding: 0;
+  font: inherit;
+  font-size: var(--rhc-text-font-size-sm);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--rhc-color-foreground-default);
+  background: transparent;
+  border: 2px solid var(--rhc-color-border-default, var(--rhc-color-cool-grey-300));
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-status:empty { opacity: .6; }
+.rhc-status:empty:hover, .rhc-status:empty:focus-visible { opacity: 1; }
+.rhc-status:not(:empty) { padding: 0 var(--rhc-space-sm); border-color: transparent; }
+.rhc-status[data-status="in_behandeling"] { background: var(--rhc-color-warning-50); border-color: var(--rhc-color-warning-500); }
+.rhc-status[data-status="gefixt"], .rhc-status[data-status="genegeerd"] { background: var(--rhc-color-positive-100); }
+.rhc-status[data-status="teruggekomen"], .rhc-status[data-status="aanwezig"] { background: var(--rhc-color-negative-100); }
+.rhc-kolom li.rhc-afgehandeld .rhc-waarde { font-weight: 400; color: var(--rhc-color-foreground-subtle); }
+
+.rhc-filter { display: inline-flex; flex-wrap: wrap; gap: var(--rhc-space-xs); margin-block: var(--rhc-space-md); }
+.rhc-filter button {
+  font: inherit;
+  font-size: var(--rhc-text-font-size-sm);
+  padding: var(--rhc-space-2xs) var(--rhc-space-md);
+  background: #fff;
+  color: var(--rhc-color-foreground-default);
+  border: 1px solid var(--rhc-color-border-subtle);
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-filter button span { font-variant-numeric: tabular-nums; color: var(--rhc-color-foreground-subtle); }
+.rhc-filter button[aria-pressed="true"] { background: var(--rhc-color-primary-500); border-color: var(--rhc-color-primary-500); color: #fff; font-weight: 700; }
+.rhc-filter button[aria-pressed="true"] span { color: inherit; }
+.rhc-filter-weg { display: none; }
+.rhc-afhandeling-fout { color: var(--rhc-color-negative-500); font-weight: 700; margin-block-end: var(--rhc-space-md); }
+
+.rhc-menu {
+  position: fixed;
+  z-index: 10;
+  inline-size: min(22rem, calc(100vw - 16px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--rhc-space-sm);
+  padding: var(--rhc-space-md);
+  background: #fff;
+  border: 1px solid var(--rhc-color-border-subtle);
+  box-shadow: 0 4px 16px rgb(0 0 0 / .18);
+  font-size: var(--rhc-text-font-size-sm);
+}
+.rhc-menu__keuzes, .rhc-menu__groep { display: flex; flex-wrap: wrap; gap: var(--rhc-space-xs); align-items: center; }
+.rhc-menu__groep { padding-block-start: var(--rhc-space-sm); border-block-start: 1px solid var(--rhc-color-border-subtle); }
+.rhc-menu__groep span { flex-basis: 100%; }
+.rhc-menu button {
+  font: inherit;
+  padding: var(--rhc-space-2xs) var(--rhc-space-md);
+  background: #fff;
+  color: var(--rhc-color-foreground-default);
+  border: 1px solid var(--rhc-color-border-subtle);
+  border-radius: var(--rhc-border-radius-round, 999px);
+  cursor: pointer;
+}
+.rhc-menu button[aria-pressed="true"] { background: var(--rhc-color-primary-500); border-color: var(--rhc-color-primary-500); color: #fff; font-weight: 700; }
+.rhc-menu__wie { color: var(--rhc-color-foreground-subtle); }
 
 .rhc-waarschuwing {
   border-inline-start: 4px solid var(--rhc-color-warning-500);
